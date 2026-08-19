@@ -2,30 +2,146 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>أداة حساب السعرات الحرارية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أفضل حاسبة صحية شاملة - حساب السعرات والوزن المثالي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 40px; background: #f0f2f5; }
-        .card { background: white; padding: 30px; border-radius: 12px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        input, button { padding: 12px; margin: 10px; font-size: 16px; border-radius: 6px; border: 1px solid #ccc; }
-        button { background: #28a745; color: white; border: none; cursor: pointer; font-weight: bold; }
-        #result { margin-top: 20px; font-size: 18px; color: #333; font-weight: bold; }
+        * { box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
+        body { 
+            margin: 0; 
+            padding: 20px 10px; 
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); 
+            color: #fff; 
+            display: flex; 
+            justify-content: center; 
+            min-height: 100vh;
+            align-items: center;
+        }
+        .container { 
+            width: 100%; 
+            max-width: 480px; 
+            background: rgba(30, 27, 75, 0.75); 
+            backdrop-filter: blur(10px);
+            padding: 25px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+        h1 { 
+            background: linear-gradient(90deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 22px; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            font-weight: 800;
+        }
+        .ad-box { 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px dashed #a855f7; 
+            color: #c084fc; 
+            text-align: center; 
+            padding: 12px; 
+            margin: 15px 0; 
+            border-radius: 10px; 
+            font-size: 13px; 
+        }
+        .input-group { margin-bottom: 14px; text-align: right; }
+        label { display: block; margin-bottom: 6px; color: #cbd5e1; font-size: 14px; font-weight: 500; }
+        input, select { 
+            width: 100%; 
+            padding: 12px; 
+            border-radius: 10px; 
+            border: 1px solid #4338ca; 
+            background: #0f172a; 
+            color: #fff; 
+            font-size: 15px; 
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus, select:focus { border-color: #ec4899; box-shadow: 0 0 10px rgba(236, 72, 153, 0.3); }
+        button { 
+            width: 100%; 
+            padding: 14px; 
+            border-radius: 10px; 
+            border: none; 
+            background: linear-gradient(90deg, #8b5cf6, #ec4899); 
+            color: #fff; 
+            font-size: 17px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            margin-top: 10px; 
+            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
+            transition: 0.2s;
+        }
+        button:active { transform: scale(0.98); }
+        .results { 
+            display: none; 
+            margin-top: 20px; 
+            background: #0f172a; 
+            padding: 18px; 
+            border-radius: 12px; 
+            border: 1px solid #8b5cf6; 
+        }
+        .res-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
+        .res-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .val { color: #f472b6; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h2>أداة حساب السعرات التقديرية</h2>
-        <input type="number" id="weight" placeholder="الوزن بالكجم">
-        <br>
-        <button onclick="calc()">احسب الآن</button>
-        <div id="result"></div>
+    <div class="container">
+        <h1>✨ المنصة الصحية الشاملة</h1>
+        
+        <!-- مساحة إعلانية علوية -->
+        <div class="ad-box">مكان إعلان Google AdSense (علوي)</div>
+
+        <div class="input-group">
+            <label>الجنس:</label>
+            <select id="gender"><option value="m">ذكر</option><option value="f">أنثى</option></select>
+        </div>
+        <div class="input-group">
+            <label>السن:</label>
+            <input type="number" id="age" placeholder="مثال: 25">
+        </div>
+        <div class="input-group">
+            <label>الوزن (كجم):</label>
+            <input type="number" id="weight" placeholder="مثال: 70">
+        </div>
+        <div class="input-group">
+            <label>الطول (سم):</label>
+            <input type="number" id="height" placeholder="مثال: 175">
+        </div>
+
+        <button onclick="calcAll()">احسب التقرير الشامل</button>
+
+        <!-- مساحة إعلانية وسطى -->
+        <div class="ad-box">مكان إعلان Google AdSense (وسطي)</div>
+
+        <div id="results" class="results">
+            <div class="res-item"><span>🔥 السعرات للتثبيت:</span><span id="cals" class="val"></span></div>
+            <div class="res-item"><span>📉 سعرات التخسيس:</span><span id="lossCals" class="val"></span></div>
+            <div class="res-item"><span>🎯 الوزن المثالي:</span><span id="idealW" class="val"></span></div>
+            <div class="res-item"><span>💧 الماء اليومي:</span><span id="water" class="val"></span></div>
+        </div>
     </div>
 
     <script>
-        function calc() {
-            let w = document.getElementById('weight').value;
-            if(w) {
-                let calories = Math.round(w * 24 * 1.2);
-                document.getElementById('result').innerText = 'احتياجك اليومي التقريبي: ' + calories + ' سعرة حرارية';
+        function calcAll() {
+            let g = document.getElementById('gender').value;
+            let a = parseFloat(document.getElementById('age').value);
+            let w = parseFloat(document.getElementById('weight').value);
+            let h = parseFloat(document.getElementById('height').value);
+
+            if(w > 0 && h > 0 && a > 0) {
+                let bmr = (g === 'm') ? (10*w + 6.25*h - 5*a + 5) : (10*w + 6.25*h - 5*a - 161);
+                let cals = Math.round(bmr * 1.375);
+                
+                document.getElementById('cals').innerText = cals + ' سعرة';
+                document.getElementById('lossCals').innerText = (cals - 500) + ' سعرة';
+                document.getElementById('idealW').innerText = Math.round(22 * ((h/100)*(h/100))) + ' كجم';
+                document.getElementById('water').innerText = (w * 0.035).toFixed(1) + ' لتر';
+                
+                document.getElementById('results').style.display = 'block';
             }
         }
     </script>
