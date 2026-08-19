@@ -1,1105 +1,558 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!-- ================= CV MAKER ================= -->
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section id="cv-maker" class="section">
 
-<title>Mido Tech | أدواتك الرقمية</title>
+    <div class="section-title">
+        <span>CV MAKER</span>
+        <h2>اعمل CV احترافي في دقائق 📄</h2>
+    </div>
+
+    <div class="cv-container">
+
+        <div class="cv-form">
+
+            <h3>بياناتك</h3>
+
+            <input id="cvName" type="text" placeholder="الاسم بالكامل">
+
+            <input id="cvJob" type="text"
+                   placeholder="التخصص أو الوظيفة">
+
+            <input id="cvEmail" type="email"
+                   placeholder="البريد الإلكتروني">
+
+            <input id="cvPhone" type="text"
+                   placeholder="رقم الهاتف">
+
+            <textarea id="cvAbout"
+                      placeholder="نبذة عنك"></textarea>
+
+            <textarea id="cvSkills"
+                      placeholder="المهارات - افصل بينها بفاصلة"></textarea>
+
+            <textarea id="cvEducation"
+                      placeholder="التعليم والمؤهلات"></textarea>
+
+            <textarea id="cvExperience"
+                      placeholder="الخبرات والمشاريع"></textarea>
+
+            <button class="btn primary"
+                    onclick="generateCV()">
+                إنشاء CV ✨
+            </button>
+
+        </div>
+
+
+        <!-- المعاينة -->
+
+        <div class="cv-preview" id="cvPreview">
+
+            <div class="cv-header">
+
+                <h1 id="previewName">
+                    اسمك هنا
+                </h1>
+
+                <p id="previewJob">
+                    تخصصك أو وظيفتك
+                </p>
+
+            </div>
+
+
+            <div class="cv-info">
+
+                <span id="previewEmail">
+                    البريد الإلكتروني
+                </span>
+
+                <span id="previewPhone">
+                    رقم الهاتف
+                </span>
+
+            </div>
+
+
+            <div class="cv-section">
+
+                <h3>نبذة عني</h3>
+
+                <p id="previewAbout">
+                    اكتب نبذة عنك لتظهر هنا.
+                </p>
+
+            </div>
+
+
+            <div class="cv-section">
+
+                <h3>المهارات</h3>
+
+                <p id="previewSkills">
+                    مهاراتك ستظهر هنا.
+                </p>
+
+            </div>
+
+
+            <div class="cv-section">
+
+                <h3>التعليم</h3>
+
+                <p id="previewEducation">
+                    التعليم والمؤهلات.
+                </p>
+
+            </div>
+
+
+            <div class="cv-section">
+
+                <h3>الخبرات والمشاريع</h3>
+
+                <p id="previewExperience">
+                    الخبرات والمشاريع.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="cv-actions">
+
+        <button class="btn primary"
+                onclick="printCV()">
+
+            تحميل / حفظ PDF 📥
+
+        </button>
+
+        <button class="btn premium-btn"
+                onclick="showPremium()">
+
+            💎 فتح قوالب Premium
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PREMIUM ================= -->
+
+<section class="section">
+
+    <div class="premium-box">
+
+        <div>
+
+            <span class="badge">
+                💎 Mido Tech Pro
+            </span>
+
+            <h2>
+                خليك احترافي أكتر
+            </h2>
+
+            <p>
+                قوالب CV مميزة + أدوات إضافية
+                + مميزات متقدمة قريبًا.
+            </p>
+
+        </div>
+
+        <button class="btn primary"
+                onclick="showPremium()">
+
+            اشترك في Pro
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ORDER SERVICE ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>OUR SERVICES</span>
+
+        <h2>
+            عايز حاجة نعملهالك؟ 🚀
+        </h2>
+
+    </div>
+
+
+    <div class="service-order">
+
+        <h3>
+            موقع؟ CV؟ Portfolio؟
+        </h3>
+
+        <p>
+            اطلب الخدمة وإحنا نتواصل معاك
+            ونحدد التفاصيل والسعر.
+        </p>
+
+        <button class="btn primary"
+                onclick="requestService()">
+
+            اطلب خدمتك الآن
+
+        </button>
+
+    </div>
+
+</section>
+
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Arial,sans-serif;
-background:#080B14;
-color:#F8FAFC;
-line-height:1.7;
-}
-
-/* ===== HEADER ===== */
-
-.header{
-position:sticky;
-top:0;
-z-index:1000;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:18px 7%;
-
-background:rgba(8,11,20,.94);
-backdrop-filter:blur(15px);
+/* ===== CV ===== */
 
-border-bottom:1px solid rgba(124,58,237,.2);
-}
+.cv-container {
 
-.logo{
-font-size:26px;
-font-weight:bold;
-}
+    max-width: 1100px;
 
-.logo span{
-color:#7C3AED;
-}
+    margin: auto;
 
-nav{
-display:flex;
-gap:25px;
-}
+    display: grid;
 
-nav a{
-color:#94A3B8;
-text-decoration:none;
-transition:.3s;
-}
+    grid-template-columns:
+        1fr 1fr;
 
-nav a:hover{
-color:#A78BFA;
-}
+    gap: 25px;
 
-.menu-btn{
-display:none;
-background:none;
-border:none;
-color:white;
-font-size:27px;
-cursor:pointer;
 }
 
-/* ===== HERO ===== */
 
-.hero{
-min-height:90vh;
+.cv-form {
 
-display:flex;
-align-items:center;
-justify-content:center;
+    background: #0E1422;
 
-text-align:center;
+    padding: 30px;
 
-padding:70px 7%;
+    border-radius: 20px;
 
-background:
-radial-gradient(
-circle at top,
-rgba(124,58,237,.25),
-transparent 45%
-);
-}
+    border: 1px solid #1C2638;
 
-.hero-content{
-max-width:850px;
 }
-
-.badge{
-display:inline-block;
-
-padding:7px 16px;
-margin-bottom:20px;
-
-border-radius:50px;
-
-background:rgba(124,58,237,.15);
-color:#A78BFA;
 
-border:1px solid rgba(124,58,237,.3);
-}
 
-.hero h1{
-font-size:clamp(45px,7vw,80px);
-line-height:1.15;
-margin-bottom:25px;
-}
+.cv-form h3 {
 
-.hero h1 span{
-display:block;
+    margin-bottom: 20px;
 
-background:linear-gradient(
-90deg,
-#7C3AED,
-#2563EB
-);
+    font-size: 25px;
 
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
 }
 
-.hero-text{
-color:#94A3B8;
-font-size:18px;
 
-max-width:680px;
-margin:auto;
-}
+.cv-form input,
+.cv-form textarea {
 
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:15px;
-margin-top:35px;
-}
+    width: 100%;
 
-.btn{
-display:inline-block;
+    padding: 13px;
 
-padding:13px 25px;
+    margin-bottom: 12px;
 
-border-radius:12px;
+    border-radius: 10px;
 
-text-decoration:none;
-border:none;
+    border: 1px solid #263247;
 
-cursor:pointer;
+    background: #080B14;
 
-font-size:16px;
+    color: white;
 
-transition:.3s;
-}
+    outline: none;
 
-.primary{
-color:white;
-
-background:linear-gradient(
-135deg,
-#7C3AED,
-#2563EB
-);
 }
 
-.primary:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 30px rgba(124,58,237,.25);
-}
 
-.secondary{
-color:white;
+.cv-form textarea {
 
-background:#111827;
+    min-height: 90px;
 
-border:1px solid #263247;
-}
+    resize: vertical;
 
-.secondary:hover{
-border-color:#7C3AED;
 }
 
-/* ===== SECTIONS ===== */
 
-.section{
-padding:100px 7%;
-}
+.cv-form input:focus,
+.cv-form textarea:focus {
 
-.section-title{
-text-align:center;
-margin-bottom:50px;
-}
+    border-color: #7C3AED;
 
-.section-title span{
-color:#7C3AED;
-font-weight:bold;
 }
 
-.section-title h2{
-font-size:38px;
-margin-top:8px;
-}
 
-/* ===== CARDS ===== */
+/* ===== CV Preview ===== */
 
-.cards{
-display:grid;
+.cv-preview {
 
-grid-template-columns:
-repeat(auto-fit,minmax(230px,1fr));
+    background: white;
 
-gap:20px;
-}
+    color: #111827;
 
-.card{
-padding:30px;
+    min-height: 650px;
 
-background:#0E1422;
+    padding: 40px;
 
-border:1px solid #1C2638;
+    border-radius: 8px;
 
-border-radius:20px;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.3);
 
-transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-7px);
 
-border-color:#7C3AED;
+.cv-header {
 
-box-shadow:
-0 15px 40px rgba(124,58,237,.15);
-}
+    border-bottom: 3px solid #7C3AED;
 
-.icon{
-font-size:40px;
-margin-bottom:15px;
-}
+    padding-bottom: 20px;
 
-.card h3{
-font-size:22px;
-margin-bottom:10px;
-}
+    margin-bottom: 20px;
 
-.card p{
-color:#94A3B8;
-margin-bottom:20px;
 }
-
-.card button{
-background:transparent;
-
-color:#A78BFA;
 
-border:1px solid #7C3AED;
 
-padding:9px 17px;
+.cv-header h1 {
 
-border-radius:9px;
+    font-size: 32px;
 
-cursor:pointer;
-
-transition:.3s;
-}
-
-.card button:hover{
-background:#7C3AED;
-color:white;
 }
-
-/* ===== AI ===== */
-
-.tool-box{
-max-width:800px;
-margin:auto;
-
-padding:35px;
 
-background:#0E1422;
 
-border:1px solid #1C2638;
+.cv-header p {
 
-border-radius:22px;
-}
+    color: #7C3AED;
 
-.tool-box h3{
-font-size:25px;
-}
+    font-weight: bold;
 
-.tool-box p{
-color:#94A3B8;
-margin-bottom:20px;
 }
-
-textarea{
-width:100%;
-min-height:130px;
-
-resize:vertical;
-
-padding:15px;
 
-margin-bottom:15px;
 
-border-radius:12px;
+.cv-info {
 
-border:1px solid #263247;
+    display: flex;
 
-background:#080B14;
+    flex-wrap: wrap;
 
-color:white;
+    gap: 15px;
 
-outline:none;
+    font-size: 13px;
 
-font-size:16px;
-}
+    margin-bottom: 25px;
 
-textarea:focus{
-border-color:#7C3AED;
 }
-
-.result{
-margin-top:20px;
-
-padding:20px;
 
-min-height:70px;
 
-background:#080B14;
+.cv-section {
 
-border-radius:12px;
+    margin-bottom: 22px;
 
-color:#CBD5E1;
 }
-
-/* ===== PREMIUM ===== */
-
-.premium-box{
-display:flex;
-
-align-items:center;
-justify-content:space-between;
 
-gap:30px;
 
-padding:40px;
+.cv-section h3 {
 
-border-radius:25px;
+    color: #7C3AED;
 
-background:
-linear-gradient(
-135deg,
-rgba(124,58,237,.2),
-rgba(37,99,235,.12)
-);
+    margin-bottom: 7px;
 
-border:1px solid #3B2B68;
 }
 
-.premium-box h2{
-font-size:35px;
-margin:15px 0;
-}
-
-.premium-box p{
-color:#94A3B8;
-}
-
-/* ===== CONTACT ===== */
-
-.contact-card{
-max-width:650px;
-margin:auto;
 
-padding:20px;
+.cv-section p {
 
-background:#0E1422;
+    color: #374151;
 
-border:1px solid #1C2638;
+    white-space: pre-line;
 
-border-radius:24px;
-
-display:flex;
-flex-direction:column;
-gap:12px;
 }
-
-.contact-item{
-display:flex;
-align-items:center;
-gap:15px;
-
-padding:18px;
 
-text-decoration:none;
 
-color:#F8FAFC;
+.cv-actions {
 
-background:#080B14;
+    max-width: 1100px;
 
-border:1px solid #1C2638;
+    margin: 25px auto 0;
 
-border-radius:16px;
+    display: flex;
 
-transition:.3s;
-}
+    justify-content: center;
 
-.contact-item:hover{
-transform:translateY(-3px);
+    gap: 15px;
 
-border-color:#7C3AED;
+    flex-wrap: wrap;
 
-background:#101626;
 }
 
-.contact-icon{
-width:48px;
-height:48px;
 
-display:flex;
-align-items:center;
-justify-content:center;
+.premium-btn {
 
-font-size:24px;
+    background: #17122B;
 
-border-radius:13px;
+    color: #C4B5FD;
 
-background:rgba(124,58,237,.15);
-}
+    border: 1px solid #7C3AED;
 
-.contact-item div{
-flex:1;
 }
 
-.contact-item strong{
-display:block;
 
-font-size:17px;
+.service-order {
 
-margin-bottom:3px;
-}
+    max-width: 700px;
 
-.contact-item small{
-display:block;
+    margin: auto;
 
-color:#64748B;
+    text-align: center;
 
-font-size:13px;
-}
+    padding: 45px 30px;
 
-.arrow{
-color:#A78BFA;
-font-size:20px;
-}
+    background: #0E1422;
 
-/* WhatsApp */
+    border: 1px solid #1C2638;
 
-.contact-item.whatsapp{
-border-color:rgba(34,197,94,.25);
-}
+    border-radius: 22px;
 
-.contact-item.whatsapp:hover{
-border-color:#22C55E;
 }
 
-/* ===== FOOTER ===== */
 
-footer{
-padding:30px;
+.service-order h3 {
 
-text-align:center;
+    font-size: 28px;
 
-color:#64748B;
+    margin-bottom: 10px;
 
-border-top:1px solid #1C2638;
 }
-
-/* ===== MESSAGE ===== */
-
-.message{
-position:fixed;
-
-bottom:25px;
-left:50%;
-
-transform:
-translateX(-50%)
-translateY(100px);
-
-background:#111827;
-
-border:1px solid #7C3AED;
-
-padding:15px 25px;
-
-border-radius:12px;
 
-opacity:0;
 
-transition:.4s;
+.service-order p {
 
-z-index:9999;
+    color: #94A3B8;
 
-width:max-content;
-max-width:90%;
-}
-
-.message.show{
-transform:
-translateX(-50%)
-translateY(0);
+    margin-bottom: 25px;
 
-opacity:1;
 }
 
-/* ===== MOBILE ===== */
 
-@media(max-width:700px){
+@media(max-width: 800px) {
 
-nav{
-display:none;
-}
-
-.menu-btn{
-display:block;
-}
+    .cv-container {
 
-.hero{
-min-height:80vh;
-}
+        grid-template-columns: 1fr;
 
-.hero h1{
-font-size:45px;
-}
+    }
 
-.hero-buttons{
-flex-direction:column;
-}
+    .cv-preview {
 
-.premium-box{
-flex-direction:column;
-text-align:center;
-}
+        min-height: auto;
 
-.section{
-padding:70px 5%;
-}
+    }
 
 }
-
-/* ===== END CSS ===== */
 
 </style>
 
-</head>
-
-<body>
-
-<!-- ===== HEADER ===== -->
-
-<header class="header">
-
-<div class="logo">
-Mido<span>Tech</span>
-</div>
-
-<nav>
-
-<a href="#home">الرئيسية</a>
-
-<a href="#services">الخدمات</a>
-
-<a href="#tools">الأدوات</a>
-
-<a href="#premium">Premium</a>
-
-<a href="#contact">تواصل معنا</a>
-
-</nav>
-
-<button
-class="menu-btn"
-onclick="showMessage('قائمة الموقع جاهزة 📱')">
-
-☰
-
-</button>
-
-</header>
-
-
-<!-- ===== HOME ===== -->
-
-<section id="home" class="hero">
-
-<div class="hero-content">
-
-<p class="badge">
-🚀 مستقبل الخدمات الرقمية
-</p>
-
-<h1>
-
-أنجز شغلك
-
-<span>
-بذكاء أسرع
-</span>
-
-</h1>
-
-<p class="hero-text">
-
-Mido Tech منصة رقمية تجمع لك أدوات
-الذكاء الاصطناعي والخدمات الرقمية
-للطلاب وأصحاب المشاريع في مكان واحد.
-
-</p>
-
-<div class="hero-buttons">
-
-<a
-href="#tools"
-class="btn primary">
-
-ابدأ الآن 🚀
-
-</a>
-
-<a
-href="#services"
-class="btn secondary">
-
-اكتشف الخدمات
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ===== SERVICES ===== -->
-
-<section id="services" class="section">
-
-<div class="section-title">
-
-<span>
-خدماتنا
-</span>
-
-<h2>
-كل اللي تحتاجه في مكان واحد
-</h2>
-
-</div>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<div class="icon">
-🤖
-</div>
-
-<h3>
-AI Tools
-</h3>
-
-<p>
-أدوات ذكية تساعدك في الدراسة
-والعمل وإنجاز المهام.
-</p>
-
-<button
-onclick="showMessage('أدوات الذكاء الاصطناعي قريبًا 🔥')">
-
-اكتشف
-
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-📄
-</div>
-
-<h3>
-CV Maker
-</h3>
-
-<p>
-أنشئ سيرة ذاتية احترافية
-بسهولة ومن غير تعقيد.
-</p>
-
-<button
-onclick="openCV()">
-
-إنشاء CV
-
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-🌐
-</div>
-
-<h3>
-Portfolio Maker
-</h3>
-
-<p>
-أنشئ صفحة شخصية تعرض مهاراتك
-ومشاريعك بشكل احترافي.
-</p>
-
-<button
-onclick="showMessage('Portfolio Maker قريبًا 🚀')">
-
-ابدأ
-
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-🎨
-</div>
-
-<h3>
-Design
-</h3>
-
-<p>
-خدمات تصميم تساعدك في عرض
-مشروعك أو علامتك التجارية.
-</p>
-
-<button
-onclick="showMessage('خدمات التصميم قريبًا 🎨')">
-
-اكتشف
-
-</button>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ===== AI TOOLS ===== -->
-
-<section id="tools" class="section">
-
-<div class="section-title">
-
-<span>
-Smart Tools
-</span>
-
-<h2>
-أدوات ذكية
-</h2>
-
-</div>
-
-
-<div class="tool-box">
-
-<h3>
-✨ مساعد Mido AI
-</h3>
-
-<p>
-اكتب طلبك وسنجهز لك نتيجة مناسبة.
-</p>
-
-<textarea
-id="aiInput"
-placeholder="مثال: اكتب لي وصفًا لمشروع...">
-</textarea>
-
-<button
-class="btn primary"
-onclick="generateAI()">
-
-توليد ✨
-
-</button>
-
-<div
-id="aiResult"
-class="result">
-
-النتيجة ستظهر هنا...
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ===== PREMIUM ===== -->
-
-<section id="premium" class="section">
-
-<div class="premium-box">
-
-<div>
-
-<span class="badge">
-💎 Premium
-</span>
-
-<h2>
-جاهز للمستوى الاحترافي؟
-</h2>
-
-<p>
-قريبًا هنضيف مميزات وأدوات
-متقدمة للمستخدمين Premium.
-</p>
-
-</div>
-
-<button
-class="btn primary"
-onclick="showMessage('Premium سيتم إطلاقه قريبًا 💎')">
-
-اعرف المزيد
-
-</button>
-
-</div>
-
-</section>
-
-
-<!-- ===== CONTACT ===== -->
-
-<section id="contact" class="section">
-
-<div class="section-title">
-
-<span>
-Contact
-</span>
-
-<h2>
-تواصل معنا
-</h2>
-
-</div>
-
-
-<div class="contact-card">
-
-
-<!-- EMAIL -->
-
-<a
-href="mailto:midoreda100100100@gmail.com"
-class="contact-item">
-
-<span class="contact-icon">
-📧
-</span>
-
-<div>
-
-<strong>
-البريد الإلكتروني
-</strong>
-
-<small>
-تواصل معنا عبر البريد
-</small>
-
-</div>
-
-<span class="arrow">
-←
-</span>
-
-</a>
-
-
-<!-- WHATSAPP -->
-
-<a
-href="https://wa.me/201112110250"
-target="_blank"
-rel="noopener"
-class="contact-item whatsapp">
-
-<span class="contact-icon">
-📱
-</span>
-
-<div>
-
-<strong>
-تواصل عبر WhatsApp
-</strong>
-
-<small>
-اضغط لبدء المحادثة مباشرة
-</small>
-
-</div>
-
-<span class="arrow">
-←
-</span>
-
-</a>
-
-
-<!-- WEBSITE -->
-
-<a
-href="https://midoreda100100100-code.github.io/Portfolio/"
-target="_blank"
-rel="noopener"
-class="contact-item">
-
-<span class="contact-icon">
-🌐
-</span>
-
-<div>
-
-<strong>
-Mido Tech
-</strong>
-
-<small>
-زيارة الموقع
-</small>
-
-</div>
-
-<span class="arrow">
-←
-</span>
-
-</a>
-
-
-</div>
-
-</section>
-
-
-<!-- ===== FOOTER ===== -->
-
-<footer>
-
-<p>
-© 2026 Mido Tech — جميع الحقوق محفوظة.
-</p>
-
-</footer>
-
-
-<div
-id="message"
-class="message">
-</div>
-
-
-<!-- ===== JAVASCRIPT ===== -->
 
 <script>
 
-function showMessage(text){
+/* ================= CV GENERATOR ================= */
 
-const message=
-document.getElementById("message");
+function generateCV() {
 
-message.textContent=text;
+    document.getElementById("previewName").textContent =
+        document.getElementById("cvName").value ||
+        "اسمك هنا";
 
-message.classList.add("show");
+    document.getElementById("previewJob").textContent =
+        document.getElementById("cvJob").value ||
+        "تخصصك أو وظيفتك";
 
-setTimeout(()=>{
+    document.getElementById("previewEmail").textContent =
+        document.getElementById("cvEmail").value ||
+        "البريد الإلكتروني";
 
-message.classList.remove("show");
+    document.getElementById("previewPhone").textContent =
+        document.getElementById("cvPhone").value ||
+        "رقم الهاتف";
 
-},3000);
+    document.getElementById("previewAbout").textContent =
+        document.getElementById("cvAbout").value ||
+        "اكتب نبذة عنك لتظهر هنا.";
 
-}
+    document.getElementById("previewSkills").textContent =
+        document.getElementById("cvSkills").value ||
+        "مهاراتك ستظهر هنا.";
 
+    document.getElementById("previewEducation").textContent =
+        document.getElementById("cvEducation").value ||
+        "التعليم والمؤهلات.";
 
-function generateAI(){
+    document.getElementById("previewExperience").textContent =
+        document.getElementById("cvExperience").value ||
+        "الخبرات والمشاريع.";
 
-const input=
-document
-.getElementById("aiInput")
-.value
-.trim();
-
-const result=
-document
-.getElementById("aiResult");
-
-
-if(input===""){
-
-result.textContent=
-"اكتب طلبك الأول يا ريس 😄";
-
-return;
-
-}
-
-
-const safeText=
-escapeHTML(input);
-
-
-result.innerHTML=`
-
-<strong>
-تم استلام طلبك ✨
-</strong>
-
-<br><br>
-
-طلبك هو:
-
-<br>
-
-${safeText}
-
-<br><br>
-
-🤖 محرك Mido AI الحقيقي
-هنربطه في المرحلة القادمة.
-
-`;
+    showMessage("تم إنشاء الـ CV بنجاح 🎉");
 
 }
 
 
-function openCV(){
+/* ================= PDF ================= */
 
-showMessage(
-"مولد الـ CV هنبدأ نبرمجه في المرحلة القادمة 📄🔥"
-);
+function printCV() {
+
+    const cv =
+        document.getElementById("cvPreview");
+
+    const oldBody =
+        document.body.innerHTML;
+
+    document.body.innerHTML =
+        cv.outerHTML;
+
+    window.print();
+
+    document.body.innerHTML =
+        oldBody;
+
+    location.reload();
 
 }
 
 
-function escapeHTML(text){
+/* ================= PREMIUM ================= */
 
-const div=
-document.createElement("div");
+function showPremium() {
 
-div.textContent=text;
+    showMessage(
+        "💎 Premium قريبًا — هنضيف الدفع الحقيقي بعد تجهيز الخدمة."
+    );
 
-return div.innerHTML;
+}
+
+
+/* ================= SERVICE ================= */
+
+function requestService() {
+
+    showMessage(
+        "🚀 نموذج طلب الخدمة هنربطه بالواتساب/البريد في الخطوة القادمة."
+    );
 
 }
 
 </script>
-
-</body>
-
-    </html>
