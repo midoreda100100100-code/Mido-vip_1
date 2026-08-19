@@ -3,144 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أفضل حاسبة صحية شاملة - حساب السعرات والوزن المثالي</title>
+    <title>حاسبة الميزانية والتوفير الذكي - Mido VIP</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
+        
         body { 
-            margin: 0; 
-            padding: 20px 10px; 
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); 
-            color: #fff; 
-            display: flex; 
-            justify-content: center; 
-            min-height: 100vh;
-            align-items: center;
+            margin: 0; padding: 20px 10px; min-height: 100vh; 
+            background: #090d16; color: #fff; 
+            display: flex; justify-content: center; align-items: center;
         }
+
+        /* كارت الميزانية مع إضاءة خ خلفية نيون */
         .container { 
-            width: 100%; 
-            max-width: 480px; 
-            background: rgba(30, 27, 75, 0.75); 
-            backdrop-filter: blur(10px);
-            padding: 25px; 
-            border-radius: 20px; 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            width: 100%; max-width: 450px; 
+            background: #131b2e; padding: 25px; border-radius: 20px; 
+            border: 1px solid rgba(56, 189, 248, 0.2); 
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.15), 0 10px 30px rgba(0,0,0,0.5); 
         }
+
         h1 { 
-            background: linear-gradient(90deg, #a855f7, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 22px; 
-            text-align: center; 
-            margin-bottom: 20px; 
-            font-weight: 800;
+            color: #38bdf8; font-size: 22px; text-align: center; margin-bottom: 20px; font-weight: 800;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
         }
+
         .ad-box { 
-            background: rgba(255, 255, 255, 0.05); 
-            border: 1px dashed #a855f7; 
-            color: #c084fc; 
-            text-align: center; 
-            padding: 12px; 
-            margin: 15px 0; 
-            border-radius: 10px; 
-            font-size: 13px; 
+            background: #090d16; border: 1px dashed #38bdf8; color: #94a3b8; 
+            text-align: center; padding: 12px; margin: 15px 0; border-radius: 10px; font-size: 13px; 
         }
-        .input-group { margin-bottom: 14px; text-align: right; }
-        label { display: block; margin-bottom: 6px; color: #cbd5e1; font-size: 14px; font-weight: 500; }
-        input, select { 
-            width: 100%; 
-            padding: 12px; 
-            border-radius: 10px; 
-            border: 1px solid #4338ca; 
-            background: #0f172a; 
-            color: #fff; 
-            font-size: 15px; 
-            outline: none;
-            transition: 0.3s;
+
+        .input-group { margin-bottom: 15px; text-align: right; }
+        label { display: block; margin-bottom: 6px; color: #94a3b8; font-size: 14px; }
+        
+        input { 
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #1e293b; 
+            background: #090d16; color: #fff; font-size: 15px; outline: none;
+            transition: 0.3s ease;
         }
-        input:focus, select:focus { border-color: #ec4899; box-shadow: 0 0 10px rgba(236, 72, 153, 0.3); }
+
+        input:focus { 
+            border-color: #38bdf8; 
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        }
+
+        /* زرار منور ومتوهج */
         button { 
-            width: 100%; 
-            padding: 14px; 
-            border-radius: 10px; 
-            border: none; 
-            background: linear-gradient(90deg, #8b5cf6, #ec4899); 
-            color: #fff; 
-            font-size: 17px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            margin-top: 10px; 
-            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
-            transition: 0.2s;
+            width: 100%; padding: 14px; border-radius: 10px; border: none; 
+            background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; 
+            font-size: 17px; font-weight: bold; cursor: pointer; margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+            transition: 0.2s ease;
         }
+
         button:active { transform: scale(0.98); }
+
         .results { 
-            display: none; 
-            margin-top: 20px; 
-            background: #0f172a; 
-            padding: 18px; 
-            border-radius: 12px; 
-            border: 1px solid #8b5cf6; 
+            display: none; margin-top: 20px; background: #090d16; padding: 18px; 
+            border-radius: 12px; border: 1px solid #38bdf8; 
+            box-shadow: inset 0 0 10px rgba(56, 189, 248, 0.1);
         }
-        .res-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
-        .res-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .val { color: #f472b6; font-weight: bold; }
+
+        .res-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 15px; }
+        .val { color: #4ade80; font-weight: bold; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3); }
+        .val-warn { color: #f43f5e; font-weight: bold; text-shadow: 0 0 8px rgba(244, 63, 94, 0.3); }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>✨ المنصة الصحية الشاملة</h1>
+        <h1>💰 حاسبة الميزانية والتوفير</h1>
         
-        <!-- مساحة إعلانية علوية -->
-        <div class="ad-box">مكان إعلان Google AdSense (علوي)</div>
+        <div class="ad-box">📢 مساحة إعلانية (Google AdSense)</div>
 
         <div class="input-group">
-            <label>الجنس:</label>
-            <select id="gender"><option value="m">ذكر</option><option value="f">أنثى</option></select>
+            <label>الدخل الشهري أو المصروف:</label>
+            <input type="number" id="income" placeholder="مثال: 5000">
         </div>
         <div class="input-group">
-            <label>السن:</label>
-            <input type="number" id="age" placeholder="مثال: 25">
-        </div>
-        <div class="input-group">
-            <label>الوزن (كجم):</label>
-            <input type="number" id="weight" placeholder="مثال: 70">
-        </div>
-        <div class="input-group">
-            <label>الطول (سم):</label>
-            <input type="number" id="height" placeholder="مثال: 175">
+            <label>المصاريف الثابتة (فواتير، إيجار، إلخ):</label>
+            <input type="number" id="expenses" placeholder="مثال: 2000">
         </div>
 
-        <button onclick="calcAll()">احسب التقرير الشامل</button>
+        <button onclick="calcBudget()">حساب خطة التوفير</button>
 
-        <!-- مساحة إعلانية وسطى -->
-        <div class="ad-box">مكان إعلان Google AdSense (وسطي)</div>
+        <div class="ad-box">📢 مساحة إعلانية وسطى</div>
 
         <div id="results" class="results">
-            <div class="res-item"><span>🔥 السعرات للتثبيت:</span><span id="cals" class="val"></span></div>
-            <div class="res-item"><span>📉 سعرات التخسيس:</span><span id="lossCals" class="val"></span></div>
-            <div class="res-item"><span>🎯 الوزن المثالي:</span><span id="idealW" class="val"></span></div>
-            <div class="res-item"><span>💧 الماء اليومي:</span><span id="water" class="val"></span></div>
+            <div class="res-item"><span>🏠 الأساسيات والالتزامات:</span><span id="expVal" class="val"></span></div>
+            <div class="res-item"><span>🛒 مصاريف متغيرة وترفيه:</span><span id="flexVal" class="val"></span></div>
+            <div class="res-item"><span>💎 المبلغ المفترض توفيره شهرياً:</span><span id="saveVal" class="val"></span></div>
+            <div class="res-item"><span>🚀 التوفير المتوقع في السنة:</span><span id="yearVal" class="val"></span></div>
         </div>
     </div>
 
     <script>
-        function calcAll() {
-            let g = document.getElementById('gender').value;
-            let a = parseFloat(document.getElementById('age').value);
-            let w = parseFloat(document.getElementById('weight').value);
-            let h = parseFloat(document.getElementById('height').value);
+        function calcBudget() {
+            let inc = parseFloat(document.getElementById('income').value);
+            let exp = parseFloat(document.getElementById('expenses').value) || 0;
 
-            if(w > 0 && h > 0 && a > 0) {
-                let bmr = (g === 'm') ? (10*w + 6.25*h - 5*a + 5) : (10*w + 6.25*h - 5*a - 161);
-                let cals = Math.round(bmr * 1.375);
-                
-                document.getElementById('cals').innerText = cals + ' سعرة';
-                document.getElementById('lossCals').innerText = (cals - 500) + ' سعرة';
-                document.getElementById('idealW').innerText = Math.round(22 * ((h/100)*(h/100))) + ' كجم';
-                document.getElementById('water').innerText = (w * 0.035).toFixed(1) + ' لتر';
-                
+            if(inc > 0) {
+                let save = Math.round(inc * 0.20);
+                let flex = inc - exp - save;
+
+                document.getElementById('expVal').innerText = exp + ' ج.م';
+                document.getElementById('saveVal').innerText = save + ' ج.م';
+                document.getElementById('yearVal').innerText = (save * 12) + ' ج.م';
+
+                let flexElem = document.getElementById('flexVal');
+                if(flex >= 0) {
+                    flexElem.innerText = flex + ' ج.م';
+                    flexElem.className = 'val';
+                } else {
+                    flexElem.innerText = 'عجز بـ ' + Math.abs(flex) + ' ج.م';
+                    flexElem.className = 'val-warn';
+                }
+
                 document.getElementById('results').style.display = 'block';
             }
         }
