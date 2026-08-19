@@ -556,3 +556,411 @@ function requestService() {
 }
 
 </script>
+<!-- ================= MIDO TECH UI ENHANCEMENT ================= -->
+
+<style>
+
+/* ===== GLOBAL LIGHTING ===== */
+
+body {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(124,58,237,.12), transparent 30%),
+        radial-gradient(circle at 85% 30%, rgba(59,130,246,.10), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(124,58,237,.08), transparent 35%),
+        #080B14 !important;
+}
+
+
+/* ===== SECTIONS ===== */
+
+.section {
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(124,58,237,.08);
+    filter: blur(100px);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+    pointer-events: none;
+}
+
+
+/* ===== SECTION TITLES ===== */
+
+.section-title {
+    position: relative;
+    z-index: 1;
+}
+
+.section-title span {
+    color: #A78BFA;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 18px rgba(167,139,250,.35);
+}
+
+.section-title h2 {
+    text-shadow:
+        0 0 20px rgba(124,58,237,.18);
+}
+
+
+/* ===== CV FORM ===== */
+
+.cv-form {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17,24,39,.96),
+            rgba(10,14,25,.98)
+        ) !important;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.35),
+        0 0 35px rgba(124,58,237,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.cv-form:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(124,58,237,.65);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.45),
+        0 0 35px rgba(124,58,237,.15);
+}
+
+
+/* ===== INPUTS ===== */
+
+.cv-form input,
+.cv-form textarea {
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.cv-form input:hover,
+.cv-form textarea:hover {
+    border-color: #3B4861;
+}
+
+.cv-form input:focus,
+.cv-form textarea:focus {
+
+    border-color: #8B5CF6 !important;
+
+    background: #0A0F1D;
+
+    box-shadow:
+        0 0 0 3px rgba(124,58,237,.10),
+        0 0 20px rgba(124,58,237,.12);
+}
+
+
+/* ===== CV PREVIEW ===== */
+
+.cv-preview {
+
+    position: relative;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45),
+        0 0 35px rgba(124,58,237,.10);
+}
+
+.cv-preview:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.5),
+        0 0 45px rgba(124,58,237,.15);
+}
+
+
+/* ===== CV HEADER ===== */
+
+.cv-header {
+    position: relative;
+}
+
+.cv-header::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -3px;
+
+    width: 80px;
+    height: 3px;
+
+    background: #A78BFA;
+
+    box-shadow:
+        0 0 15px rgba(124,58,237,.7);
+}
+
+
+/* ===== BUTTONS ===== */
+
+.btn {
+
+    position: relative;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+
+    cursor: pointer;
+}
+
+.btn:hover {
+
+    transform: translateY(-3px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 8px 25px rgba(124,58,237,.25);
+}
+
+.btn:active {
+    transform: translateY(-1px) scale(.98);
+}
+
+
+/* ===== PRIMARY BUTTON ===== */
+
+.btn.primary {
+
+    box-shadow:
+        0 0 20px rgba(124,58,237,.12);
+}
+
+.btn.primary:hover {
+
+    box-shadow:
+        0 8px 30px rgba(124,58,237,.35),
+        0 0 25px rgba(124,58,237,.15);
+}
+
+
+/* ===== PREMIUM BOX ===== */
+
+.premium-box {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(124,58,237,.16),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #111827,
+            #0B1020
+        ) !important;
+
+    border: 1px solid rgba(124,58,237,.25) !important;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35),
+        0 0 45px rgba(124,58,237,.08);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.premium-box:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45),
+        0 0 50px rgba(124,58,237,.18);
+}
+
+
+/* ===== PREMIUM BADGE ===== */
+
+.badge {
+
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    border-radius: 50px;
+
+    background: rgba(124,58,237,.12);
+
+    border: 1px solid rgba(167,139,250,.3);
+
+    color: #C4B5FD;
+
+    box-shadow:
+        0 0 18px rgba(124,58,237,.12);
+}
+
+
+/* ===== SERVICE BOX ===== */
+
+.service-order {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(124,58,237,.12),
+            transparent 45%
+        ),
+        #0E1422 !important;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35),
+        0 0 35px rgba(124,58,237,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.service-order:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(124,58,237,.5);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45),
+        0 0 45px rgba(124,58,237,.13);
+}
+
+
+/* ===== SOFT TEXT LIGHT ===== */
+
+.cv-form h3,
+.service-order h3,
+.premium-box h2 {
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,.05);
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 800px) {
+
+    .cv-container {
+        padding: 0 12px;
+    }
+
+    .cv-form {
+        padding: 22px;
+    }
+
+    .cv-preview {
+        padding: 25px 20px;
+    }
+
+    .premium-box {
+        margin: 0 12px;
+        padding: 25px 20px;
+    }
+
+    .service-order {
+        margin: 0 12px;
+        padding: 35px 20px;
+    }
+
+    .cv-actions {
+        padding: 0 12px;
+    }
+
+}
+
+
+/* ===== SMOOTH SCROLL ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+</style>
+
+
+<script>
+
+/* ================= MIDO TECH EFFECT ================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const cards = document.querySelectorAll(
+        ".cv-form, .cv-preview, .premium-box, .service-order"
+    );
+
+    cards.forEach(card => {
+
+        card.addEventListener("mousemove", function (e) {
+
+            const rect = card.getBoundingClientRect();
+
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            card.style.backgroundImage =
+                `radial-gradient(
+                    circle at ${x}px ${y}px,
+                    rgba(124,58,237,.08),
+                    transparent 35%
+                )`;
+
+        });
+
+        card.addEventListener("mouseleave", function () {
+
+            card.style.backgroundImage = "";
+
+        });
+
+    });
+
+});
+
+</script>
+
+<!-- ================= END MIDO TECH UI ENHANCEMENT ================= -->
