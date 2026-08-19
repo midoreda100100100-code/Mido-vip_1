@@ -3,123 +3,940 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حاسبة الميزانية والتوفير الذكي - Mido VIP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <title>Mido Tech | أدواتك الرقمية</title>
+
     <style>
-        * { box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
-        
-        body { 
-            margin: 0; padding: 20px 10px; min-height: 100vh; 
-            background: #090d16; color: #fff; 
-            display: flex; justify-content: center; align-items: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* كارت الميزانية مع إضاءة خ خلفية نيون */
-        .container { 
-            width: 100%; max-width: 450px; 
-            background: #131b2e; padding: 25px; border-radius: 20px; 
-            border: 1px solid rgba(56, 189, 248, 0.2); 
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.15), 0 10px 30px rgba(0,0,0,0.5); 
+        html {
+            scroll-behavior: smooth;
         }
 
-        h1 { 
-            color: #38bdf8; font-size: 22px; text-align: center; margin-bottom: 20px; font-weight: 800;
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+        body {
+            font-family: Arial, sans-serif;
+            background: #080B14;
+            color: #F8FAFC;
+            line-height: 1.7;
         }
 
-        .ad-box { 
-            background: #090d16; border: 1px dashed #38bdf8; color: #94a3b8; 
-            text-align: center; padding: 12px; margin: 15px 0; border-radius: 10px; font-size: 13px; 
+        /* ===== Header ===== */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 18px 7%;
+
+            background: rgba(8, 11, 20, 0.92);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(124, 58, 237, 0.2);
         }
 
-        .input-group { margin-bottom: 15px; text-align: right; }
-        label { display: block; margin-bottom: 6px; color: #94a3b8; font-size: 14px; }
-        
-        input { 
-            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #1e293b; 
-            background: #090d16; color: #fff; font-size: 15px; outline: none;
-            transition: 0.3s ease;
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
         }
 
-        input:focus { 
-            border-color: #38bdf8; 
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        .logo span {
+            color: #7C3AED;
         }
 
-        /* زرار منور ومتوهج */
-        button { 
-            width: 100%; padding: 14px; border-radius: 10px; border: none; 
-            background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; 
-            font-size: 17px; font-weight: bold; cursor: pointer; margin-top: 10px;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
-            transition: 0.2s ease;
+        nav {
+            display: flex;
+            gap: 25px;
         }
 
-        button:active { transform: scale(0.98); }
-
-        .results { 
-            display: none; margin-top: 20px; background: #090d16; padding: 18px; 
-            border-radius: 12px; border: 1px solid #38bdf8; 
-            box-shadow: inset 0 0 10px rgba(56, 189, 248, 0.1);
+        nav a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: 0.3s;
         }
 
-        .res-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 15px; }
-        .val { color: #4ade80; font-weight: bold; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3); }
-        .val-warn { color: #f43f5e; font-weight: bold; text-shadow: 0 0 8px rgba(244, 63, 94, 0.3); }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>💰 حاسبة الميزانية والتوفير</h1>
-        
-        <div class="ad-box">📢 مساحة إعلانية (Google AdSense)</div>
+        nav a:hover {
+            color: #A78BFA;
+        }
 
-        <div class="input-group">
-            <label>الدخل الشهري أو المصروف:</label>
-            <input type="number" id="income" placeholder="مثال: 5000">
-        </div>
-        <div class="input-group">
-            <label>المصاريف الثابتة (فواتير، إيجار، إلخ):</label>
-            <input type="number" id="expenses" placeholder="مثال: 2000">
-        </div>
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+        }
 
-        <button onclick="calcBudget()">حساب خطة التوفير</button>
+        /* ===== Hero ===== */
 
-        <div class="ad-box">📢 مساحة إعلانية وسطى</div>
+        .hero {
+            min-height: 90vh;
 
-        <div id="results" class="results">
-            <div class="res-item"><span>🏠 الأساسيات والالتزامات:</span><span id="expVal" class="val"></span></div>
-            <div class="res-item"><span>🛒 مصاريف متغيرة وترفيه:</span><span id="flexVal" class="val"></span></div>
-            <div class="res-item"><span>💎 المبلغ المفترض توفيره شهرياً:</span><span id="saveVal" class="val"></span></div>
-            <div class="res-item"><span>🚀 التوفير المتوقع في السنة:</span><span id="yearVal" class="val"></span></div>
-        </div>
-    </div>
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    <script>
-        function calcBudget() {
-            let inc = parseFloat(document.getElementById('income').value);
-            let exp = parseFloat(document.getElementById('expenses').value) || 0;
+            text-align: center;
 
-            if(inc > 0) {
-                let save = Math.round(inc * 0.20);
-                let flex = inc - exp - save;
+            padding: 70px 7%;
 
-                document.getElementById('expVal').innerText = exp + ' ج.م';
-                document.getElementById('saveVal').innerText = save + ' ج.م';
-                document.getElementById('yearVal').innerText = (save * 12) + ' ج.م';
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(124, 58, 237, 0.25),
+                    transparent 45%
+                );
+        }
 
-                let flexElem = document.getElementById('flexVal');
-                if(flex >= 0) {
-                    flexElem.innerText = flex + ' ج.م';
-                    flexElem.className = 'val';
-                } else {
-                    flexElem.innerText = 'عجز بـ ' + Math.abs(flex) + ' ج.م';
-                    flexElem.className = 'val-warn';
-                }
+        .hero-content {
+            max-width: 850px;
+        }
 
-                document.getElementById('results').style.display = 'block';
+        .badge {
+            display: inline-block;
+
+            padding: 7px 16px;
+            margin-bottom: 20px;
+
+            border-radius: 50px;
+
+            background: rgba(124, 58, 237, 0.15);
+            color: #A78BFA;
+
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            display: block;
+
+            background: linear-gradient(
+                90deg,
+                #7C3AED,
+                #2563EB
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text {
+            color: #94A3B8;
+            font-size: 18px;
+
+            max-width: 680px;
+            margin: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+            border: none;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        .primary {
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #7C3AED,
+                #2563EB
+            );
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(124,58,237,.25);
+        }
+
+        .secondary {
+            color: white;
+
+            background: #111827;
+
+            border: 1px solid #263247;
+        }
+
+        .secondary:hover {
+            border-color: #7C3AED;
+        }
+
+        /* ===== Sections ===== */
+
+        .section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #7C3AED;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        /* ===== Cards ===== */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 20px;
+        }
+
+        .card {
+            padding: 30px;
+
+            background: #0E1422;
+
+            border: 1px solid #1C2638;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+
+            border-color: #7C3AED;
+
+            box-shadow:
+                0 15px 40px rgba(124, 58, 237, 0.15);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #94A3B8;
+            margin-bottom: 20px;
+        }
+
+        .card button {
+            background: transparent;
+
+            color: #A78BFA;
+
+            border: 1px solid #7C3AED;
+
+            padding: 9px 17px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .card button:hover {
+            background: #7C3AED;
+            color: white;
+        }
+
+        /* ===== AI Tool ===== */
+
+        .tool-box {
+            max-width: 800px;
+            margin: auto;
+
+            padding: 35px;
+
+            background: #0E1422;
+
+            border: 1px solid #1C2638;
+
+            border-radius: 22px;
+        }
+
+        .tool-box h3 {
+            font-size: 25px;
+        }
+
+        .tool-box p {
+            color: #94A3B8;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 130px;
+
+            resize: vertical;
+
+            padding: 15px;
+
+            margin-bottom: 15px;
+
+            border-radius: 12px;
+
+            border: 1px solid #263247;
+
+            background: #080B14;
+
+            color: white;
+
+            outline: none;
+
+            font-size: 16px;
+        }
+
+        textarea:focus {
+            border-color: #7C3AED;
+        }
+
+        .result {
+            margin-top: 20px;
+
+            padding: 20px;
+
+            min-height: 70px;
+
+            background: #080B14;
+
+            border-radius: 12px;
+
+            color: #CBD5E1;
+        }
+
+        /* ===== Premium ===== */
+
+        .premium-box {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding: 40px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(124, 58, 237, 0.2),
+                    rgba(37, 99, 235, 0.12)
+                );
+
+            border: 1px solid #3B2B68;
+        }
+
+        .premium-box h2 {
+            font-size: 35px;
+            margin: 15px 0;
+        }
+
+        .premium-box p {
+            color: #94A3B8;
+        }
+
+        /* ===== Contact ===== */
+
+        .contact-card {
+            max-width: 600px;
+            margin: auto;
+
+            padding: 30px;
+
+            background: #0E1422;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            border: 1px solid #1C2638;
+        }
+
+        .contact-card p {
+            padding: 10px;
+
+            color: #CBD5E1;
+        }
+
+        /* ===== Footer ===== */
+
+        footer {
+            padding: 30px;
+
+            text-align: center;
+
+            color: #64748B;
+
+            border-top: 1px solid #1C2638;
+        }
+
+        /* ===== Message ===== */
+
+        .message {
+            position: fixed;
+
+            bottom: 25px;
+            left: 50%;
+
+            transform:
+                translateX(-50%)
+                translateY(100px);
+
+            background: #111827;
+
+            border: 1px solid #7C3AED;
+
+            padding: 15px 25px;
+
+            border-radius: 12px;
+
+            opacity: 0;
+
+            transition: 0.4s;
+
+            z-index: 9999;
+
+            width: max-content;
+            max-width: 90%;
+        }
+
+        .message.show {
+            transform:
+                translateX(-50%)
+                translateY(0);
+
+            opacity: 1;
+        }
+
+        /* ===== Mobile ===== */
+
+        @media (max-width: 700px) {
+
+            nav {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .premium-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section {
+                padding: 70px 5%;
             }
         }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+
+    <header class="header">
+
+        <div class="logo">
+            Mido<span>Tech</span>
+        </div>
+
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#services">الخدمات</a>
+            <a href="#tools">الأدوات</a>
+            <a href="#premium">Premium</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+
+        <button
+            class="menu-btn"
+            onclick="showMessage('قائمة الموقع جاهزة 📱')">
+
+            ☰
+
+        </button>
+
+    </header>
+
+
+    <!-- ===== HERO ===== -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="badge">
+                🚀 مستقبل الخدمات الرقمية
+            </p>
+
+            <h1>
+
+                أنجز شغلك
+
+                <span>
+                    بذكاء أسرع
+                </span>
+
+            </h1>
+
+            <p class="hero-text">
+
+                Mido Tech منصة رقمية تجمع لك أدوات
+                الذكاء الاصطناعي والخدمات الرقمية
+                للطلاب وأصحاب المشاريع في مكان واحد.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#tools"
+                    class="btn primary">
+
+                    ابدأ الآن 🚀
+
+                </a>
+
+                <a
+                    href="#services"
+                    class="btn secondary">
+
+                    اكتشف الخدمات
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== SERVICES ===== -->
+
+    <section id="services" class="section">
+
+        <div class="section-title">
+
+            <span>
+                خدماتنا
+            </span>
+
+            <h2>
+                كل اللي تحتاجه في مكان واحد
+            </h2>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI Tools
+                </h3>
+
+                <p>
+                    أدوات ذكية تساعدك في الدراسة
+                    والعمل وإنجاز المهام.
+                </p>
+
+                <button
+                    onclick="showMessage('أدوات الذكاء الاصطناعي قريبًا 🔥')">
+
+                    اكتشف
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    📄
+                </div>
+
+                <h3>
+                    CV Maker
+                </h3>
+
+                <p>
+                    أنشئ سيرة ذاتية احترافية
+                    بسهولة ومن غير تعقيد.
+                </p>
+
+                <button
+                    onclick="openCV()">
+
+                    إنشاء CV
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Portfolio Maker
+                </h3>
+
+                <p>
+                    أنشئ صفحة شخصية تعرض مهاراتك
+                    ومشاريعك بشكل احترافي.
+                </p>
+
+                <button
+                    onclick="showMessage('Portfolio Maker قريبًا 🚀')">
+
+                    ابدأ
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Design
+                </h3>
+
+                <p>
+                    خدمات تصميم تساعدك في عرض
+                    مشروعك أو علامتك التجارية.
+                </p>
+
+                <button
+                    onclick="showMessage('خدمات التصميم قريبًا 🎨')">
+
+                    اكتشف
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== AI TOOLS ===== -->
+
+    <section id="tools" class="section">
+
+        <div class="section-title">
+
+            <span>
+                Smart Tools
+            </span>
+
+            <h2>
+                أدوات ذكية
+            </h2>
+
+        </div>
+
+
+        <div class="tool-box">
+
+            <h3>
+                ✨ مساعد Mido AI
+            </h3>
+
+            <p>
+                اكتب طلبك وسنجهز لك نتيجة مناسبة.
+            </p>
+
+
+            <textarea
+                id="aiInput"
+                placeholder="مثال: اكتب لي وصفًا لمشروع...">
+            </textarea>
+
+
+            <button
+                class="btn primary"
+                onclick="generateAI()">
+
+                توليد ✨
+
+            </button>
+
+
+            <div
+                id="aiResult"
+                class="result">
+
+                النتيجة ستظهر هنا...
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== PREMIUM ===== -->
+
+    <section id="premium" class="section">
+
+        <div class="premium-box">
+
+            <div>
+
+                <span class="badge">
+                    💎 Premium
+                </span>
+
+                <h2>
+                    جاهز للمستوى الاحترافي؟
+                </h2>
+
+                <p>
+                    قريبًا هنضيف مميزات وأدوات
+                    متقدمة للمستخدمين Premium.
+                </p>
+
+            </div>
+
+
+            <button
+                class="btn primary"
+                onclick="showMessage('Premium سيتم إطلاقه قريبًا 💎')">
+
+                اعرف المزيد
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== CONTACT ===== -->
+
+    <section id="contact" class="section">
+
+        <div class="section-title">
+
+            <span>
+                Contact
+            </span>
+
+            <h2>
+                تواصل معنا
+            </h2>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <p>
+                📧 البريد الإلكتروني
+            </p>
+
+            <p>
+                📱 WhatsApp
+            </p>
+
+            <p>
+                🌐 Mido Tech
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== FOOTER ===== -->
+
+    <footer>
+
+        <p>
+            © 2026 Mido Tech — جميع الحقوق محفوظة.
+        </p>
+
+    </footer>
+
+
+    <div
+        id="message"
+        class="message">
+    </div>
+
+
+    <!-- ===== JAVASCRIPT ===== -->
+
+    <script>
+
+        function showMessage(text) {
+
+            const message =
+                document.getElementById("message");
+
+            message.textContent = text;
+
+            message.classList.add("show");
+
+            setTimeout(() => {
+
+                message.classList.remove("show");
+
+            }, 3000);
+
+        }
+
+
+        function generateAI() {
+
+            const input =
+                document
+                .getElementById("aiInput")
+                .value
+                .trim();
+
+            const result =
+                document
+                .getElementById("aiResult");
+
+
+            if (input === "") {
+
+                result.textContent =
+                    "اكتب طلبك الأول يا ريس 😄";
+
+                return;
+            }
+
+
+            const safeText =
+                escapeHTML(input);
+
+
+            result.innerHTML = `
+
+                <strong>
+                    تم استلام طلبك ✨
+                </strong>
+
+                <br><br>
+
+                طلبك هو:
+
+                <br>
+
+                ${safeText}
+
+                <br><br>
+
+                🤖 محرك Mido AI الحقيقي
+                هنربطه في المرحلة القادمة.
+
+            `;
+
+        }
+
+
+        function openCV() {
+
+            showMessage(
+                "مولد الـ CV هنبدأ نبرمجه في المرحلة القادمة 📄🔥"
+            );
+
+        }
+
+
+        function escapeHTML(text) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent = text;
+
+            return div.innerHTML;
+
+        }
+
     </script>
+
 </body>
 </html>
