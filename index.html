@@ -3,14 +3,11 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MIDO TECH | تصميم مواقع وحلول رقمية 🚀</title>
 
-<meta name="description"
-content="MIDO TECH - تصميم مواقع احترافية، Portfolio، Landing Pages، مواقع شركات وCV Maker بأسعار مناسبة.">
+<meta name="description" content="MIDO TECH - تصميم مواقع احترافية، Portfolio، Landing Pages، مواقع شركات وCV Maker بأسعار مناسبة.">
 
 <style>
 
@@ -20,7 +17,6 @@ content="MIDO TECH - تصميم مواقع احترافية، Portfolio، Landin
 ========================================================= */
 
 :root{
-
   --bg:#03050d;
   --bg2:#070b17;
   --bg3:#0b1020;
@@ -40,11 +36,8 @@ content="MIDO TECH - تصميم مواقع احترافية، Portfolio، Landin
 
   --border:rgba(255,255,255,.08);
 
-  --shadow:
-    0 25px 80px rgba(0,0,0,.45);
-
+  --shadow: 0 25px 80px rgba(0,0,0,.45);
   --radius:24px;
-
 }
 
 *{
@@ -58,74 +51,27 @@ html{
 }
 
 body{
-
-  font-family:
-    Tahoma,
-    Arial,
-    sans-serif;
-
+  font-family: Tahoma, Arial, sans-serif;
   color:var(--text);
-
   background:
-
-    radial-gradient(
-      circle at 10% 0%,
-      rgba(124,58,237,.18),
-      transparent 28%
-    ),
-
-    radial-gradient(
-      circle at 90% 10%,
-      rgba(168,85,247,.10),
-      transparent 25%
-    ),
-
-    linear-gradient(
-      180deg,
-      var(--bg),
-      var(--bg2)
-    );
-
+    radial-gradient(circle at 10% 0%, rgba(124,58,237,.18), transparent 28%),
+    radial-gradient(circle at 90% 10%, rgba(168,85,247,.10), transparent 25%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
   min-height:100vh;
-
   overflow-x:hidden;
-
 }
 
 body::before{
-
   content:"";
-
   position:fixed;
-
   inset:0;
-
   pointer-events:none;
-
   opacity:.16;
-
   background-image:
-
-    linear-gradient(
-      rgba(255,255,255,.018) 1px,
-      transparent 1px
-    ),
-
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.018) 1px,
-      transparent 1px
-    );
-
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
   background-size:45px 45px;
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      #000,
-      transparent
-    );
-
+  mask-image: linear-gradient(to bottom, #000, transparent);
 }
 
 a{
@@ -133,109 +79,61 @@ a{
   color:inherit;
 }
 
-button,
-input,
-textarea{
+button, input, textarea{
   font-family:inherit;
 }
 
 .container{
-
-  width:min(
-    1150px,
-    92%
-  );
-
+  width:min(1150px, 92%);
   margin:auto;
-
 }
 
 section{
   padding:85px 0;
 }
 
-
 /* =========================================================
    HEADER
 ========================================================= */
 
 header{
-
   position:sticky;
-
   top:0;
-
   z-index:1000;
-
-  background:
-    rgba(3,5,13,.82);
-
-  backdrop-filter:
-    blur(20px);
-
-  border-bottom:
-    1px solid var(--border);
-
+  background: rgba(3,5,13,.82);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav{
-
   min-height:76px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:20px;
-
 }
 
 .logo{
-
   display:flex;
-
   align-items:center;
-
   gap:10px;
-
   font-weight:900;
-
 }
 
 .logo-mark{
-
   width:44px;
   height:44px;
-
   display:grid;
-
   place-items:center;
-
   border-radius:13px;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--purple),
-      var(--purple2)
-    );
-
-  box-shadow:
-    0 0 25px
-    rgba(124,58,237,.30);
-
+  background: linear-gradient(135deg, var(--purple), var(--purple2));
+  box-shadow: 0 0 25px rgba(124,58,237,.30);
   font-size:20px;
-
 }
 
 .logo-text{
-
   font-size:20px;
-
   letter-spacing:.5px;
-
 }
 
 .logo-text span{
@@ -243,31 +141,19 @@ header{
 }
 
 .logo-text small{
-
   display:block;
-
   color:#6f7890;
-
   font-size:7px;
-
   letter-spacing:2px;
-
   margin-top:2px;
-
 }
 
 .nav-links{
-
   display:flex;
-
   gap:23px;
-
   list-style:none;
-
   color:#aeb6c9;
-
   font-size:11px;
-
 }
 
 .nav-links a{
@@ -279,164 +165,81 @@ header{
 }
 
 .nav-btn{
-
   padding:11px 18px;
-
   border-radius:12px;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--purple),
-      var(--purple2)
-    );
-
+  background: linear-gradient(135deg, var(--purple), var(--purple2));
   font-size:11px;
-
   font-weight:900;
-
-  box-shadow:
-    0 10px 30px
-    rgba(124,58,237,.22);
-
+  box-shadow: 0 10px 30px rgba(124,58,237,.22);
 }
-
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero{
-
-  padding:
-    100px 0
-    65px;
-
+  padding: 100px 0 65px;
 }
 
 .hero-grid{
-
   display:grid;
-
-  grid-template-columns:
-    1.05fr
-    .95fr;
-
+  grid-template-columns: 1.05fr .95fr;
   gap:55px;
-
   align-items:center;
-
 }
 
 .badge{
-
   display:inline-flex;
-
   padding:9px 15px;
-
   border-radius:50px;
-
   color:#e0c7ff;
-
-  background:
-    rgba(124,58,237,.08);
-
-  border:
-    1px solid
-    rgba(168,85,247,.24);
-
+  background: rgba(124,58,237,.08);
+  border: 1px solid rgba(168,85,247,.24);
   font-size:10px;
-
   font-weight:900;
-
 }
 
 .hero h1{
-
   margin:22px 0 17px;
-
-  font-size:
-    clamp(
-      40px,
-      6vw,
-      70px
-    );
-
+  font-size: clamp(40px, 6vw, 70px);
   line-height:1.12;
-
   font-weight:900;
-
   letter-spacing:-2px;
-
 }
 
 .gradient{
-
-  background:
-    linear-gradient(
-      100deg,
-      #fff,
-      #e0c7ff,
-      #a855f7,
-      #7c3aed
-    );
-
+  background: linear-gradient(100deg, #fff, #e0c7ff, #a855f7, #7c3aed);
   -webkit-background-clip:text;
-
   background-clip:text;
-
   color:transparent;
-
 }
 
 .hero p{
-
   max-width:620px;
-
   color:var(--muted);
-
   font-size:14px;
-
   line-height:2;
-
 }
 
 .hero-buttons{
-
   display:flex;
-
   flex-wrap:wrap;
-
   gap:12px;
-
   margin-top:27px;
-
 }
 
 .btn{
-
   min-height:48px;
-
   padding:0 22px;
-
   display:inline-flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:7px;
-
   border-radius:13px;
-
   font-size:11px;
-
   font-weight:900;
-
   transition:.25s;
-
   cursor:pointer;
-
 }
 
 .btn:hover{
@@ -444,151 +247,64 @@ header{
 }
 
 .primary{
-
   color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--purple),
-      var(--purple2)
-    );
-
-  box-shadow:
-    0 15px 40px
-    rgba(124,58,237,.25);
-
+  background: linear-gradient(135deg, var(--purple), var(--purple2));
+  box-shadow: 0 15px 40px rgba(124,58,237,.25);
 }
 
 .secondary{
-
-  background:
-    rgba(255,255,255,.035);
-
-  border:
-    1px solid var(--border);
-
+  background: rgba(255,255,255,.035);
+  border: 1px solid var(--border);
 }
-
 
 /* =========================================================
    HERO VISUAL
 ========================================================= */
 
 .hero-visual{
-
   min-height:390px;
-
   position:relative;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
 }
 
 .glow-circle{
-
   position:absolute;
-
   width:330px;
   height:330px;
-
   border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(124,58,237,.32),
-      rgba(124,58,237,.06),
-      transparent 70%
-    );
-
+  background: radial-gradient(circle, rgba(124,58,237,.32), rgba(124,58,237,.06), transparent 70%);
   filter:blur(4px);
-
 }
 
 .laptop{
-
   position:relative;
-
   width:430px;
-
   max-width:100%;
-
   min-height:255px;
-
   border-radius:20px;
-
   padding:15px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #20283c,
-      #080b14
-    );
-
-  border:
-    1px solid
-    rgba(255,255,255,.13);
-
-  box-shadow:
-    0 40px 90px
-    rgba(0,0,0,.55),
-
-    0 0 50px
-    rgba(124,58,237,.16);
-
-  transform:
-    perspective(1000px)
-    rotateY(-5deg)
-    rotateX(3deg);
-
+  background: linear-gradient(145deg, #20283c, #080b14);
+  border: 1px solid rgba(255,255,255,.13);
+  box-shadow: 0 40px 90px rgba(0,0,0,.55), 0 0 50px rgba(124,58,237,.16);
+  transform: perspective(1000px) rotateY(-5deg) rotateX(3deg);
 }
 
 .laptop-screen{
-
   height:225px;
-
   border-radius:13px;
-
-  background:
-
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(168,85,247,.25),
-      transparent 30%
-    ),
-
-    linear-gradient(
-      145deg,
-      #10182d,
-      #050811
-    );
-
-  border:
-    1px solid
-    rgba(255,255,255,.08);
-
+  background: radial-gradient(circle at 80% 20%, rgba(168,85,247,.25), transparent 30%), linear-gradient(145deg, #10182d, #050811);
+  border: 1px solid rgba(255,255,255,.08);
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
-
   justify-content:center;
-
 }
 
 .laptop-logo{
-
   font-size:25px;
-
   font-weight:900;
-
 }
 
 .laptop-logo span{
@@ -596,61 +312,30 @@ header{
 }
 
 .laptop-sub{
-
   margin-top:5px;
-
   color:#737c94;
-
   font-size:7px;
-
   letter-spacing:3px;
-
 }
 
 .laptop-button{
-
   margin-top:20px;
-
   padding:8px 20px;
-
   border-radius:8px;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--purple),
-      var(--purple2)
-    );
-
+  background: linear-gradient(135deg, var(--purple), var(--purple2));
   font-size:9px;
-
   font-weight:900;
-
 }
 
 .float-card{
-
   position:absolute;
-
   padding:12px 15px;
-
   border-radius:14px;
-
-  background:
-    rgba(11,16,32,.90);
-
-  border:
-    1px solid
-    rgba(168,85,247,.25);
-
-  box-shadow:
-    0 15px 40px
-    rgba(0,0,0,.35);
-
+  background: rgba(11,16,32,.90);
+  border: 1px solid rgba(168,85,247,.25);
+  box-shadow: 0 15px 40px rgba(0,0,0,.35);
   font-size:10px;
-
   font-weight:900;
-
 }
 
 .float-one{
@@ -663,1121 +348,516 @@ header{
   left:5px;
 }
 
-
 /* =========================================================
    MARKETING BOX
 ========================================================= */
 
 .marketing{
-
   margin-top:45px;
-
   padding:30px;
-
   border-radius:28px;
-
-  background:
-
-    radial-gradient(
-      circle at 90% 5%,
-      rgba(168,85,247,.13),
-      transparent 35%
-    ),
-
-    linear-gradient(
-      145deg,
-      #11182e,
-      #080d1c
-    );
-
-  border:
-    1px solid var(--border);
-
+  background: radial-gradient(circle at 90% 5%, rgba(168,85,247,.13), transparent 35%), linear-gradient(145deg, #11182e, #080d1c);
+  border: 1px solid var(--border);
   box-shadow:var(--shadow);
-
 }
 
 .marketing-top{
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:20px;
-
 }
 
 .marketing h2{
-
   font-size:25px;
-
   margin-bottom:8px;
-
 }
 
 .marketing-intro{
-
   color:var(--muted);
-
   font-size:12px;
-
   line-height:1.9;
-
 }
 
 .marketing-list{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
+  grid-template-columns: repeat(4,1fr);
   gap:10px;
-
   margin-top:20px;
-
 }
 
 .marketing-item{
-
   padding:15px;
-
   text-align:center;
-
   border-radius:14px;
-
-  background:
-    rgba(255,255,255,.025);
-
-  border:
-    1px solid var(--border);
-
+  background: rgba(255,255,255,.025);
+  border: 1px solid var(--border);
   color:#e8eaf3;
-
   font-size:10px;
-
 }
-
 
 /* =========================================================
    SECTION HEADINGS
 ========================================================= */
 
 .heading{
-
   text-align:center;
-
   margin-bottom:42px;
-
 }
 
 .heading small{
-
   color:var(--purple3);
-
   font-size:9px;
-
   letter-spacing:2px;
-
   font-weight:900;
-
 }
 
 .heading h2{
-
   margin:10px 0;
-
-  font-size:
-    clamp(
-      28px,
-      5vw,
-      40px
-    );
-
+  font-size: clamp(28px, 5vw, 40px);
 }
 
 .heading p{
-
   color:var(--muted);
-
   font-size:12px;
-
 }
-
 
 /* =========================================================
    SERVICES
 ========================================================= */
 
 .services{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
+  grid-template-columns: repeat(4,1fr);
   gap:15px;
-
 }
 
 .card{
-
   padding:24px 20px;
-
   border-radius:21px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(16,25,47,.96),
-      rgba(7,12,25,.96)
-    );
-
-  border:
-    1px solid var(--border);
-
+  background: linear-gradient(145deg, rgba(16,25,47,.96), rgba(7,12,25,.96));
+  border: 1px solid var(--border);
   transition:.3s;
-
 }
 
 .card:hover{
-
-  transform:
-    translateY(-6px);
-
-  border-color:
-    rgba(168,85,247,.35);
-
+  transform: translateY(-6px);
+  border-color: rgba(168,85,247,.35);
   box-shadow:var(--shadow);
-
 }
 
 .icon{
-
   width:50px;
   height:50px;
-
   display:grid;
-
   place-items:center;
-
   border-radius:14px;
-
-  background:
-    rgba(124,58,237,.10);
-
-  border:
-    1px solid
-    rgba(168,85,247,.15);
-
+  background: rgba(124,58,237,.10);
+  border: 1px solid rgba(168,85,247,.15);
   font-size:22px;
-
   margin-bottom:16px;
-
 }
 
 .card h3{
-
   font-size:16px;
-
   margin-bottom:9px;
-
 }
 
 .card p{
-
   color:var(--muted);
-
   font-size:10px;
-
   line-height:1.9;
-
   min-height:60px;
-
 }
 
 .price{
-
   color:#d5aeff;
-
   margin-top:15px;
-
   font-size:12px;
-
   font-weight:900;
-
 }
-
 
 /* =========================================================
    WORKS
 ========================================================= */
 
 .works{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
+  grid-template-columns: repeat(3,1fr);
   gap:17px;
-
 }
 
 .work-card{
-
   overflow:hidden;
-
   border-radius:22px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #10182e,
-      #080d1b
-    );
-
-  border:
-    1px solid var(--border);
-
+  background: linear-gradient(145deg, #10182e, #080d1b);
+  border: 1px solid var(--border);
   transition:.3s;
-
 }
 
 .work-card:hover{
-
-  transform:
-    translateY(-6px);
-
-  border-color:
-    rgba(168,85,247,.35);
-
+  transform: translateY(-6px);
+  border-color: rgba(168,85,247,.35);
 }
 
 .work-preview{
-
   height:180px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   position:relative;
-
-  background:
-
-    radial-gradient(
-      circle at center,
-      rgba(124,58,237,.24),
-      transparent 60%
-    ),
-
-    #080c19;
-
+  background: radial-gradient(circle at center, rgba(124,58,237,.24), transparent 60%), #080c19;
 }
 
 .work-browser{
-
   width:78%;
-
   height:125px;
-
   border-radius:10px;
-
   overflow:hidden;
-
-  border:
-    1px solid
-    rgba(255,255,255,.12);
-
+  border: 1px solid rgba(255,255,255,.12);
   background:#10172a;
-
-  box-shadow:
-    0 20px 45px
-    rgba(0,0,0,.4);
-
+  box-shadow: 0 20px 45px rgba(0,0,0,.4);
 }
 
 .browser-top{
-
   height:20px;
-
   display:flex;
-
   align-items:center;
-
   gap:4px;
-
   padding:0 8px;
-
   background:#151d32;
-
 }
 
 .dot{
-
   width:5px;
   height:5px;
-
   border-radius:50%;
-
   background:#68728b;
-
 }
 
 .browser-content{
-
   height:105px;
-
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
-
   justify-content:center;
-
 }
 
 .browser-content strong{
-
   font-size:15px;
-
 }
 
 .browser-content span{
-
   margin-top:6px;
-
   color:var(--purple3);
-
   font-size:8px;
-
 }
 
 .work-info{
-
   padding:18px;
-
 }
 
 .work-info h3{
-
   font-size:15px;
-
   margin-bottom:6px;
-
 }
 
 .work-info p{
-
   color:var(--muted);
-
   font-size:9px;
-
   line-height:1.8;
-
 }
 
 .work-btn{
-
   display:inline-flex;
-
   margin-top:13px;
-
   color:#d8b5ff;
-
   font-size:9px;
-
   font-weight:900;
-
 }
-
 
 /* =========================================================
    STEPS
 ========================================================= */
 
 .steps{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(5,1fr);
-
+  grid-template-columns: repeat(5,1fr);
   gap:10px;
-
 }
 
 .step{
-
   text-align:center;
-
   padding:22px 13px;
-
   border-radius:18px;
-
-  background:
-    rgba(13,20,39,.75);
-
-  border:
-    1px solid var(--border);
-
+  background: rgba(13,20,39,.75);
+  border: 1px solid var(--border);
 }
 
 .step-number{
-
   width:38px;
   height:38px;
-
   margin:auto;
-
   display:grid;
-
   place-items:center;
-
   border-radius:50%;
-
   color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--purple),
-      var(--purple2)
-    );
-
+  background: linear-gradient(135deg, var(--purple), var(--purple2));
   font-size:11px;
-
   font-weight:900;
-
 }
 
 .step h3{
-
   margin-top:12px;
-
   font-size:12px;
-
 }
 
 .step p{
-
   margin-top:6px;
-
   color:var(--muted);
-
   font-size:8px;
-
   line-height:1.8;
-
 }
 
-
 /* =========================================================
-   CV SECTION
+   NEW CV SHOWCASE SECTION (B2B PROFESSIONAL DESIGN)
 ========================================================= */
 
 .cv-box{
-
-  padding:25px;
-
+  padding:35px;
   border-radius:30px;
-
-  background:
-
-    radial-gradient(
-      circle at 90% 0%,
-      rgba(124,58,237,.14),
-      transparent 30%
-    ),
-
-    linear-gradient(
-      145deg,
-      #10192f,
-      #070d1b
-    );
-
-  border:
-    1px solid var(--border);
-
+  background: radial-gradient(circle at 90% 0%, rgba(124,58,237,.18), transparent 40%), linear-gradient(145deg, #0e172e, #050914);
+  border: 1px solid rgba(168,85,247,.22);
   box-shadow:var(--shadow);
-
 }
 
 .cv-layout{
-
   display:grid;
-
-  grid-template-columns:
-    .85fr
-    1.15fr;
-
-  gap:20px;
-
+  grid-template-columns: 0.9fr 1.1fr;
+  gap:35px;
+  align-items:center;
 }
 
 .cv-info{
-
   padding:10px;
-
 }
 
 .label{
-
   color:var(--purple3);
-
-  font-size:9px;
-
+  font-size:10px;
   letter-spacing:2px;
-
   font-weight:900;
-
 }
 
 .cv-info h2{
-
-  font-size:30px;
-
-  line-height:1.4;
-
-  margin:10px 0;
-
+  font-size:34px;
+  line-height:1.3;
+  margin:12px 0;
 }
 
 .cv-info p{
-
   color:var(--muted);
-
-  font-size:11px;
-
-  line-height:1.9;
-
+  font-size:12px;
+  line-height:2;
 }
 
 .features{
-
   list-style:none;
-
-  margin:20px 0;
-
+  margin:25px 0;
 }
 
 .features li{
-
-  color:#d5dcec;
-
-  font-size:10px;
-
-  margin:10px 0;
-
+  color:#e2e8f0;
+  font-size:11px;
+  margin:12px 0;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
 .features li::before{
-
   content:"✓";
-
-  color:#c084fc;
-
-  margin-left:8px;
-
-  font-weight:900;
-
-}
-
-
-/* =========================================================
-   CV APP
-========================================================= */
-
-.cv-app{
-
+  color:var(--purple2);
+  background:rgba(124,58,237,.15);
+  width:22px;
+  height:22px;
   display:grid;
-
-  grid-template-columns:
-    .9fr
-    1.1fr;
-
-  gap:12px;
-
-  padding:12px;
-
-  border-radius:22px;
-
-  background:#050914;
-
-  border:
-    1px solid var(--border);
-
-}
-
-.form{
-
-  padding:10px;
-
-}
-
-.form h3{
-
-  font-size:14px;
-
-  margin-bottom:13px;
-
-}
-
-.field{
-
-  margin-bottom:8px;
-
-}
-
-.field label{
-
-  display:block;
-
-  color:#bac4d9;
-
-  font-size:9px;
-
-  margin-bottom:5px;
-
-}
-
-.field input,
-.field textarea{
-
-  width:100%;
-
-  background:#0a1121;
-
-  color:white;
-
-  border:
-    1px solid
-    rgba(255,255,255,.07);
-
-  border-radius:9px;
-
-  outline:none;
-
-  padding:9px;
-
-  font-size:9px;
-
-  transition:.2s;
-
-}
-
-.field input:focus,
-.field textarea:focus{
-
-  border-color:
-    rgba(168,85,247,.55);
-
-  box-shadow:
-    0 0 15px
-    rgba(124,58,237,.08);
-
-}
-
-.field textarea{
-
-  min-height:48px;
-
-  resize:vertical;
-
-}
-
-.form-buttons{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:5px;
-
-  margin-top:10px;
-
-}
-
-.form-buttons button{
-
-  min-height:34px;
-
-  background:#0d162a;
-
-  color:#cbd3e3;
-
-  border:
-    1px solid var(--border);
-
-  border-radius:9px;
-
-  font-size:8px;
-
-  cursor:pointer;
-
-  transition:.2s;
-
-}
-
-.form-buttons button:hover{
-
-  border-color:
-    rgba(168,85,247,.45);
-
-}
-
-.print{
-
-  width:100%;
-
-  margin-top:7px;
-
-  min-height:42px;
-
-  border:0;
-
-  border-radius:10px;
-
-  color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--purple),
-      var(--purple2)
-    );
-
+  place-items:center;
+  border-radius:50%;
   font-size:10px;
-
   font-weight:900;
-
-  cursor:pointer;
-
 }
 
-
-/* =========================================================
-   CV TEMPLATES
-========================================================= */
-
-.templates{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:6px;
-
-  margin-top:8px;
-
-}
-
-.template{
-
-  min-height:55px;
-
-  background:#0d162a;
-
-  color:#cbd3e3;
-
-  border:
-    1px solid var(--border);
-
-  border-radius:10px;
-
-  cursor:pointer;
-
-  font-size:8px;
-
+/* MODERN CV DISPLAY MOCKUP */
+.cv-display-container{
   position:relative;
-
-  overflow:hidden;
-
+  border-radius:24px;
+  padding:20px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-.template::before{
-
-  content:"";
-
-  display:block;
-
-  width:28px;
-
-  height:32px;
-
-  margin:5px auto 3px;
-
-  background:#f7f7f7;
-
-  border-radius:3px;
-
-  box-shadow:
-    inset 0 5px 0 var(--purple2);
-
+.cv-mockup-card {
+  border-radius: 16px;
+  padding: 24px;
+  background: linear-gradient(135deg, #131c35 0%, #090f1f 100%);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: all 0.4s ease;
 }
 
-.template.active{
-
-  border-color:
-    var(--purple2);
-
-  color:white;
-
-  background:
-    rgba(124,58,237,.12);
-
+.cv-header-preview {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 18px;
+  margin-bottom: 18px;
 }
 
-
-/* =========================================================
-   CV PREVIEW
-========================================================= */
-
-.preview-wrap{
-
-  padding:15px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  background:
-
-    radial-gradient(
-      circle at center,
-      rgba(124,58,237,.12),
-      transparent 65%
-    ),
-
-    #050914;
-
-  border-radius:18px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.06);
-
+.cv-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--purple), var(--purple2));
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 20px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(124,58,237,0.4);
 }
 
-.preview{
-
-  width:100%;
-
-  max-width:420px;
-
-  min-height:560px;
-
-  padding:32px;
-
-  background:#fff;
-
-  color:#171717;
-
-  border-radius:4px;
-
-  position:relative;
-
-  overflow:hidden;
-
-  box-shadow:
-    0 25px 60px
-    rgba(0,0,0,.45);
-
+.cv-header-text h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 4px;
 }
 
-.preview::before{
-
-  content:"";
-
-  position:absolute;
-
-  top:0;
-
-  right:0;
-
-  width:100%;
-
-  height:8px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #7c3aed,
-      #a855f7,
-      #c084fc
-    );
-
+.cv-header-text p {
+  font-size: 11px;
+  color: var(--purple3);
+  font-weight: bold;
 }
 
-.preview-name{
-
-  margin-top:7px;
-
-  font-size:29px;
-
-  font-weight:900;
-
-  color:#111827;
-
+.cv-body-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.preview-job{
-
-  color:#7c3aed;
-
-  font-size:12px;
-
-  font-weight:900;
-
-  margin:5px 0 13px;
-
+.skeleton-box {
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
 }
 
-.contact{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:6px;
-
-  color:#6b7280;
-
-  font-size:8px;
-
-  margin-bottom:14px;
-
+.skeleton-title {
+  font-size: 11px;
+  color: #e2e8f0;
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.line{
-
-  height:2px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #7c3aed,
-      #c084fc,
-      transparent
-    );
-
-  margin-bottom:18px;
-
+.skeleton-line {
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  margin-bottom: 6px;
 }
 
-.cv-section{
-
-  margin-bottom:17px;
-
+.skeleton-line.short {
+  width: 60%;
 }
 
-.cv-section h4{
-
-  color:#7c3aed;
-
-  font-size:11px;
-
-  font-weight:900;
-
-  margin-bottom:6px;
-
+.cv-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.cv-section p{
-
-  color:#4b5563;
-
-  font-size:8px;
-
-  line-height:1.8;
-
-  white-space:pre-line;
-
+.metric-item {
+  text-align: center;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  padding: 10px 5px;
+  border-radius: 12px;
 }
 
+.metric-item strong {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+}
+
+.metric-item span {
+  font-size: 8px;
+  color: var(--muted);
+}
+
+.cv-actions-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.cv-tab-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 9px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cv-tab-btn.active, .cv-tab-btn:hover {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: var(--purple2);
+  color: #fff;
+}
 
 /* =========================================================
    PRICING
 ========================================================= */
 
 .pricing{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
+  grid-template-columns: repeat(3,1fr);
   gap:16px;
-
 }
 
 .plan{
-
   position:relative;
-
   padding:27px 22px;
-
   border-radius:22px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #10192f,
-      #080e1d
-    );
-
-  border:
-    1px solid var(--border);
-
+  background: linear-gradient(145deg, #10192f, #080e1d);
+  border: 1px solid var(--border);
 }
 
 .plan.featured{
-
-  border-color:
-    rgba(168,85,247,.55);
-
-  box-shadow:
-    0 20px 60px
-    rgba(124,58,237,.13);
-
-  transform:
-    translateY(-6px);
-
+  border-color: rgba(168,85,247,.55);
+  box-shadow: 0 20px 60px rgba(124,58,237,.13);
+  transform: translateY(-6px);
 }
 
 .popular{
-
   position:absolute;
-
   top:-11px;
-
   right:18px;
-
   padding:6px 11px;
-
   border-radius:50px;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--purple),
-      var(--purple2)
-    );
-
+  background: linear-gradient(135deg, var(--purple), var(--purple2));
   font-size:8px;
-
   font-weight:900;
-
 }
 
 .plan h3{
@@ -1785,3069 +865,1075 @@ header{
 }
 
 .plan-desc{
-
   color:var(--muted);
-
   font-size:9px;
-
   margin-top:6px;
-
 }
 
 .plan-price{
-
   font-size:35px;
-
   font-weight:900;
-
   margin:15px 0;
-
 }
 
 .plan-price span{
-
   color:var(--muted);
-
   font-size:9px;
-
   font-weight:normal;
-
 }
 
 .old-price{
-
   color:#717a91;
-
   font-size:13px;
-
   text-decoration:line-through;
-
   margin-left:6px;
-
 }
 
 .plan ul{
-
   list-style:none;
-
   color:#adb7cc;
-
   font-size:9px;
-
   line-height:2.4;
-
   margin-bottom:18px;
-
 }
 
 .plan li::before{
-
   content:"✓";
-
   color:#c084fc;
-
   margin-left:7px;
-
 }
 
 .plan-btn{
-
   min-height:42px;
-
   display:grid;
-
   place-items:center;
-
   border-radius:10px;
-
-  background:
-    rgba(124,58,237,.10);
-
-  border:
-    1px solid
-    rgba(124,58,237,.25);
-
+  background: rgba(124,58,237,.10);
+  border: 1px solid rgba(124,58,237,.25);
   font-size:9px;
-
   font-weight:900;
-
 }
 
 .featured .plan-btn{
-
   color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--purple),
-      var(--purple2)
-    );
-
+  background: linear-gradient(135deg, var(--purple), var(--purple2));
   border:0;
-
 }
-
 
 /* =========================================================
    WEBSITE PACKAGES
 ========================================================= */
 
 .web-packages{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
+  grid-template-columns: repeat(3,1fr);
   gap:16px;
-
 }
 
 .web-package{
-
   padding:25px 21px;
-
   border-radius:22px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #10192f,
-      #080e1d
-    );
-
-  border:
-    1px solid var(--border);
-
+  background: linear-gradient(145deg, #10192f, #080e1d);
+  border: 1px solid var(--border);
   transition:.3s;
-
 }
 
 .web-package:hover{
-
-  transform:
-    translateY(-5px);
-
-  border-color:
-    rgba(168,85,247,.35);
-
+  transform: translateY(-5px);
+  border-color: rgba(168,85,247,.35);
 }
 
 .package-icon{
-
   font-size:26px;
-
   margin-bottom:13px;
-
 }
 
 .web-package h3{
-
   font-size:17px;
-
 }
 
 .web-package p{
-
   color:var(--muted);
-
   font-size:10px;
-
   line-height:1.9;
-
   margin:8px 0 14px;
-
 }
 
 .package-price{
-
   color:#d5aeff;
-
   font-size:20px;
-
   font-weight:900;
-
 }
 
 .package-price small{
-
   color:var(--muted);
-
   font-size:9px;
-
   font-weight:normal;
-
 }
-
 
 /* =========================================================
    WHY
 ========================================================= */
 
 .why{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
+  grid-template-columns: repeat(4,1fr);
   gap:15px;
-
 }
 
 .why-card{
-
   padding:24px;
-
   border-radius:20px;
-
-  background:
-    rgba(13,20,39,.80);
-
-  border:
-    1px solid var(--border);
-
+  background: rgba(13,20,39,.80);
+  border: 1px solid var(--border);
 }
 
 .why-card .icon{
-
   margin-bottom:10px;
-
 }
 
 .why-card h3{
-
   font-size:14px;
-
   margin-bottom:7px;
-
 }
 
 .why-card p{
-
   color:var(--muted);
-
   font-size:10px;
-
   line-height:1.9;
-
 }
-
 
 /* =========================================================
    PAYMENT
 ========================================================= */
 
 .payment{
-
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns: 1fr 1fr;
   gap:16px;
-
 }
 
 .payment-card{
-
   padding:26px;
-
   border-radius:22px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #10192f,
-      #090f20
-    );
-
-  border:
-    1px solid var(--border);
-
+  background: linear-gradient(145deg, #10192f, #090f20);
+  border: 1px solid var(--border);
 }
 
 .payment-card h3{
-
   font-size:17px;
-
   margin-bottom:9px;
-
 }
 
 .payment-card p{
-
   color:var(--muted);
-
   font-size:10px;
-
   line-height:1.9;
-
 }
 
 .cash-box{
-
   margin:17px 0;
-
   padding:17px;
-
   border-radius:15px;
-
-  background:
-    rgba(124,58,237,.08);
-
-  border:
-    1px dashed
-    rgba(168,85,247,.35);
-
+  background: rgba(124,58,237,.08);
+  border: 1px dashed rgba(168,85,247,.35);
   text-align:center;
-
 }
 
 .cash-label{
-
   color:#929ab0;
-
   font-size:9px;
-
   margin-bottom:6px;
-
 }
 
 .cash-number-row{
-
   direction:ltr;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:8px;
-
 }
 
 .cash-number{
-
   color:#e0c4ff;
-
   font-size:21px;
-
   font-weight:900;
-
   letter-spacing:1px;
-
 }
 
 .copy-cash-btn{
-
-  border:
-    1px solid
-    rgba(255,255,255,.12);
-
-  background:
-    rgba(255,255,255,.06);
-
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
   color:white;
-
   border-radius:9px;
-
   padding:8px 10px;
-
   cursor:pointer;
-
   font-size:9px;
-
   font-weight:900;
-
 }
 
 .copy-cash-btn.copied{
-
   background:#16a34a;
-
   border-color:#22c55e;
-
 }
-
 
 /* =========================================================
    CONTACT
 ========================================================= */
 
 .contact-box{
-
   margin-top:22px;
-
   padding:27px;
-
   border-radius:24px;
-
-  background:
-
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(168,85,247,.13),
-      transparent 35%
-    ),
-
-    linear-gradient(
-      145deg,
-      #111a32,
-      #090f20
-    );
-
-  border:
-    1px solid
-    rgba(168,85,247,.17);
-
+  background: radial-gradient(circle at 90% 20%, rgba(168,85,247,.13), transparent 35%), linear-gradient(145deg, #111a32, #090f20);
+  border: 1px solid rgba(168,85,247,.17);
   box-shadow:var(--shadow);
-
 }
 
 .contact-box h3{
-
   font-size:21px;
-
   margin-bottom:7px;
-
 }
 
 .contact-box p{
-
   color:var(--muted);
-
   font-size:10px;
-
   line-height:1.9;
-
 }
 
 .contact-actions{
-
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns: 1fr 1fr;
   gap:10px;
-
   margin-top:18px;
-
 }
 
 .contact-action{
-
   min-height:52px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:8px;
-
   border-radius:12px;
-
   font-size:10px;
-
   font-weight:900;
-
   transition:.25s;
-
 }
 
 .contact-action:hover{
-
-  transform:
-    translateY(-3px);
-
+  transform: translateY(-3px);
 }
 
 .whatsapp{
-
-  background:
-    linear-gradient(
-      135deg,
-      #16a34a,
-      #22c55e
-    );
-
+  background: linear-gradient(135deg, #16a34a, #22c55e);
   color:white;
-
 }
 
 .payment-action{
-
-  background:
-    rgba(124,58,237,.10);
-
-  border:
-    1px solid
-    rgba(168,85,247,.25);
-
+  background: rgba(124,58,237,.10);
+  border: 1px solid rgba(168,85,247,.25);
   color:#e5d5ff;
-
 }
-
 
 /* =========================================================
    CTA
 ========================================================= */
 
 .cta{
-
   padding:60px 25px;
-
   border-radius:28px;
-
   text-align:center;
-
-  background:
-
-    radial-gradient(
-      circle at center,
-      rgba(124,58,237,.20),
-      transparent 60%
-    ),
-
-    #0d1427;
-
-  border:
-    1px solid var(--border);
-
+  background: radial-gradient(circle at center, rgba(124,58,237,.20), transparent 60%), #0d1427;
+  border: 1px solid var(--border);
   box-shadow:var(--shadow);
-
 }
 
 .cta h2{
-
-  font-size:
-    clamp(
-      27px,
-      5vw,
-      40px
-    );
-
+  font-size: clamp(27px, 5vw, 40px);
   margin-bottom:10px;
-
 }
 
 .cta p{
-
   color:var(--muted);
-
   font-size:11px;
-
   margin-bottom:22px;
-
 }
-
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer{
-
   margin-top:60px;
-
   padding:40px 0;
-
-  border-top:
-    1px solid var(--border);
-
+  border-top: 1px solid var(--border);
   color:var(--muted);
-
   font-size:9px;
-
   text-align:center;
-
 }
 
 footer strong{
-
   color:white;
-
   font-size:17px;
-
 }
 
-
 /* =========================================================
-   WHATSAPP
+   WHATSAPP & TOAST
 ========================================================= */
 
 .floating-whatsapp{
-
   position:fixed;
-
   left:18px;
-
   bottom:18px;
-
   z-index:9999;
-
   width:56px;
-
   height:56px;
-
   display:grid;
-
   place-items:center;
-
   border-radius:50%;
-
   background:#22c55e;
-
   color:white;
-
   font-size:25px;
-
-  box-shadow:
-    0 10px 30px
-    rgba(34,197,94,.30);
-
+  box-shadow: 0 10px 30px rgba(34,197,94,.30);
   transition:.25s;
-
 }
 
 .floating-whatsapp:hover{
-
-  transform:
-    scale(1.08);
-
+  transform: scale(1.08);
 }
 
-
-/* =========================================================
-   TOAST
-========================================================= */
-
 .toast{
-
   position:fixed;
-
   left:50%;
-
   bottom:22px;
-
-  transform:
-    translate(-50%,100px);
-
+  transform: translate(-50%,100px);
   z-index:99999;
-
   padding:12px 18px;
-
   border-radius:12px;
-
   background:#121c33;
-
-  border:
-    1px solid
-    rgba(168,85,247,.25);
-
+  border: 1px solid rgba(168,85,247,.25);
   color:white;
-
   font-size:10px;
-
   box-shadow:var(--shadow);
-
   transition:.3s;
-
 }
 
 .toast.show{
-
-  transform:
-    translate(-50%,0);
-
+  transform: translate(-50%,0);
 }
 
-
 /* =========================================================
-   MOBILE
+   RESPONSIVE MEDIA QUERIES
 ========================================================= */
 
 @media(max-width:950px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .hero-grid{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-
-  .hero p{
-    margin:auto;
-  }
-
-  .hero-buttons{
-    justify-content:center;
-  }
-
-  .hero-visual{
-    min-height:330px;
-  }
-
-  .services{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .works{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .steps{
-    grid-template-columns:
-      repeat(3,1fr);
-  }
-
-  .cv-layout{
-    grid-template-columns:1fr;
-  }
-
-  .cv-app{
-    grid-template-columns:1fr;
-  }
-
-  .pricing{
-    grid-template-columns:1fr;
-  }
-
-  .plan.featured{
-    transform:none;
-  }
-
-  .web-packages{
-    grid-template-columns:1fr;
-  }
-
-  .why{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .payment{
-    grid-template-columns:1fr;
-  }
-
+  .nav-links{ display:none; }
+  .hero-grid{ grid-template-columns:1fr; text-align:center; }
+  .hero p{ margin:auto; }
+  .hero-buttons{ justify-content:center; }
+  .hero-visual{ min-height:330px; }
+  .services{ grid-template-columns: repeat(2,1fr); }
+  .works{ grid-template-columns: repeat(2,1fr); }
+  .steps{ grid-template-columns: repeat(3,1fr); }
+  .cv-layout{ grid-template-columns:1fr; }
+  .pricing{ grid-template-columns:1fr; }
+  .plan.featured{ transform:none; }
+  .web-packages{ grid-template-columns:1fr; }
+  .why{ grid-template-columns: repeat(2,1fr); }
+  .payment{ grid-template-columns:1fr; }
 }
 
 @media(max-width:600px){
-
-  .container{
-    width:94%;
-  }
-
-  section{
-    padding:62px 0;
-  }
-
-  .nav{
-    min-height:68px;
-  }
-
-  .nav-btn{
-    padding:9px 12px;
-    font-size:9px;
-  }
-
-  .logo-text{
-    font-size:17px;
-  }
-
-  .logo-mark{
-    width:38px;
-    height:38px;
-  }
-
-  .hero{
-    padding:65px 0 40px;
-  }
-
-  .hero h1{
-    font-size:39px;
-    letter-spacing:-1px;
-  }
-
-  .hero p{
-    font-size:11px;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-  }
-
-  .hero-buttons .btn{
-    width:100%;
-  }
-
-  .hero-visual{
-    min-height:270px;
-  }
-
-  .laptop{
-    width:310px;
-    min-height:190px;
-  }
-
-  .laptop-screen{
-    height:160px;
-  }
-
-  .float-card{
-    font-size:8px;
-    padding:9px 11px;
-  }
-
-  .float-one{
-    top:20px;
-    right:0;
-  }
-
-  .float-two{
-    bottom:20px;
-    left:0;
-  }
-
-  .marketing{
-    padding:22px 17px;
-  }
-
-  .marketing-top{
-    display:block;
-  }
-
-  .marketing h2{
-    font-size:21px;
-  }
-
-  .marketing-list{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .services{
-    grid-template-columns:1fr;
-  }
-
-  .works{
-    grid-template-columns:1fr;
-  }
-
-  .steps{
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .cv-box{
-    padding:14px;
-  }
-
-  .cv-info h2{
-    font-size:27px;
-  }
-
-  .preview{
-    min-height:500px;
-    padding:24px;
-  }
-
-  .preview-name{
-    font-size:25px;
-  }
-
-  .cash-number-row{
-    flex-direction:column;
-  }
-
-  .copy-cash-btn{
-    width:100%;
-  }
-
-  .contact-actions{
-    grid-template-columns:1fr;
-  }
-
-  .why{
-    grid-template-columns:1fr;
-  }
-
-  .floating-whatsapp{
-    left:14px;
-    bottom:14px;
-  }
-
-}
-
-
-/* =========================================================
-   PRINT PDF
-========================================================= */
-
-@media print{
-
-  body *{
-    visibility:hidden!important;
-  }
-
-  .preview,
-  .preview *{
-    visibility:visible!important;
-  }
-
-  .preview{
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:100%;
-
-    max-width:none;
-
-    box-shadow:none;
-
-    border-radius:0;
-
-  }
-
-  @page{
-
-    size:A4;
-
-    margin:0;
-
-  }
-
+  .container{ width:94%; }
+  section{ padding:62px 0; }
+  .nav{ min-height:68px; }
+  .nav-btn{ padding:9px 12px; font-size:9px; }
+  .logo-text{ font-size:17px; }
+  .logo-mark{ width:38px; height:38px; }
+  .hero{ padding:65px 0 40px; }
+  .hero h1{ font-size:39px; letter-spacing:-1px; }
+  .hero p{ font-size:11px; }
+  .hero-buttons{ flex-direction:column; }
+  .hero-buttons .btn{ width:100%; }
+  .hero-visual{ min-height:270px; }
+  .laptop{ width:310px; min-height:190px; }
+  .laptop-screen{ height:160px; }
+  .float-card{ font-size:8px; padding:9px 11px; }
+  .float-one{ top:20px; right:0; }
+  .float-two{ bottom:20px; left:0; }
+  .marketing{ padding:22px 17px; }
+  .marketing-top{ display:block; }
+  .marketing h2{ font-size:21px; }
+  .marketing-list{ grid-template-columns:1fr 1fr; }
+  .services{ grid-template-columns:1fr; }
+  .works{ grid-template-columns:1fr; }
+  .steps{ grid-template-columns: 1fr 1fr; }
+  .cv-box{ padding:20px; }
+  .cv-info h2{ font-size:26px; }
+  .cash-number-row{ flex-direction:column; }
+  .copy-cash-btn{ width:100%; }
+  .contact-actions{ grid-template-columns:1fr; }
+  .why{ grid-template-columns:1fr; }
+  .floating-whatsapp{ left:14px; bottom:14px; }
 }
 
 </style>
-
 </head>
 
 <body>
 
-
 <!-- =====================================================
      HEADER
 ===================================================== -->
-
 <header>
-
 <div class="container">
-
 <nav class="nav">
 
 <a href="#home" class="logo">
-
-<div class="logo-mark">
-M
-</div>
-
+<div class="logo-mark">M</div>
 <div class="logo-text">
-
 MIDO <span>TECH</span>
-
-<small>
-DIGITAL SOLUTIONS
-</small>
-
+<small>DIGITAL SOLUTIONS</small>
 </div>
-
 </a>
-
 
 <ul class="nav-links">
-
-<li>
-<a href="#home">
-الرئيسية
-</a>
-</li>
-
-<li>
-<a href="#services">
-الخدمات
-</a>
-</li>
-
-<li>
-<a href="#works">
-أعمالنا
-</a>
-</li>
-
-<li>
-<a href="#cv">
-CV Maker
-</a>
-</li>
-
-<li>
-<a href="#pricing">
-الباقات
-</a>
-</li>
-
-<li>
-<a href="#contact">
-تواصل
-</a>
-</li>
-
+<li><a href="#home">الرئيسية</a></li>
+<li><a href="#services">الخدمات</a></li>
+<li><a href="#works">أعمالنا</a></li>
+<li><a href="#cv">الـ CV الاحترافي</a></li>
+<li><a href="#pricing">الباقات</a></li>
+<li><a href="#contact">تواصل</a></li>
 </ul>
 
-
-<a
-href="https://wa.me/20111011025"
-target="_blank"
-class="nav-btn">
-
-تواصل معنا
-
-</a>
+<a href="https://wa.me/20111011025" target="_blank" class="nav-btn">تواصل معنا</a>
 
 </nav>
-
 </div>
-
 </header>
-
 
 <!-- =====================================================
      HERO
 ===================================================== -->
-
 <main id="home">
 
 <section class="hero">
-
 <div class="container">
-
 <div class="hero-grid">
 
-
 <div>
+<div class="badge">🚀 MIDO TECH — DIGITAL SOLUTIONS</div>
 
-<div class="badge">
-
-🚀 MIDO TECH — DIGITAL SOLUTIONS
-
-</div>
-
-
-<h1>
-
-نحوّل فكرتك إلى
-
-<span class="gradient">
-موقع يصنع الفرق
-</span>
-
-</h1>
-
+<h1>نحوّل فكرتك إلى <span class="gradient">موقع يصنع الفرق</span></h1>
 
 <p>
-
-تصميم مواقع احترافية للأفراد وأصحاب المشاريع
-والشركات، بتصميم عصري وسريع ومتوافق مع الموبايل،
-وبأسعار مناسبة.
-
+تصميم مواقع احترافية للأفراد وأصحاب المشاريع والشركات، بتصميم عصري وسريع ومتوافق مع الموبايل، وبأسعار مناسبة.
 <br><br>
-
-من Landing Page بسيطة إلى موقع كامل لمشروعك.
-نساعدك تبدأ وجودك الحقيقي على الإنترنت.
-
+من Landing Page بسيطة إلى موقع كامل لمشروعك. نساعدك تبدأ وجودك الحقيقي على الإنترنت.
 </p>
-
 
 <div class="hero-buttons">
-
-<a
-href="#pricing"
-class="btn primary">
-
-🚀 ابدأ مشروعك الآن
-
-</a>
-
-
-<a
-href="#works"
-class="btn secondary">
-
-💼 شاهد أعمالنا
-
-</a>
-
+<a href="#pricing" class="btn primary">🚀 ابدأ مشروعك الآن</a>
+<a href="#works" class="btn secondary">💼 شاهد أعمالنا</a>
 </div>
-
 </div>
-
 
 <div class="hero-visual">
-
 <div class="glow-circle"></div>
-
-
-<div class="float-card float-one">
-🌐 مواقع احترافية
-</div>
-
-
-<div class="float-card float-two">
-⚡ سريع ومتجاوب
-</div>
-
+<div class="float-card float-one">🌐 مواقع احترافية</div>
+<div class="float-card float-two">⚡ سريع ومتجاوب</div>
 
 <div class="laptop">
-
 <div class="laptop-screen">
-
-<div class="laptop-logo">
-
-MIDO <span>TECH</span>
-
+<div class="laptop-logo">MIDO <span>TECH</span></div>
+<div class="laptop-sub">DIGITAL SOLUTIONS</div>
+<div class="laptop-button">ابدأ الآن</div>
 </div>
-
-<div class="laptop-sub">
-DIGITAL SOLUTIONS
 </div>
-
-<div class="laptop-button">
-ابدأ الآن
 </div>
 
 </div>
-
-</div>
-
-</div>
-
-</div>
-
 
 <!-- MARKETING -->
-
 <div class="marketing">
-
 <div class="marketing-top">
-
 <div>
-
-<h2>
-MIDO TECH — حلول رقمية تبدأ من فكرتك 🚀
-</h2>
-
+<h2>MIDO TECH — حلول رقمية تبدأ من فكرتك 🚀</h2>
 <p class="marketing-intro">
-
-محتاج CV احترافي؟
-Portfolio؟
-Landing Page؟
-أو موقع لمشروعك؟
-
+محتاج CV احترافي؟ Portfolio؟ Landing Page؟ أو موقع لمشروعك؟
 إحنا بنساعدك تحول فكرتك لحضور رقمي احترافي.
-
 </p>
-
 </div>
-
 </div>
-
 
 <div class="marketing-list">
-
-<div class="marketing-item">
-📄 CV احترافي
+<div class="marketing-item">📄 CV احترافي</div>
+<div class="marketing-item">💼 Portfolio</div>
+<div class="marketing-item">🌐 Landing Page</div>
+<div class="marketing-item">🖥️ مواقع كاملة</div>
 </div>
-
-<div class="marketing-item">
-💼 Portfolio
-</div>
-
-<div class="marketing-item">
-🌐 Landing Page
-</div>
-
-<div class="marketing-item">
-🖥️ مواقع كاملة
 </div>
 
 </div>
-
-</div>
-
-</div>
-
 </section>
-
 
 <!-- =====================================================
      SERVICES
 ===================================================== -->
-
 <section id="services">
-
 <div class="container">
-
 <div class="heading">
-
-<small>
-OUR SERVICES
-</small>
-
-<h2>
-الخدمات اللي بنقدمها 🚀
-</h2>
-
-<p>
-اختار الخدمة المناسبة وابدأ مشروعك.
-</p>
-
+<small>OUR SERVICES</small>
+<h2>الخدمات اللي بنقدمها 🚀</h2>
+<p>اختار الخدمة المناسبة وابدأ مشروعك.</p>
 </div>
-
 
 <div class="services">
 
+<div class="card">
+<div class="icon">📄</div>
+<h3>CV احترافي</h3>
+<p>CV احترافي مناسب للتقديم على الوظائف والتدريب والفرص المختلفة في الكبرى الشركات.</p>
+<div class="price">يبدأ من 99 جنيه</div>
+</div>
 
 <div class="card">
-
-<div class="icon">
-📄
+<div class="icon">💼</div>
+<h3>Portfolio</h3>
+<p>موقع شخصي لعرض أعمالك ومهاراتك ومشاريعك بشكل احترافي.</p>
+<div class="price">يبدأ من 500 جنيه</div>
 </div>
-
-<h3>
-CV احترافي
-</h3>
-
-<p>
-CV احترافي مناسب للتقديم على الوظائف
-والتدريب والفرص المختلفة.
-</p>
-
-<div class="price">
-يبدأ من 99 جنيه
-</div>
-
-</div>
-
 
 <div class="card">
-
-<div class="icon">
-💼
+<div class="icon">🌐</div>
+<h3>Landing Page</h3>
+<p>صفحة احترافية لمنتجك أو خدمتك مع زر تواصل مباشر.</p>
+<div class="price">يبدأ من 450 جنيه</div>
 </div>
-
-<h3>
-Portfolio
-</h3>
-
-<p>
-موقع شخصي لعرض أعمالك ومهاراتك
-ومشاريعك بشكل احترافي.
-</p>
-
-<div class="price">
-يبدأ من 500 جنيه
-</div>
-
-</div>
-
 
 <div class="card">
-
-<div class="icon">
-🌐
-</div>
-
-<h3>
-Landing Page
-</h3>
-
-<p>
-صفحة احترافية لمنتجك أو خدمتك
-مع زر تواصل مباشر.
-</p>
-
-<div class="price">
-يبدأ من 450 جنيه
+<div class="icon">🖥️</div>
+<h3>موقع كامل</h3>
+<p>موقع كامل للمشروع حسب الأقسام والخدمات والاحتياجات المطلوبة.</p>
+<div class="price">يبدأ من 550 جنيه</div>
 </div>
 
 </div>
-
-
-<div class="card">
-
-<div class="icon">
-🖥️
 </div>
-
-<h3>
-موقع كامل
-</h3>
-
-<p>
-موقع كامل للمشروع حسب الأقسام
-والخدمات والاحتياجات المطلوبة.
-</p>
-
-<div class="price">
-يبدأ من 550 جنيه
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
-
 
 <!-- =====================================================
      WORKS
 ===================================================== -->
-
 <section id="works">
-
 <div class="container">
-
 <div class="heading">
-
-<small>
-OUR WORK
-</small>
-
-<h2>
-أعمالنا 💼
-</h2>
-
-<p>
-نماذج من أنواع المواقع التي يمكن تنفيذها.
-</p>
-
+<small>OUR WORK</small>
+<h2>أعمالنا 💼</h2>
+<p>نماذج من أنواع المواقع التي يمكن تنفيذها.</p>
 </div>
-
 
 <div class="works">
 
+<div class="work-card">
+<div class="work-preview">
+<div class="work-browser">
+<div class="browser-top">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+<div class="browser-content">
+<strong>Business Website</strong>
+<span>موقع شركة</span>
+</div>
+</div>
+</div>
+<div class="work-info">
+<h3>موقع شركة</h3>
+<p>واجهة احترافية لعرض خدمات الشركة ومعلومات التواصل.</p>
+<a href="#contact" class="work-btn">اطلب موقع مشابه ←</a>
+</div>
+</div>
 
 <div class="work-card">
-
 <div class="work-preview">
-
 <div class="work-browser">
-
 <div class="browser-top">
-
 <span class="dot"></span>
 <span class="dot"></span>
 <span class="dot"></span>
-
 </div>
-
 <div class="browser-content">
-
-<strong>
-Business Website
-</strong>
-
-<span>
-موقع شركة
-</span>
-
+<strong>Portfolio</strong>
+<span>موقع شخصي</span>
 </div>
-
 </div>
-
 </div>
-
 <div class="work-info">
-
-<h3>
-موقع شركة
-</h3>
-
-<p>
-واجهة احترافية لعرض خدمات الشركة
-ومعلومات التواصل.
-</p>
-
-<a
-href="#contact"
-class="work-btn">
-
-اطلب موقع مشابه ←
-
-</a>
-
+<h3>Portfolio شخصي</h3>
+<p>عرض المهارات والمشاريع والخبرات بشكل احترافي.</p>
+<a href="#contact" class="work-btn">اطلب موقع مشابه ←</a>
 </div>
-
 </div>
-
 
 <div class="work-card">
-
 <div class="work-preview">
-
 <div class="work-browser">
-
 <div class="browser-top">
-
 <span class="dot"></span>
 <span class="dot"></span>
 <span class="dot"></span>
-
 </div>
-
 <div class="browser-content">
-
-<strong>
-Portfolio
-</strong>
-
-<span>
-موقع شخصي
-</span>
-
+<strong>Landing Page</strong>
+<span>منتج / خدمة</span>
 </div>
-
 </div>
-
 </div>
-
 <div class="work-info">
-
-<h3>
-Portfolio شخصي
-</h3>
-
-<p>
-عرض المهارات والمشاريع والخبرات
-بشكل احترافي.
-</p>
-
-<a
-href="#contact"
-class="work-btn">
-
-اطلب موقع مشابه ←
-
-</a>
-
+<h3>Landing Page</h3>
+<p>صفحة تسويقية مركزة على المنتج أو الخدمة وزر الطلب.</p>
+<a href="#contact" class="work-btn">اطلب موقع مشابه ←</a>
+</div>
 </div>
 
 </div>
-
-
-<div class="work-card">
-
-<div class="work-preview">
-
-<div class="work-browser">
-
-<div class="browser-top">
-
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-
 </div>
-
-<div class="browser-content">
-
-<strong>
-Landing Page
-</strong>
-
-<span>
-منتج / خدمة
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="work-info">
-
-<h3>
-Landing Page
-</h3>
-
-<p>
-صفحة تسويقية مركزة على المنتج
-أو الخدمة وزر الطلب.
-</p>
-
-<a
-href="#contact"
-class="work-btn">
-
-اطلب موقع مشابه ←
-
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
-
 
 <!-- =====================================================
      STEPS
 ===================================================== -->
-
 <section>
-
 <div class="container">
-
 <div class="heading">
-
-<small>
-HOW IT WORKS
-</small>
-
-<h2>
-إزاي هننفذ مشروعك؟ 🚀
-</h2>
-
-<p>
-خطوات بسيطة من أول الفكرة لحد التسليم.
-</p>
-
+<small>HOW IT WORKS</small>
+<h2>إزاي هننفذ مشروعك؟ 🚀</h2>
+<p>خطوات بسيطة من أول الفكرة لحد التسليم.</p>
 </div>
-
 
 <div class="steps">
-
+<div class="step">
+<div class="step-number">01</div>
+<h3>ابعت فكرتك</h3>
+<p>قول لنا محتاج موقع إيه.</p>
+</div>
 
 <div class="step">
-
-<div class="step-number">
-01
+<div class="step-number">02</div>
+<h3>نحدد المطلوب</h3>
+<p>نتفق على التصميم والسعر.</p>
 </div>
-
-<h3>
-ابعت فكرتك
-</h3>
-
-<p>
-قول لنا محتاج موقع إيه.
-</p>
-
-</div>
-
 
 <div class="step">
-
-<div class="step-number">
-02
+<div class="step-number">03</div>
+<h3>نبدأ التنفيذ</h3>
+<p>نبدأ بناء الموقع.</p>
 </div>
-
-<h3>
-نحدد المطلوب
-</h3>
-
-<p>
-نتفق على التصميم والسعر.
-</p>
-
-</div>
-
 
 <div class="step">
-
-<div class="step-number">
-03
+<div class="step-number">04</div>
+<h3>المراجعة</h3>
+<p>تشوف الموقع ونعدل المطلوب.</p>
 </div>
-
-<h3>
-نبدأ التنفيذ
-</h3>
-
-<p>
-نبدأ بناء الموقع.
-</p>
-
-</div>
-
 
 <div class="step">
-
-<div class="step-number">
-04
+<div class="step-number">05</div>
+<h3>التسليم 🚀</h3>
+<p>نجهز الموقع للنشر.</p>
 </div>
-
-<h3>
-المراجعة
-</h3>
-
-<p>
-تشوف الموقع ونعدل المطلوب.
-</p>
-
 </div>
-
-
-<div class="step">
-
-<div class="step-number">
-05
 </div>
-
-<h3>
-التسليم 🚀
-</h3>
-
-<p>
-نجهز الموقع للنشر.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
-
 
 <!-- =====================================================
-     CV MAKER
+     CV SHOWCASE (UPDATED FOR B2B & ENTERPRISE LOOK)
 ===================================================== -->
-
 <section id="cv">
-
 <div class="container">
-
 <div class="heading">
-
-<small>
-SMART CV MAKER
-</small>
-
-<h2>
-خلي أول انطباع عنك قوي ✨
-</h2>
-
-<p>
-أنشئ CV احترافي، شاهد النتيجة مباشرة واحفظه PDF.
-</p>
-
+<small>EXECUTIVE CV DESIGN</small>
+<h2>صمِّم سيرتك الذاتية بمقاييس الشركات العالمية ✨</h2>
+<p>تصميمات مخصصة تضمن لك تجاوز أنظمة الفلترة الذكية (ATS) وترك انطباع لا يُنسى.</p>
 </div>
-
 
 <div class="cv-box">
-
 <div class="cv-layout">
 
-
 <div class="cv-info">
-
-<div class="label">
-CV MAKER
-</div>
-
-<h2>
-اعمل CV احترافي
-في دقائق.
-</h2>
-
+<div class="label">CORPORATE READY</div>
+<h2>سيرة ذاتية احترافية تفتح لك أبواب الشركات الكبرى.</h2>
 <p>
-اكتب بياناتك، اختار القالب المناسب،
-وشاهد الـCV مباشرة قبل الحفظ أو الطباعة.
+نصمم لك سيرتك الذاتية بناءً على المعايير المعتمدة لدى مسؤولي التوظيف والشركات العالمية، مع صياغة قوية للخبرات والمهارات لضمان أعلى نسبة قبول.
 </p>
-
 
 <ul class="features">
-
-<li>
-معاينة مباشرة
-</li>
-
-<li>
-3 تصميمات مختلفة
-</li>
-
-<li>
-حفظ البيانات على جهازك
-</li>
-
-<li>
-استرجاع البيانات بسهولة
-</li>
-
-<li>
-طباعة وحفظ PDF
-</li>
-
+<li>متوافق 100% مع أنظمة الفرز الآلي (ATS Friendly)</li>
+<li>نماذج مخصصة لكبار المدراء والتنفيذيين</li>
+<li>صياغة احترافية للمهام والإنجازات بأسلوب قياسي</li>
+<li>تسليم ملفات PDF عالية الدقة جاهزة للطباعة والترشيح</li>
+<li>تعديلات واستشارات توظيفية مجانية مع الباقات المتقدمة</li>
 </ul>
 
-
-<a
-href="#pricing"
-class="btn primary">
-
-💎 شوف باقات الـCV
-
-</a>
-
+<a href="#pricing" class="btn primary">💎 اختر باقة الـ CV المناسبة</a>
 </div>
 
-
-<div class="cv-app">
-
-
-<!-- FORM -->
-
-<div class="form">
-
-<h3>
-بيانات الـCV
-</h3>
-
-
-<div class="field">
-
-<label>
-الاسم بالكامل
-</label>
-
-<input
-id="name"
-placeholder="محمد رضا">
-
-</div>
-
-
-<div class="field">
-
-<label>
-التخصص / الوظيفة
-</label>
-
-<input
-id="job"
-placeholder="Web Developer">
-
-</div>
-
-
-<div class="field">
-
-<label>
-البريد الإلكتروني
-</label>
-
-<input
-id="email"
-placeholder="example@email.com">
-
-</div>
-
-
-<div class="field">
-
-<label>
-رقم الهاتف
-</label>
-
-<input
-id="phone"
-placeholder="01xxxxxxxxx">
-
-</div>
-
-
-<div class="field">
-
-<label>
-نبذة عني
-</label>
-
-<textarea
-id="about"
-placeholder="اكتب نبذة عنك..."></textarea>
-
-</div>
-
-
-<div class="field">
-
-<label>
-المهارات
-</label>
-
-<textarea
-id="skills"
-placeholder="HTML, CSS, JavaScript..."></textarea>
-
-</div>
-
-
-<div class="field">
-
-<label>
-التعليم
-</label>
-
-<textarea
-id="education"
-placeholder="اكتب التعليم والمؤهلات..."></textarea>
-
-</div>
-
-
-<div class="field">
-
-<label>
-الخبرات والمشاريع
-</label>
-
-<textarea
-id="experience"
-placeholder="اكتب خبراتك ومشاريعك..."></textarea>
-
-</div>
-
-
-<div class="form-buttons">
-
-<button onclick="saveCV()">
-💾 حفظ
-</button>
-
-<button onclick="loadCV()">
-📂 استرجاع
-</button>
-
-<button onclick="clearCV()">
-🗑️ مسح
-</button>
-
-</div>
-
-
-<button
-class="print"
-onclick="printCV()">
-
-📄 حفظ / طباعة PDF
-
-</button>
-
-
-<div class="templates">
-
-<button
-class="template active"
-onclick="template1(this)">
-
-كلاسيك
-
-</button>
-
-<button
-class="template"
-onclick="template2(this)">
-
-مودرن
-
-</button>
-
-<button
-class="template"
-onclick="template3(this)">
-
-Premium
-
-</button>
-
+<!-- MODERN INTERACTIVE DISPLAY MOCKUP -->
+<div class="cv-display-container">
+  <div class="cv-mockup-card" id="activeCvMockup">
+    <div class="cv-header-preview">
+      <div class="cv-avatar" id="mockAvatar">MR</div>
+      <div class="cv-header-text">
+        <h3 id="mockName">م. محمد رضا</h3>
+        <p id="mockRole">Senior Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="cv-body-skeleton">
+      <div class="skeleton-box">
+        <div class="skeleton-title">💼 الخبرات العملية (Professional Experience)</div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+      <div class="skeleton-box">
+        <div class="skeleton-title">🎓 التعليم والمؤهلات (Education & Certifications)</div>
+        <div class="skeleton-line"></div>
+      </div>
+      <div class="skeleton-box">
+        <div class="skeleton-title">🚀 المهارات والتقنيات (Core Competencies)</div>
+        <div class="skeleton-line"></div>
+      </div>
+    </div>
+
+    <div class="cv-metrics">
+      <div class="metric-item">
+        <strong>100%</strong>
+        <span>ATS Compatible</span>
+      </div>
+      <div class="metric-item">
+        <strong>+500</strong>
+        <span>عميل ناجح</span>
+      </div>
+      <div class="metric-item">
+        <strong>48h</strong>
+        <span>تسليم سريع</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cv-actions-bar">
+    <button class="cv-tab-btn active" onclick="changeCvPreview('executive', this)">Executive Style</button>
+    <button class="cv-tab-btn" onclick="changeCvPreview('tech', this)">Modern Tech</button>
+    <button class="cv-tab-btn" onclick="changeCvPreview('creative', this)">Creative Pro</button>
+  </div>
 </div>
 
 </div>
-
-
-<!-- PREVIEW -->
-
-<div class="preview-wrap">
-
-<div
-class="preview"
-id="preview">
-
-
-<div
-class="preview-name"
-id="pName">
-
-اسمك هنا
-
 </div>
-
-
-<div
-class="preview-job"
-id="pJob">
-
-تخصصك أو وظيفتك
-
 </div>
-
-
-<div
-class="contact"
-id="pContact">
-
-<span>
-البريد الإلكتروني
-</span>
-
-<span>
-•
-</span>
-
-<span>
-رقم الهاتف
-</span>
-
-</div>
-
-
-<div class="line"></div>
-
-
-<div class="cv-section">
-
-<h4>
-نبذة عني
-</h4>
-
-<p id="pAbout">
-اكتب نبذة عنك لتظهر هنا.
-</p>
-
-</div>
-
-
-<div class="cv-section">
-
-<h4>
-المهارات
-</h4>
-
-<p id="pSkills">
-اكتب مهاراتك لتظهر هنا.
-</p>
-
-</div>
-
-
-<div class="cv-section">
-
-<h4>
-التعليم والمؤهلات
-</h4>
-
-<p id="pEducation">
-اكتب التعليم والمؤهلات.
-</p>
-
-</div>
-
-
-<div class="cv-section">
-
-<h4>
-الخبرات والمشاريع
-</h4>
-
-<p id="pExperience">
-اكتب خبراتك ومشاريعك.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
-
 
 <!-- =====================================================
      CV PRICING
 ===================================================== -->
-
 <section id="pricing">
-
 <div class="container">
-
 <div class="heading">
-
-<small>
-CV PACKAGES
-</small>
-
-<h2>
-باقات الـCV 💎
-</h2>
-
-<p>
-اختار الباقة المناسبة ليك.
-</p>
-
+<small>CV PACKAGES</small>
+<h2>باقات الـCV 💎</h2>
+<p>اختار الباقة المناسبة ليك.</p>
 </div>
-
 
 <div class="pricing">
 
-
 <div class="plan">
-
-<h3>
-Starter
-</h3>
-
-<div class="plan-desc">
-بداية بسيطة واحترافية
-</div>
-
-<div class="plan-price">
-99 <span>جنيه</span>
-</div>
-
+<h3>Starter</h3>
+<div class="plan-desc">بداية بسيطة واحترافية</div>
+<div class="plan-price">99 <span>جنيه</span></div>
 <ul>
-
-<li>
-CV احترافي
-</li>
-
-<li>
-إدخال البيانات
-</li>
-
-<li>
-قالب أساسي
-</li>
-
-<li>
-PDF
-</li>
-
+<li>CV احترافي</li>
+<li>إدخال البيانات والتنسيق</li>
+<li>قالب أساسي ATS</li>
+<li>تسليم ملف PDF</li>
 </ul>
-
-
-<a
-class="plan-btn"
-target="_blank"
-href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20باقة%20Starter%20بسعر%2099%20جنيه.">
-
-اطلب الباقة
-
-</a>
-
+<a class="plan-btn" target="_blank" href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20باقة%20Starter%20بسعر%2099%20جنيه.">اطلب الباقة</a>
 </div>
-
 
 <div class="plan featured">
-
-<div class="popular">
-🔥 عرض الإطلاق
-</div>
-
-<h3>
-Pro
-</h3>
-
-<div class="plan-desc">
-الأكثر طلباً
-</div>
-
-<div class="plan-price">
-
-<span class="old-price">
-250
-</span>
-
-200
-
-<span>
-جنيه
-</span>
-
-</div>
-
+<div class="popular">🔥 عرض الإطلاق</div>
+<h3>Pro</h3>
+<div class="plan-desc">الأكثر طلباً للشركات المتوسطة والكبيرة</div>
+<div class="plan-price"><span class="old-price">250</span>200 <span>جنيه</span></div>
 <ul>
-
-<li>
-كل مميزات Starter
-</li>
-
-<li>
-قالب احترافي
-</li>
-
-<li>
-تعديلات إضافية
-</li>
-
-<li>
-تنسيق أفضل
-</li>
-
-<li>
-دعم سريع
-</li>
-
+<li>كل مميزات Starter</li>
+<li>قالب احترافي موجه للمؤسسات</li>
+<li>تعديلات إضافية غير محدودة</li>
+<li>إعادة صياغة المهارات والخبرات</li>
+<li>دعم ومتابعة سريعة</li>
 </ul>
-
-
-<a
-class="plan-btn"
-target="_blank"
-href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20عرض%20الإطلاق%20Pro%20بسعر%20200%20جنيه.">
-
-🎁 احجز العرض
-
-</a>
-
+<a class="plan-btn" target="_blank" href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20عرض%20الإطلاق%20Pro%20بسعر%20200%20جنيه.">🎁 احجز العرض</a>
 </div>
-
 
 <div class="plan">
-
-<h3>
-Premium
-</h3>
-
-<div class="plan-desc">
-أعلى مستوى
-</div>
-
-<div class="plan-price">
-350 <span>جنيه</span>
-</div>
-
+<h3>Premium Executive</h3>
+<div class="plan-desc">للمناصب القيادية والشركات العالمية</div>
+<div class="plan-price">350 <span>جنيه</span></div>
 <ul>
-
-<li>
-كل مميزات Pro
-</li>
-
-<li>
-تصميم Premium
-</li>
-
-<li>
-تعديلات مخصصة
-</li>
-
-<li>
-مراجعة CV
-</li>
-
-<li>
-أولوية التنفيذ
-</li>
-
+<li>كل مميزات Pro</li>
+<li>تصميم Premium مخصص بالكامل</li>
+<li>تنسيق ملف Word + PDF قابل للتعديل</li>
+<li>مراجعة شاملة للـ CV من متخصص</li>
+<li>أولوية تسليم خلال 24 ساعة</li>
 </ul>
-
-
-<a
-class="plan-btn"
-target="_blank"
-href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20باقة%20Premium%20بسعر%20350%20جنيه.">
-
-اطلب الباقة
-
-</a>
-
-</div>
-
-
+<a class="plan-btn" target="_blank" href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20باقة%20Premium%20بسعر%20350%20جنيه.">اطلب الباقة</a>
 </div>
 
 </div>
-
+</div>
 </section>
-
 
 <!-- =====================================================
      WEBSITE PACKAGES
 ===================================================== -->
-
 <section>
-
 <div class="container">
-
 <div class="heading">
-
-<small>
-WEBSITE PACKAGES
-</small>
-
-<h2>
-أسعار المواقع 🌐
-</h2>
-
-<p>
-أسعار بداية مناسبة للأفراد وأصحاب المشاريع.
-</p>
-
+<small>WEBSITE PACKAGES</small>
+<h2>أسعار المواقع 🌐</h2>
+<p>أسعار بداية مناسبة للأفراد وأصحاب المشاريع.</p>
 </div>
-
 
 <div class="web-packages">
 
+<div class="web-package">
+<div class="package-icon">🌐</div>
+<h3>Landing Page</h3>
+<p>صفحة واحدة احترافية لمنتج، خدمة أو مشروع مع زر تواصل مباشر.</p>
+<div class="package-price">450 <small>جنيه — يبدأ من</small></div>
+<br>
+<a class="btn primary" target="_blank" href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20Landing%20Page%20وأريد%20معرفة%20التفاصيل.">اطلب Landing Page</a>
+</div>
 
 <div class="web-package">
-
-<div class="package-icon">
-🌐
-</div>
-
-<h3>
-Landing Page
-</h3>
-
-<p>
-صفحة واحدة احترافية لمنتج،
-خدمة أو مشروع مع زر تواصل مباشر.
-</p>
-
-<div class="package-price">
-450
-<small>
-جنيه — يبدأ من
-</small>
-</div>
-
+<div class="package-icon">💼</div>
+<h3>Portfolio</h3>
+<p>موقع شخصي لعرض أعمالك ومهاراتك ومشاريعك وطرق التواصل.</p>
+<div class="package-price">500 <small>جنيه — يبدأ من</small></div>
 <br>
-
-<a
-class="btn primary"
-target="_blank"
-href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20Landing%20Page%20وأريد%20معرفة%20التفاصيل.">
-
-اطلب Landing Page
-
-</a>
-
+<a class="btn primary" target="_blank" href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20Portfolio%20وأريد%20معرفة%20التفاصيل.">اطلب Portfolio</a>
 </div>
-
 
 <div class="web-package">
-
-<div class="package-icon">
-💼
-</div>
-
-<h3>
-Portfolio
-</h3>
-
-<p>
-موقع شخصي لعرض أعمالك ومهاراتك
-ومشاريعك وطرق التواصل.
-</p>
-
-<div class="package-price">
-500
-<small>
-جنيه — يبدأ من
-</small>
-</div>
-
+<div class="package-icon">🖥️</div>
+<h3>موقع كامل</h3>
+<p>موقع للمشروع أو الشركة حسب الأقسام والخدمات المطلوبة.</p>
+<div class="package-price">550+ <small>جنيه — يبدأ من</small></div>
 <br>
-
-<a
-class="btn primary"
-target="_blank"
-href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20Portfolio%20وأريد%20معرفة%20التفاصيل.">
-
-اطلب Portfolio
-
-</a>
+<a class="btn primary" target="_blank" href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20عمل%20موقع%20كامل%20لمشروعي%20وأريد%20معرفة%20التفاصيل.">اطلب موقع كامل</a>
+</div>
 
 </div>
 
-
-<div class="web-package">
-
-<div class="package-icon">
-🖥️
-</div>
-
-<h3>
-موقع كامل
-</h3>
-
-<p>
-موقع للمشروع أو الشركة حسب
-الأقسام والخدمات المطلوبة.
-</p>
-
-<div class="package-price">
-550+
-<small>
-جنيه — يبدأ من
-</small>
-</div>
-
-<br>
-
-<a
-class="btn primary"
-target="_blank"
-href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20عمل%20موقع%20كامل%20لمشروعي%20وأريد%20معرفة%20التفاصيل.">
-
-اطلب موقع كامل
-
-</a>
-
-</div>
-
-
-</div>
-
-
-<div
-style="
-text-align:center;
-margin-top:18px;
-color:#7f899f;
-font-size:9px;
-">
-
+<div style="text-align:center; margin-top:18px; color:#7f899f; font-size:9px;">
 💡 السعر النهائي للموقع بيتحدد حسب عدد الصفحات والخصائص المطلوبة.
-
 </div>
 
 </div>
-
 </section>
-
 
 <!-- =====================================================
      WHY MIDO TECH
 ===================================================== -->
-
 <section>
-
 <div class="container">
-
 <div class="heading">
-
-<small>
-WHY MIDO TECH
-</small>
-
-<h2>
-ليه تختار MIDO TECH؟ ⭐
-</h2>
-
-<p>
-هدفنا إن مشروعك يظهر بشكل احترافي بدون تعقيد.
-</p>
-
+<small>WHY MIDO TECH</small>
+<h2>ليه تختار MIDO TECH؟ ⭐</h2>
+<p>هدفنا إن مشروعك يظهر بشكل احترافي بدون تعقيد.</p>
 </div>
-
 
 <div class="why">
 
+<div class="why-card">
+<div class="icon">📱</div>
+<h3>متوافق مع الموبايل</h3>
+<p>الموقع بيتصمم ليظهر بشكل مناسب على الموبايل والكمبيوتر.</p>
+</div>
 
 <div class="why-card">
-
-<div class="icon">
-📱
+<div class="icon">🎨</div>
+<h3>تصميم حسب مشروعك</h3>
+<p>مش بنستخدم شكل واحد لكل العملاء. التصميم بيتحدد حسب طبيعة المشروع.</p>
 </div>
-
-<h3>
-متوافق مع الموبايل
-</h3>
-
-<p>
-الموقع بيتصمم ليظهر بشكل مناسب
-على الموبايل والكمبيوتر.
-</p>
-
-</div>
-
 
 <div class="why-card">
-
-<div class="icon">
-🎨
+<div class="icon">⚡</div>
+<h3>سرعة وبساطة</h3>
+<p>واجهة واضحة وسهلة للزائر بدون تعقيد أو زحمة.</p>
 </div>
-
-<h3>
-تصميم حسب مشروعك
-</h3>
-
-<p>
-مش بنستخدم شكل واحد لكل العملاء.
-التصميم بيتحدد حسب طبيعة المشروع.
-</p>
-
-</div>
-
 
 <div class="why-card">
-
-<div class="icon">
-⚡
-</div>
-
-<h3>
-سرعة وبساطة
-</h3>
-
-<p>
-واجهة واضحة وسهلة للزائر بدون
-تعقيد أو زحمة.
-</p>
-
-</div>
-
-
-<div class="why-card">
-
-<div class="icon">
-💰
-</div>
-
-<h3>
-أسعار مناسبة
-</h3>
-
-<p>
-أسعار بداية مناسبة للأفراد
-وأصحاب المشاريع الصغيرة.
-</p>
-
-</div>
-
-
+<div class="icon">💰</div>
+<h3>أسعار مناسبة</h3>
+<p>أسعار بداية مناسبة للأفراد وأصحاب المشاريع الصغيرة.</p>
 </div>
 
 </div>
-
+</div>
 </section>
-
 
 <!-- =====================================================
      PAYMENT
 ===================================================== -->
-
 <section id="payment">
-
 <div class="container">
-
 <div class="heading">
-
-<small>
-PAYMENT
-</small>
-
-<h2>
-الدفع وطلب الخدمة 💳
-</h2>
-
-<p>
-الدفع عن طريق Vodafone Cash والتواصل عبر واتساب.
-</p>
-
+<small>PAYMENT</small>
+<h2>الدفع وطلب الخدمة 💳</h2>
+<p>الدفع عن طريق Vodafone Cash والتواصل عبر واتساب.</p>
 </div>
-
 
 <div class="payment">
 
-
 <div class="payment-card">
-
-<h3>
-📱 Vodafone Cash
-</h3>
-
-<p>
-بعد اختيار الخدمة، حوّل قيمة الطلب
-على رقم Vodafone Cash ثم أرسل إثبات الدفع
-على واتساب.
-</p>
-
+<h3>📱 Vodafone Cash</h3>
+<p>بعد اختيار الخدمة، حوّل قيمة الطلب على رقم Vodafone Cash ثم أرسل إثبات الدفع على واتساب.</p>
 
 <div class="cash-box">
-
-<div class="cash-label">
-رقم Vodafone Cash
-</div>
-
-
+<div class="cash-label">رقم Vodafone Cash</div>
 <div class="cash-number-row">
-
-<div
-class="cash-number"
-id="cashNumber">
-
-01016005679
-
+<div class="cash-number" id="cashNumber">01016005679</div>
+<button class="copy-cash-btn" id="copyCashBtn" onclick="copyCashNumber()">📋 نسخ الرقم</button>
+</div>
 </div>
 
-
-<button
-class="copy-cash-btn"
-id="copyCashBtn"
-onclick="copyCashNumber()">
-
-📋 نسخ الرقم
-
-</button>
-
+<a class="btn primary" target="_blank" href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20تم%20تحويل%20قيمة%20الخدمة%20وأريد%20إرسال%20إثبات%20الدفع.">📲 إرسال إثبات الدفع</a>
 </div>
-
-</div>
-
-
-<a
-class="btn primary"
-target="_blank"
-href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20تم%20تحويل%20قيمة%20الخدمة%20وأريد%20إرسال%20إثبات%20الدفع.">
-
-📲 إرسال إثبات الدفع
-
-</a>
-
-</div>
-
 
 <div class="payment-card">
-
-<h3>
-🚀 اطلب خدمتك
-</h3>
-
-<p>
-قول لنا أنت محتاج إيه،
-ابعت تفاصيل مشروعك،
-وهنحدد لك الخدمة والسعر المناسب.
-</p>
-
+<h3>🚀 اطلب خدمتك</h3>
+<p>قول لنا أنت محتاج إيه، ابعت تفاصيل مشروعك، وهنحدد لك الخدمة والسعر المناسب.</p>
 <br>
-
-<a
-class="btn primary"
-target="_blank"
-href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20طلب%20خدمة%20وأريد%20معرفة%20التفاصيل.">
-
-💬 اطلب الآن
-
-</a>
-
+<a class="btn primary" target="_blank" href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20طلب%20خدمة%20وأريد%20معرفة%20التفاصيل.">💬 اطلب الآن</a>
 </div>
 
-
 </div>
-
 
 <!-- CONTACT -->
-
-<div
-class="contact-box"
-id="contact">
-
-<h3>
-📲 جاهز تبدأ مشروعك؟
-</h3>
-
-<p>
-ابعت لنا فكرتك أو الخدمة اللي محتاجها،
-ونحدد لك التفاصيل والسعر المناسب.
-</p>
-
+<div class="contact-box" id="contact">
+<h3>📲 جاهز تبدأ مشروعك؟</h3>
+<p>ابعت لنا فكرتك أو الخدمة اللي محتاجها، ونحدد لك التفاصيل والسعر المناسب.</p>
 
 <div class="contact-actions">
-
-<a
-class="contact-action whatsapp"
-target="_blank"
-href="https://wa.me/20111011025">
-
-🟢 تواصل معنا على واتساب
-
-</a>
-
-
-<a
-class="contact-action payment-action"
-href="#payment">
-
-💰 طريقة الدفع
-
-</a>
-
+<a class="contact-action whatsapp" target="_blank" href="https://wa.me/20111011025">🟢 تواصل معنا على واتساب</a>
+<a class="contact-action payment-action" href="#payment">💰 طريقة الدفع</a>
+</div>
 </div>
 
 </div>
-
-</div>
-
 </section>
-
 
 <!-- =====================================================
      CTA
 ===================================================== -->
-
 <section>
-
 <div class="container">
-
 <div class="cta">
-
-<h2>
-جاهز تبدأ مشروعك؟ 🚀
-</h2>
-
-<p>
-فكرة بسيطة النهارده ممكن تبقى موقع احترافي بكرة.
-</p>
-
-<a
-class="btn primary"
-target="_blank"
-href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20الاستفسار%20عن%20خدماتكم%20وعمل%20موقع%20لمشروعي.">
-
-📲 ابدأ مشروعك الآن
-
-</a>
-
+<h2>جاهز تبدأ مشروعك؟ 🚀</h2>
+<p>فكرة بسيطة النهارده ممكن تبقى موقع احترافي بكرة.</p>
+<a class="btn primary" target="_blank" href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20الاستفسار%20عن%20خدماتكم%20وعمل%20موقع%20لمشروعي.">📲 ابدأ مشروعك الآن</a>
 </div>
-
 </div>
-
 </section>
 
 </main>
 
-
 <!-- =====================================================
      FOOTER
 ===================================================== -->
-
 <footer>
-
 <div class="container">
-
-<strong>
-MIDO TECH 🚀
-</strong>
-
+<strong>MIDO TECH 🚀</strong>
 <br><br>
-
 حلول رقمية تساعدك تبني حضورك على الإنترنت.
-
 <br><br>
-
 CV • Portfolio • Landing Pages • Websites
-
 <br><br>
-
 © 2026 MIDO TECH — جميع الحقوق محفوظة
-
 </div>
-
 </footer>
 
-
 <!-- FLOATING WHATSAPP -->
+<a class="floating-whatsapp" target="_blank" href="https://wa.me/20111011025" aria-label="WhatsApp">💬</a>
 
-<a
-class="floating-whatsapp"
-target="_blank"
-href="https://wa.me/20111011025"
-aria-label="WhatsApp">
-
-💬
-
-</a>
-
-
-<div
-class="toast"
-id="toast">
-</div>
-
+<div class="toast" id="toast"></div>
 
 <script>
 
 /* =========================================================
-   CV FIELDS
+   TOAST FUNCTION
 ========================================================= */
-
-const ids = [
-
-  "name",
-  "job",
-  "email",
-  "phone",
-  "about",
-  "skills",
-  "education",
-  "experience"
-
-];
-
-
-/* =========================================================
-   LIVE PREVIEW
-========================================================= */
-
-function updateCV(){
-
-  document.getElementById("pName").textContent =
-
-    document.getElementById("name").value ||
-
-    "اسمك هنا";
-
-
-  document.getElementById("pJob").textContent =
-
-    document.getElementById("job").value ||
-
-    "تخصصك أو وظيفتك";
-
-
-  const email =
-
-    document.getElementById("email").value ||
-
-    "البريد الإلكتروني";
-
-
-  const phone =
-
-    document.getElementById("phone").value ||
-
-    "رقم الهاتف";
-
-
-  document.getElementById("pContact").innerHTML =
-
-    `
-      <span>${email}</span>
-      <span>•</span>
-      <span>${phone}</span>
-    `;
-
-
-  document.getElementById("pAbout").textContent =
-
-    document.getElementById("about").value ||
-
-    "اكتب نبذة عنك لتظهر هنا.";
-
-
-  document.getElementById("pSkills").textContent =
-
-    document.getElementById("skills").value ||
-
-    "اكتب مهاراتك لتظهر هنا.";
-
-
-  document.getElementById("pEducation").textContent =
-
-    document.getElementById("education").value ||
-
-    "اكتب التعليم والمؤهلات.";
-
-
-  document.getElementById("pExperience").textContent =
-
-    document.getElementById("experience").value ||
-
-    "اكتب خبراتك ومشاريعك.";
-
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(() => {
+    t.classList.remove("show");
+  }, 3000);
 }
 
-
 /* =========================================================
-   LIVE INPUT
+   INTERACTIVE CV PREVIEW TAB SWITCHER
 ========================================================= */
+function changeCvPreview(type, btn) {
+  const nameEl = document.getElementById("mockName");
+  const roleEl = document.getElementById("mockRole");
+  const avatarEl = document.getElementById("mockAvatar");
+  
+  document.querySelectorAll('.cv-tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 
-ids.forEach(id => {
-
-  document
-    .getElementById(id)
-    .addEventListener(
-      "input",
-      updateCV
-    );
-
-});
-
-
-/* =========================================================
-   SAVE CV
-========================================================= */
-
-function saveCV(){
-
-  const data = {};
-
-  ids.forEach(id => {
-
-    data[id] =
-      document.getElementById(id).value;
-
-  });
-
-
-  localStorage.setItem(
-
-    "midoTechCV",
-
-    JSON.stringify(data)
-
-  );
-
-
-  toast(
-    "تم حفظ بيانات الـCV 💾"
-  );
-
-}
-
-
-/* =========================================================
-   LOAD CV
-========================================================= */
-
-function loadCV(){
-
-  const data =
-    localStorage.getItem(
-      "midoTechCV"
-    );
-
-
-  if(!data){
-
-    toast(
-      "مفيش بيانات محفوظة."
-    );
-
-    return;
-
+  if(type === 'executive') {
+    nameEl.textContent = "م. محمد رضا";
+    roleEl.textContent = "Executive Operations Director";
+    avatarEl.textContent = "MR";
+    avatarEl.style.background = "linear-gradient(135deg, #7c3aed, #a855f7)";
+    toast("عرض نموذج الإدارة والتنفيذيين 💼");
+  } else if(type === 'tech') {
+    nameEl.textContent = "أحمد محمود";
+    roleEl.textContent = "Full-Stack Software Engineer";
+    avatarEl.textContent = "AM";
+    avatarEl.style.background = "linear-gradient(135deg, #2563eb, #38bdf8)";
+    toast("عرض نموذج التقنية والبرمجة 💻");
+  } else if(type === 'creative') {
+    nameEl.textContent = "سارة علي";
+    roleEl.textContent = "Senior UI/UX & Product Designer";
+    avatarEl.textContent = "SA";
+    avatarEl.style.background = "linear-gradient(135deg, #ec4899, #f43f5e)";
+    toast("عرض نموذج التصميم والإبداع 🎨");
   }
-
-
-  const cv =
-    JSON.parse(data);
-
-
-  ids.forEach(id => {
-
-    document.getElementById(id).value =
-      cv[id] || "";
-
-  });
-
-
-  updateCV();
-
-
-  toast(
-    "تم استرجاع البيانات 📂"
-  );
-
 }
-
-
-/* =========================================================
-   CLEAR CV
-========================================================= */
-
-function clearCV(){
-
-  ids.forEach(id => {
-
-    document.getElementById(id).value = "";
-
-  });
-
-
-  localStorage.removeItem(
-    "midoTechCV"
-  );
-
-
-  updateCV();
-
-
-  toast(
-    "تم مسح البيانات 🗑️"
-  );
-
-}
-
-
-/* =========================================================
-   PRINT CV
-========================================================= */
-
-function printCV(){
-
-  updateCV();
-
-  window.print();
-
-}
-
-
-/* =========================================================
-   TEMPLATES
-========================================================= */
-
-function activate(button){
-
-  document
-    .querySelectorAll(".template")
-    .forEach(b => {
-
-      b.classList.remove(
-        "active"
-      );
-
-    });
-
-
-  button.classList.add(
-    "active"
-  );
-
-}
-
-
-function template1(button){
-
-  activate(button);
-
-
-  const p =
-    document.getElementById(
-      "preview"
-    );
-
-
-  p.style.borderTop =
-    "none";
-
-
-  p.style.background =
-    "#ffffff";
-
-
-  p.style.boxShadow =
-    "0 25px 60px rgba(0,0,0,.45)";
-
-
-  toast(
-    "تم اختيار القالب الكلاسيك ✨"
-  );
-
-}
-
-
-function template2(button){
-
-  activate(button);
-
-
-  const p =
-    document.getElementById(
-      "preview"
-    );
-
-
-  p.style.borderTop =
-    "8px solid #7c3aed";
-
-
-  p.style.background =
-    "#fafafa";
-
-
-  p.style.boxShadow =
-    "0 25px 60px rgba(124,58,237,.18)";
-
-
-  toast(
-    "تم اختيار القالب المودرن ✨"
-  );
-
-}
-
-
-function template3(button){
-
-  activate(button);
-
-
-  const p =
-    document.getElementById(
-      "preview"
-    );
-
-
-  p.style.borderTop =
-    "15px solid #111827";
-
-
-  p.style.background =
-    "#ffffff";
-
-
-  p.style.boxShadow =
-    "0 25px 60px rgba(0,0,0,.55)";
-
-
-  toast(
-    "تم اختيار قالب Premium 💎"
-  );
-
-}
-
 
 /* =========================================================
    COPY VODAFONE CASH
 ========================================================= */
+function copyCashNumber(){
+  const num = document.getElementById("cashNumber").textContent;
+  navigator.clipboard.writeText(num);
+  
+  const btn = document.getElementById("copyCashBtn");
+  btn.textContent = "✓ تم النسخ";
+  btn.classList.add("copied");
+  
+  toast("تم نسخ رقم فودافون كاش 📋");
+  
+  setTimeout(() => {
+    btn.textContent = "📋 نسخ الرقم";
+    btn.classList.remove("copied");
+  }, 2500);
+}
 
-function copyCash
+</script>
+</body>
+</html>
