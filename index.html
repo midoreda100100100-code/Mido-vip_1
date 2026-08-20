@@ -9,13 +9,10 @@
 <meta name="description" content="MIDO TECH - CV احترافي، Portfolio، Landing Pages ومواقع كاملة بأسعار مناسبة.">
 
 <style>
-/* =========================
-   ROOT
-========================= */
 
 :root{
   --bg:#050816;
-  --bg2:#080d1c;
+  --bg2:#090d1d;
   --card:#0d1428;
   --card2:#111a32;
 
@@ -47,10 +44,12 @@ html{
 body{
   font-family:Tahoma,Arial,sans-serif;
   color:var(--text);
+
   background:
-    radial-gradient(circle at 10% 5%,rgba(124,58,237,.18),transparent 28%),
-    radial-gradient(circle at 90% 20%,rgba(168,85,247,.10),transparent 25%),
+    radial-gradient(circle at 10% 5%,rgba(124,58,237,.20),transparent 28%),
+    radial-gradient(circle at 90% 20%,rgba(168,85,247,.12),transparent 25%),
     linear-gradient(180deg,var(--bg),var(--bg2));
+
   min-height:100vh;
   overflow-x:hidden;
 }
@@ -60,10 +59,12 @@ body::before{
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:.25;
+  opacity:.18;
+
   background-image:
     linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
     linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+
   background-size:45px 45px;
   mask-image:linear-gradient(to bottom,#000,transparent);
 }
@@ -73,7 +74,9 @@ a{
   color:inherit;
 }
 
-button,input,textarea{
+button,
+input,
+textarea{
   font-family:inherit;
 }
 
@@ -86,49 +89,58 @@ section{
   padding:90px 0;
 }
 
+
 /* =========================
-   HEADER
+HEADER
 ========================= */
 
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(5,8,22,.78);
+
+  background:rgba(5,8,22,.80);
   backdrop-filter:blur(18px);
+
   border-bottom:1px solid var(--border);
 }
 
 .nav{
   min-height:76px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   gap:20px;
 }
-
-/* LOGO */
 
 .logo{
   display:flex;
   align-items:center;
   gap:10px;
+
   font-weight:900;
   font-size:20px;
-  letter-spacing:.5px;
 }
 
 .logo-mark{
-  width:40px;
-  height:40px;
+  width:42px;
+  height:42px;
+
   display:grid;
   place-items:center;
-  border-radius:12px;
-  background:linear-gradient(135deg,var(--purple),var(--purple2));
-  box-shadow:0 0 30px rgba(124,58,237,.35);
+
+  border-radius:13px;
+
+  background:
+    linear-gradient(135deg,var(--purple),var(--purple2));
+
+  box-shadow:
+    0 0 30px rgba(124,58,237,.35);
+
   font-weight:900;
-  font-size:19px;
-  transform:skew(-5deg);
+  font-size:20px;
 }
 
 .logo-text span{
@@ -137,16 +149,21 @@ header{
 
 .logo-text small{
   display:block;
+
   color:#79849c;
+
   font-size:7px;
   letter-spacing:2px;
+
   margin-top:2px;
 }
 
 .nav-links{
   display:flex;
   gap:25px;
+
   list-style:none;
+
   color:#aeb8ce;
   font-size:12px;
 }
@@ -160,16 +177,23 @@ header{
 }
 
 .nav-btn{
-  padding:11px 17px;
-  border-radius:12px;
-  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  padding:12px 18px;
+
+  border-radius:13px;
+
+  background:
+    linear-gradient(135deg,var(--purple),var(--purple2));
+
   font-size:11px;
   font-weight:900;
-  box-shadow:0 10px 30px rgba(124,58,237,.22);
+
+  box-shadow:
+    0 10px 30px rgba(124,58,237,.22);
 }
 
+
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero{
@@ -179,36 +203,58 @@ header{
 
 .badge{
   display:inline-flex;
+
   padding:9px 16px;
+
   border-radius:50px;
+
   color:#d9b7ff;
+
   background:rgba(124,58,237,.08);
+
   border:1px solid rgba(168,85,247,.25);
+
   font-size:10px;
   font-weight:bold;
-  box-shadow:0 0 40px rgba(124,58,237,.1);
 }
 
 .hero h1{
   max-width:900px;
+
   margin:25px auto 15px;
+
   font-size:clamp(39px,7vw,72px);
+
   line-height:1.1;
+
   font-weight:900;
+
   letter-spacing:-2px;
 }
 
 .gradient{
-  background:linear-gradient(100deg,#fff,#d8b4fe,#a855f7,#7c3aed);
+  background:
+    linear-gradient(
+      100deg,
+      #fff,
+      #d8b4fe,
+      #a855f7,
+      #7c3aed
+    );
+
   -webkit-background-clip:text;
   color:transparent;
 }
 
 .hero p{
   max-width:720px;
+
   margin:20px auto;
+
   color:var(--muted);
+
   font-size:14px;
+
   line-height:2;
 }
 
@@ -216,20 +262,28 @@ header{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
+
   gap:12px;
+
   margin-top:28px;
 }
 
 .btn{
   min-height:48px;
+
   padding:0 23px;
+
   display:inline-flex;
   align-items:center;
   justify-content:center;
+
   gap:7px;
+
   border-radius:13px;
+
   font-size:12px;
   font-weight:900;
+
   transition:.25s;
 }
 
@@ -239,27 +293,42 @@ header{
 
 .primary{
   color:#fff;
-  background:linear-gradient(135deg,var(--purple),var(--purple2));
-  box-shadow:0 15px 40px rgba(124,58,237,.25);
+
+  background:
+    linear-gradient(135deg,var(--purple),var(--purple2));
+
+  box-shadow:
+    0 15px 40px rgba(124,58,237,.25);
 }
 
 .secondary{
   background:rgba(255,255,255,.035);
+
   border:1px solid var(--border);
 }
 
+
 /* =========================
-   IMPORTANT MARKETING
+MARKETING
 ========================= */
 
 .marketing{
   margin-top:25px;
+
   padding:38px;
+
   border-radius:28px;
+
   background:
-    radial-gradient(circle at 90% 10%,rgba(168,85,247,.15),transparent 35%),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(168,85,247,.15),
+      transparent 35%
+    ),
     linear-gradient(145deg,#111a32,#090f20);
+
   border:1px solid var(--border);
+
   box-shadow:var(--shadow);
 }
 
@@ -270,34 +339,45 @@ header{
 
 .marketing-intro{
   color:#c8d0e2;
-  line-height:1.9;
+
+  line-height:2;
+
   font-size:13px;
 }
 
 .offer{
   margin-top:25px;
+
   padding:20px;
+
   border-radius:18px;
+
   background:rgba(124,58,237,.08);
+
   border:1px solid rgba(168,85,247,.2);
 }
 
 .offer-title{
   color:#f4c76d;
+
   font-size:11px;
   font-weight:900;
 }
 
 .offer-price{
   margin-top:8px;
-  font-size:28px;
+
+  font-size:32px;
   font-weight:900;
 }
 
 .old-price{
   color:#727d94;
+
   font-size:14px;
+
   text-decoration:line-through;
+
   margin-left:7px;
 }
 
@@ -305,100 +385,150 @@ header{
   color:#d8b1ff;
 }
 
+
 /* =========================
-   SERVICES
+HEADINGS
 ========================= */
 
 .heading{
   text-align:center;
+
   margin-bottom:45px;
 }
 
 .heading small{
   color:var(--purple3);
+
   font-size:9px;
+
   letter-spacing:2px;
+
   font-weight:900;
 }
 
 .heading h2{
   margin:11px 0;
+
   font-size:clamp(28px,5vw,40px);
 }
 
 .heading p{
   color:var(--muted);
+
   font-size:12px;
 }
 
+
+/* =========================
+SERVICES
+========================= */
+
 .services{
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
+
   gap:16px;
 }
 
 .card{
   padding:27px 23px;
+
   border-radius:22px;
-  background:linear-gradient(145deg,rgba(17,27,50,.95),rgba(8,14,29,.95));
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17,27,50,.95),
+      rgba(8,14,29,.95)
+    );
+
   border:1px solid var(--border);
+
   transition:.3s;
 }
 
 .card:hover{
   transform:translateY(-7px);
-  border-color:rgba(168,85,247,.35);
+
+  border-color:
+    rgba(168,85,247,.35);
+
   box-shadow:var(--shadow);
 }
 
 .icon{
   width:52px;
   height:52px;
+
   display:grid;
   place-items:center;
+
   border-radius:15px;
+
   background:rgba(124,58,237,.12);
+
   border:1px solid rgba(168,85,247,.15);
+
   font-size:23px;
+
   margin-bottom:18px;
 }
 
 .card h3{
   font-size:16px;
+
   margin-bottom:10px;
 }
 
 .card p{
   color:var(--muted);
+
   font-size:11px;
+
   line-height:1.9;
+
   min-height:65px;
 }
 
 .price{
   color:#d5aeff;
+
   margin-top:17px;
+
   font-size:12px;
+
   font-weight:900;
 }
 
+
 /* =========================
-   CV MAKER
+CV MAKER
 ========================= */
 
 .cv-box{
   padding:30px;
+
   border-radius:30px;
+
   background:
-    radial-gradient(circle at 85% 10%,rgba(124,58,237,.12),transparent 30%),
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(124,58,237,.12),
+      transparent 30%
+    ),
     linear-gradient(145deg,#101a33,#080e1f);
+
   border:1px solid var(--border);
+
   box-shadow:var(--shadow);
 }
 
 .cv-layout{
   display:grid;
+
   grid-template-columns:.75fr 1.25fr;
+
   gap:25px;
 }
 
@@ -408,50 +538,72 @@ header{
 
 .label{
   color:var(--purple3);
+
   font-size:9px;
+
   font-weight:900;
+
   letter-spacing:2px;
 }
 
 .cv-info h2{
   font-size:34px;
+
   line-height:1.35;
+
   margin:12px 0;
 }
 
 .cv-info p{
   color:var(--muted);
+
   font-size:12px;
+
   line-height:1.9;
 }
 
 .features{
   list-style:none;
+
   margin:22px 0;
 }
 
 .features li{
   color:#d5dcec;
+
   font-size:11px;
+
   margin:12px 0;
 }
 
 .features li::before{
   content:"✓";
+
   color:#c084fc;
+
   margin-left:8px;
+
   font-weight:900;
 }
 
-/* CV APP */
+
+/* =========================
+CV APP
+========================= */
 
 .cv-app{
   display:grid;
+
   grid-template-columns:.9fr 1.1fr;
+
   gap:12px;
+
   padding:12px;
-  border-radius:20px;
+
+  border-radius:22px;
+
   background:#070c1a;
+
   border:1px solid var(--border);
 }
 
@@ -461,6 +613,7 @@ header{
 
 .form h3{
   font-size:13px;
+
   margin-bottom:15px;
 }
 
@@ -470,173 +623,310 @@ header{
 
 .field label{
   display:block;
+
   color:#bac4d9;
+
   font-size:9px;
+
   margin-bottom:5px;
 }
 
 .field input,
 .field textarea{
   width:100%;
-  background:#0b1222;
-  color:white;
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:9px;
-  outline:none;
-  padding:9px;
-  font-size:10px;
-}
 
-.field textarea{
-  min-height:55px;
-  resize:vertical;
+  background:#0b1222;
+
+  color:white;
+
+  border:1px solid rgba(255,255,255,.07);
+
+  border-radius:9px;
+
+  outline:none;
+
+  padding:10px;
+
+  font-size:10px;
+
+  transition:.2s;
 }
 
 .field input:focus,
 .field textarea:focus{
-  border-color:rgba(168,85,247,.5);
+  border-color:rgba(168,85,247,.6);
+
+  box-shadow:
+    0 0 0 3px rgba(124,58,237,.08);
+}
+
+.field textarea{
+  min-height:55px;
+
+  resize:vertical;
 }
 
 .form-buttons{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:5px;
+
   margin-top:10px;
 }
 
 .form-buttons button,
 .template{
-  min-height:32px;
+  min-height:34px;
+
   background:#0d162a;
+
   color:#cbd3e3;
+
   border:1px solid var(--border);
+
   border-radius:8px;
+
   font-size:8px;
+
+  cursor:pointer;
 }
 
 .print{
   width:100%;
-  margin-top:6px;
-  min-height:40px;
+
+  margin-top:7px;
+
+  min-height:42px;
+
   border:0;
+
   border-radius:10px;
+
   color:#fff;
-  background:linear-gradient(135deg,var(--purple),var(--purple2));
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--purple),
+      var(--purple2)
+    );
+
   font-size:10px;
+
   font-weight:900;
+
+  cursor:pointer;
 }
 
 .templates{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:5px;
+
   margin-top:7px;
 }
 
 .template.active{
   border-color:var(--purple2);
+
   color:white;
+
   background:rgba(124,58,237,.12);
 }
 
-/* PREVIEW */
+
+/* =========================
+NEW CLEAN CV PREVIEW
+========================= */
 
 .preview-wrap{
-  padding:8px;
+  padding:16px;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
-  background:#090f1e;
-  border-radius:14px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(124,58,237,.12),
+      transparent 65%
+    );
+
+  border-radius:18px;
+
+  border:1px solid rgba(255,255,255,.04);
+}
+
+.preview-container{
+  width:100%;
+}
+
+.preview-title{
+  text-align:center;
+
+  color:#8e99b2;
+
+  font-size:8px;
+
+  letter-spacing:1px;
+
+  margin-bottom:8px;
 }
 
 .preview{
   width:100%;
-  max-width:380px;
-  min-height:500px;
-  padding:28px;
-  background:white;
+
+  max-width:400px;
+
+  margin:auto;
+
+  min-height:470px;
+
+  padding:30px;
+
+  background:#ffffff;
+
   color:#171717;
-  border-radius:6px;
-  box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+  border-radius:12px;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.35);
+
+  border:1px solid #eee;
+
+  overflow:hidden;
+}
+
+.preview-top{
+  border-bottom:3px solid #7c3aed;
+
+  padding-bottom:14px;
+
+  margin-bottom:18px;
 }
 
 .preview-name{
-  font-size:25px;
+  font-size:27px;
+
   font-weight:900;
+
+  color:#161616;
 }
 
 .preview-job{
   color:#7c3aed;
+
   font-size:12px;
+
   font-weight:900;
-  margin:5px 0 13px;
+
+  margin-top:5px;
 }
 
 .contact{
   display:flex;
+
   flex-wrap:wrap;
-  gap:6px;
-  color:#666;
+
+  gap:7px;
+
+  color:#777;
+
   font-size:8px;
-  margin-bottom:13px;
+
+  margin-top:10px;
 }
 
-.line{
-  height:2px;
-  background:#7c3aed;
-  margin-bottom:15px;
+.contact span{
+  max-width:100%;
+
+  word-break:break-word;
 }
 
 .cv-section{
-  margin-bottom:13px;
+  margin-bottom:17px;
 }
 
 .cv-section h4{
   color:#7c3aed;
-  font-size:10px;
-  margin-bottom:4px;
+
+  font-size:11px;
+
+  margin-bottom:5px;
+
+  font-weight:900;
 }
 
 .cv-section p{
   color:#555;
-  font-size:8px;
-  line-height:1.7;
+
+  font-size:9px;
+
+  line-height:1.8;
+
   white-space:pre-line;
+
+  word-break:break-word;
 }
 
+
 /* =========================
-   PRICING
+PRICING
 ========================= */
 
 .pricing{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:17px;
 }
 
 .plan{
   position:relative;
+
   padding:30px 24px;
+
   border-radius:23px;
-  background:linear-gradient(145deg,#111a31,#090f20);
+
+  background:
+    linear-gradient(145deg,#111a31,#090f20);
+
   border:1px solid var(--border);
 }
 
 .plan.featured{
   border-color:rgba(168,85,247,.6);
-  box-shadow:0 20px 60px rgba(124,58,237,.13);
+
+  box-shadow:
+    0 20px 60px rgba(124,58,237,.13);
+
   transform:translateY(-8px);
 }
 
 .popular{
   position:absolute;
+
   top:-12px;
+
   right:20px;
+
   padding:6px 11px;
+
   border-radius:50px;
-  background:linear-gradient(135deg,var(--purple),var(--purple2));
+
+  background:
+    linear-gradient(135deg,var(--purple),var(--purple2));
+
   font-size:8px;
+
   font-weight:900;
 }
 
@@ -646,72 +936,101 @@ header{
 
 .plan-desc{
   color:var(--muted);
+
   font-size:10px;
+
   margin-top:6px;
 }
 
 .plan-price{
   font-size:38px;
+
   font-weight:900;
+
   margin:17px 0;
 }
 
 .plan-price span{
   color:var(--muted);
+
   font-size:10px;
+
   font-weight:normal;
 }
 
 .plan ul{
   list-style:none;
+
   color:#adb7cc;
+
   font-size:10px;
+
   line-height:2.4;
+
   margin-bottom:20px;
 }
 
 .plan li::before{
   content:"✓";
+
   color:#c084fc;
+
   margin-left:7px;
 }
 
 .plan-btn{
   min-height:42px;
+
   display:grid;
+
   place-items:center;
+
   border-radius:10px;
+
   background:rgba(124,58,237,.1);
+
   border:1px solid rgba(124,58,237,.25);
+
   font-size:10px;
+
   font-weight:900;
 }
 
 .featured .plan-btn{
   color:#fff;
-  background:linear-gradient(135deg,var(--purple),var(--purple2));
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--purple),
+      var(--purple2)
+    );
+
   border:0;
 }
 
+
 /* =========================
-   OTHER SERVICES
+OTHER SERVICES
 ========================= */
 
 .other-services{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:17px;
 }
 
 .big-card{
   padding:28px;
-  border-radius:23px;
-  background:linear-gradient(145deg,#10192f,#090f20);
-  border:1px solid var(--border);
-}
 
-.big-card .icon{
-  margin-bottom:15px;
+  border-radius:23px;
+
+  background:
+    linear-gradient(145deg,#10192f,#090f20);
+
+  border:1px solid var(--border);
 }
 
 .big-card h3{
@@ -720,147 +1039,214 @@ header{
 
 .big-card p{
   color:var(--muted);
+
   font-size:11px;
+
   line-height:1.9;
+
   margin:10px 0 17px;
 }
 
 .big-price{
   color:#d5aeff;
+
   font-weight:900;
+
   font-size:13px;
 }
 
+
 /* =========================
-   WHY
+WHY
 ========================= */
 
 .why{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:17px;
 }
 
 .why-card{
   padding:27px;
+
   border-radius:20px;
+
   background:rgba(13,20,39,.85);
+
   border:1px solid var(--border);
 }
 
 .why-card h3{
   font-size:16px;
+
   margin:12px 0 7px;
 }
 
 .why-card p{
   color:var(--muted);
+
   font-size:11px;
+
   line-height:1.9;
 }
 
+
 /* =========================
-   PAYMENT
+PAYMENT
 ========================= */
 
 .payment{
   display:grid;
+
   grid-template-columns:1fr 1fr;
+
   gap:17px;
 }
 
 .payment-card{
   padding:28px;
+
   border-radius:22px;
-  background:linear-gradient(145deg,#10192f,#090f20);
+
+  background:
+    linear-gradient(145deg,#10192f,#090f20);
+
   border:1px solid var(--border);
 }
 
 .payment-card h3{
   font-size:18px;
+
   margin-bottom:10px;
 }
 
 .payment-card p{
   color:var(--muted);
+
   font-size:11px;
+
   line-height:1.9;
 }
 
 .cash{
   margin:18px 0;
-  padding:14px;
+
+  padding:15px;
+
   border-radius:11px;
+
   background:#070c18;
+
   border:1px dashed rgba(168,85,247,.3);
+
   text-align:center;
+
   direction:ltr;
+
   color:#d5b0ff;
-  font-size:19px;
+
+  font-size:20px;
+
   font-weight:900;
+
+  letter-spacing:1px;
 }
 
+
 /* =========================
-   CTA
+CTA
 ========================= */
 
 .cta{
   padding:75px 25px;
+
   border-radius:30px;
+
   text-align:center;
+
   background:
-    radial-gradient(circle at center,rgba(124,58,237,.18),transparent 60%),
+    radial-gradient(
+      circle at center,
+      rgba(124,58,237,.18),
+      transparent 60%
+    ),
     #0d1427;
+
   border:1px solid var(--border);
+
   box-shadow:var(--shadow);
 }
 
 .cta h2{
   font-size:clamp(28px,5vw,42px);
+
   margin-bottom:12px;
 }
 
 .cta p{
   color:var(--muted);
+
   font-size:12px;
+
   margin-bottom:25px;
 }
 
+
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer{
   margin-top:80px;
+
   padding:40px 0;
+
   border-top:1px solid var(--border);
+
   text-align:center;
+
   color:var(--muted);
+
   font-size:10px;
 }
 
 footer strong{
   color:white;
+
   font-size:16px;
 }
 
+
 /* =========================
-   TOAST
+TOAST
 ========================= */
 
 .toast{
   position:fixed;
+
   left:50%;
   bottom:22px;
+
   transform:translate(-50%,100px);
+
   z-index:99999;
+
   padding:12px 18px;
+
   border-radius:12px;
+
   background:#121c33;
+
   border:1px solid rgba(168,85,247,.25);
+
   color:white;
+
   font-size:10px;
+
   box-shadow:var(--shadow);
+
   transition:.3s;
 }
 
@@ -868,8 +1254,9 @@ footer strong{
   transform:translate(-50%,0);
 }
 
+
 /* =========================
-   MOBILE
+MOBILE
 ========================= */
 
 @media(max-width:950px){
@@ -910,6 +1297,7 @@ footer strong{
     grid-template-columns:1fr;
   }
 }
+
 
 @media(max-width:600px){
 
@@ -954,21 +1342,62 @@ footer strong{
   }
 
   .cv-box{
-    padding:16px;
+    padding:14px;
   }
 
   .cv-info h2{
     font-size:28px;
   }
 
+  .cv-app{
+    padding:9px;
+  }
+
+  .form{
+    padding:7px;
+  }
+
+  /*
+    المعاينة أصبحت أسفل الفورم
+    وبشكل أصغر وأنظف على الموبايل
+  */
+
+  .preview-wrap{
+    padding:10px;
+  }
+
   .preview{
-    min-height:450px;
-    padding:22px;
+    min-height:0;
+
+    padding:23px;
+
+    border-radius:10px;
+  }
+
+  .preview-name{
+    font-size:23px;
+  }
+
+  .preview-job{
+    font-size:11px;
+  }
+
+  .cv-section{
+    margin-bottom:13px;
+  }
+
+  .cv-section p{
+    font-size:8px;
+  }
+
+  .cash{
+    font-size:18px;
   }
 }
 
+
 /* =========================
-   PRINT PDF
+PRINT PDF
 ========================= */
 
 @media print{
@@ -984,11 +1413,15 @@ footer strong{
 
   .preview{
     position:absolute;
+
     top:0;
     left:0;
+
     width:100%;
     max-width:none;
+
     box-shadow:none;
+
     border-radius:0;
   }
 
@@ -997,12 +1430,17 @@ footer strong{
     margin:0;
   }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =========================
+HEADER
+========================= -->
 
 <header>
 
@@ -1017,27 +1455,50 @@ M
 </div>
 
 <div class="logo-text">
+
 MIDO <span>TECH</span>
-<small>DIGITAL SOLUTIONS</small>
+
+<small>
+DIGITAL SOLUTIONS
+</small>
+
 </div>
 
 </a>
 
+
 <ul class="nav-links">
 
-<li><a href="#home">الرئيسية</a></li>
-<li><a href="#services">الخدمات</a></li>
-<li><a href="#cv">CV Maker</a></li>
-<li><a href="#pricing">الباقات</a></li>
-<li><a href="#payment">الدفع</a></li>
+<li>
+<a href="#home">الرئيسية</a>
+</li>
+
+<li>
+<a href="#services">الخدمات</a>
+</li>
+
+<li>
+<a href="#cv">CV Maker</a>
+</li>
+
+<li>
+<a href="#pricing">الباقات</a>
+</li>
+
+<li>
+<a href="#payment">الدفع</a>
+</li>
 
 </ul>
 
+
 <a
-href="https://wa.me/201112110250"
+href="https://wa.me/20111011025"
 target="_blank"
 class="nav-btn">
+
 تواصل معنا
+
 </a>
 
 </nav>
@@ -1047,7 +1508,10 @@ class="nav-btn">
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =========================
+HERO
+========================= -->
 
 <main id="home">
 
@@ -1055,25 +1519,35 @@ class="nav-btn">
 
 <div class="container">
 
+
 <div class="badge">
+
 🚀 MIDO TECH — BUILD YOUR DIGITAL FUTURE
+
 </div>
+
 
 <h1>
 
 حوّل فكرتك إلى
+
 <span class="gradient">
 حضور رقمي احترافي
 </span>
 
 </h1>
 
+
 <p>
 
 محتاج CV احترافي؟
+
 <br>
+
 عايز Portfolio يعرض شغلك؟
+
 <br>
+
 أو محتاج موقع لمشروعك؟ 💻
 
 <br><br>
@@ -1083,20 +1557,33 @@ class="nav-btn">
 
 </p>
 
+
 <div class="hero-buttons">
 
-<a href="#services" class="btn primary">
+<a
+href="#services"
+class="btn primary">
+
 🚀 شوف خدماتنا
+
 </a>
 
-<a href="#cv" class="btn secondary">
+
+<a
+href="#cv"
+class="btn secondary">
+
 📄 اصنع CV الآن
+
 </a>
 
 </div>
 
 
-<!-- IMPORTANT MARKETING -->
+
+<!-- =========================
+MARKETING
+========================= -->
 
 <div class="marketing">
 
@@ -1104,23 +1591,34 @@ class="nav-btn">
 Mido Tech — حوّل فكرتك لموقع 🚀
 </h2>
 
+
 <p class="marketing-intro">
 
 📄 CV احترافي
+
 &nbsp;&nbsp; • &nbsp;&nbsp;
+
 💼 Portfolio
+
 &nbsp;&nbsp; • &nbsp;&nbsp;
+
 🌐 Landing Pages
+
 &nbsp;&nbsp; • &nbsp;&nbsp;
+
 🖥️ مواقع كاملة
 
 </p>
 
+
 <div class="offer">
 
 <div class="offer-title">
+
 🎁 عرض الإطلاق
+
 </div>
+
 
 <div class="offer-price">
 
@@ -1132,17 +1630,24 @@ Mido Tech — حوّل فكرتك لموقع 🚀
 
 </div>
 
+
 <p style="color:#929db5;font-size:10px;margin-top:6px;">
+
 باقة Pro لفترة الإطلاق
+
 </p>
+
 
 <br>
 
+
 <a
-href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20الاستفادة%20من%20عرض%20الإطلاق%20Pro%20بسعر%20200%20جنيه."
+href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20الاستفادة%20من%20عرض%20الإطلاق%20Pro%20بسعر%20200%20جنيه."
 target="_blank"
 class="btn primary">
+
 🎁 استفيد من العرض
+
 </a>
 
 </div>
@@ -1154,15 +1659,21 @@ class="btn primary">
 </section>
 
 
-<!-- ================= SERVICES ================= -->
+
+<!-- =========================
+SERVICES
+========================= -->
 
 <section id="services">
 
 <div class="container">
 
+
 <div class="heading">
 
-<small>OUR SERVICES</small>
+<small>
+OUR SERVICES
+</small>
 
 <h2>
 الخدمات اللي بنقدمها 🚀
@@ -1175,14 +1686,19 @@ class="btn primary">
 </div>
 
 
+
 <div class="services">
 
 
 <div class="card">
 
-<div class="icon">📄</div>
+<div class="icon">
+📄
+</div>
 
-<h3>CV احترافي</h3>
+<h3>
+CV احترافي
+</h3>
 
 <p>
 CV احترافي مناسب للتقديم على الوظائف
@@ -1196,11 +1712,16 @@ CV احترافي مناسب للتقديم على الوظائف
 </div>
 
 
+
 <div class="card">
 
-<div class="icon">💼</div>
+<div class="icon">
+💼
+</div>
 
-<h3>Portfolio</h3>
+<h3>
+Portfolio
+</h3>
 
 <p>
 موقع شخصي لعرض أعمالك ومهاراتك
@@ -1214,11 +1735,16 @@ CV احترافي مناسب للتقديم على الوظائف
 </div>
 
 
+
 <div class="card">
 
-<div class="icon">🌐</div>
+<div class="icon">
+🌐
+</div>
 
-<h3>Landing Page</h3>
+<h3>
+Landing Page
+</h3>
 
 <p>
 صفحة احترافية لمنتجك أو خدمتك
@@ -1232,11 +1758,16 @@ CV احترافي مناسب للتقديم على الوظائف
 </div>
 
 
+
 <div class="card">
 
-<div class="icon">🖥️</div>
+<div class="icon">
+🖥️
+</div>
 
-<h3>مواقع كاملة</h3>
+<h3>
+مواقع كاملة
+</h3>
 
 <p>
 موقع كامل مصمم حسب فكرة المشروع
@@ -1257,15 +1788,21 @@ CV احترافي مناسب للتقديم على الوظائف
 </section>
 
 
-<!-- ================= CV MAKER ================= -->
+
+<!-- =========================
+CV MAKER
+========================= -->
 
 <section id="cv">
 
 <div class="container">
 
+
 <div class="heading">
 
-<small>SMART CV MAKER</small>
+<small>
+SMART CV MAKER
+</small>
 
 <h2>
 اصنع CV احترافي بنفسك ✨
@@ -1278,10 +1815,14 @@ CV احترافي مناسب للتقديم على الوظائف
 </div>
 
 
+
 <div class="cv-box">
+
 
 <div class="cv-layout">
 
+
+<!-- INFO -->
 
 <div class="cv-info">
 
@@ -1298,24 +1839,48 @@ CV MAKER
 وبعدها اطبع الـCV أو احفظه PDF.
 </p>
 
+
 <ul class="features">
 
-<li>معاينة مباشرة</li>
-<li>3 قوالب</li>
-<li>حفظ البيانات</li>
-<li>استرجاع البيانات</li>
-<li>طباعة وحفظ PDF</li>
+<li>
+معاينة مباشرة
+</li>
+
+<li>
+3 قوالب
+</li>
+
+<li>
+حفظ البيانات
+</li>
+
+<li>
+استرجاع البيانات
+</li>
+
+<li>
+طباعة وحفظ PDF
+</li>
 
 </ul>
 
-<a href="#pricing" class="btn primary">
+
+<a
+href="#pricing"
+class="btn primary">
+
 💎 شوف الباقات
+
 </a>
 
 </div>
 
 
+
+<!-- CV APP -->
+
 <div class="cv-app">
+
 
 <!-- FORM -->
 
@@ -1328,7 +1893,9 @@ CV MAKER
 
 <div class="field">
 
-<label>الاسم بالكامل</label>
+<label>
+الاسم بالكامل
+</label>
 
 <input
 id="name"
@@ -1337,9 +1904,12 @@ placeholder="محمد رضا">
 </div>
 
 
+
 <div class="field">
 
-<label>التخصص / الوظيفة</label>
+<label>
+التخصص / الوظيفة
+</label>
 
 <input
 id="job"
@@ -1348,9 +1918,12 @@ placeholder="Web Developer">
 </div>
 
 
+
 <div class="field">
 
-<label>البريد الإلكتروني</label>
+<label>
+البريد الإلكتروني
+</label>
 
 <input
 id="email"
@@ -1359,9 +1932,12 @@ placeholder="example@email.com">
 </div>
 
 
+
 <div class="field">
 
-<label>رقم الهاتف</label>
+<label>
+رقم الهاتف
+</label>
 
 <input
 id="phone"
@@ -1370,9 +1946,12 @@ placeholder="01xxxxxxxxx">
 </div>
 
 
+
 <div class="field">
 
-<label>نبذة عني</label>
+<label>
+نبذة عني
+</label>
 
 <textarea
 id="about"
@@ -1381,9 +1960,12 @@ placeholder="اكتب نبذة عنك..."></textarea>
 </div>
 
 
+
 <div class="field">
 
-<label>المهارات</label>
+<label>
+المهارات
+</label>
 
 <textarea
 id="skills"
@@ -1392,9 +1974,12 @@ placeholder="HTML, CSS, JavaScript..."></textarea>
 </div>
 
 
+
 <div class="field">
 
-<label>التعليم</label>
+<label>
+التعليم
+</label>
 
 <textarea
 id="education"
@@ -1403,9 +1988,12 @@ placeholder="اكتب التعليم والمؤهلات..."></textarea>
 </div>
 
 
+
 <div class="field">
 
-<label>الخبرات والمشاريع</label>
+<label>
+الخبرات والمشاريع
+</label>
 
 <textarea
 id="experience"
@@ -1414,20 +2002,33 @@ placeholder="اكتب خبراتك ومشاريعك..."></textarea>
 </div>
 
 
+
 <div class="form-buttons">
 
-<button onclick="saveCV()">💾 حفظ</button>
-<button onclick="loadCV()">📂 استرجاع</button>
-<button onclick="clearCV()">🗑️ مسح</button>
+<button onclick="saveCV()">
+💾 حفظ
+</button>
+
+<button onclick="loadCV()">
+📂 استرجاع
+</button>
+
+<button onclick="clearCV()">
+🗑️ مسح
+</button>
 
 </div>
+
 
 
 <button
 class="print"
 onclick="printCV()">
+
 📄 حفظ / طباعة PDF
+
 </button>
+
 
 
 <div class="templates">
@@ -1435,60 +2036,98 @@ onclick="printCV()">
 <button
 class="template active"
 onclick="template1(this)">
+
 كلاسيك
+
 </button>
 
 <button
 class="template"
 onclick="template2(this)">
+
 مودرن
+
 </button>
 
 <button
 class="template"
 onclick="template3(this)">
+
 Premium
+
 </button>
 
 </div>
 
 </div>
+
 
 
 <!-- PREVIEW -->
 
 <div class="preview-wrap">
 
-<div class="preview" id="preview">
+<div class="preview-container">
+
+<div class="preview-title">
+
+LIVE CV PREVIEW — معاينة مباشرة
+
+</div>
+
+
+<div
+class="preview"
+id="preview">
+
+
+<div class="preview-top">
 
 <div
 class="preview-name"
 id="pName">
+
 اسمك هنا
+
 </div>
+
 
 <div
 class="preview-job"
 id="pJob">
+
 تخصصك أو وظيفتك
+
 </div>
+
 
 <div
 class="contact"
 id="pContact">
 
-<span>البريد الإلكتروني</span>
-<span>•</span>
-<span>رقم الهاتف</span>
+<span>
+البريد الإلكتروني
+</span>
+
+<span>
+•
+</span>
+
+<span>
+رقم الهاتف
+</span>
 
 </div>
 
-<div class="line"></div>
+</div>
+
 
 
 <div class="cv-section">
 
-<h4>نبذة عني</h4>
+<h4>
+نبذة عني
+</h4>
 
 <p id="pAbout">
 اكتب نبذة عنك لتظهر هنا.
@@ -1497,9 +2136,12 @@ id="pContact">
 </div>
 
 
+
 <div class="cv-section">
 
-<h4>المهارات</h4>
+<h4>
+المهارات
+</h4>
 
 <p id="pSkills">
 اكتب مهاراتك لتظهر هنا.
@@ -1508,9 +2150,12 @@ id="pContact">
 </div>
 
 
+
 <div class="cv-section">
 
-<h4>التعليم والمؤهلات</h4>
+<h4>
+التعليم والمؤهلات
+</h4>
 
 <p id="pEducation">
 اكتب التعليم والمؤهلات.
@@ -1519,9 +2164,12 @@ id="pContact">
 </div>
 
 
+
 <div class="cv-section">
 
-<h4>الخبرات والمشاريع</h4>
+<h4>
+الخبرات والمشاريع
+</h4>
 
 <p id="pExperience">
 اكتب خبراتك ومشاريعك.
@@ -1529,9 +2177,13 @@ id="pContact">
 
 </div>
 
+
 </div>
 
 </div>
+
+</div>
+
 
 </div>
 
@@ -1542,15 +2194,21 @@ id="pContact">
 </section>
 
 
-<!-- ================= PRICING ================= -->
+
+<!-- =========================
+PRICING
+========================= -->
 
 <section id="pricing">
 
 <div class="container">
 
+
 <div class="heading">
 
-<small>CV PACKAGES</small>
+<small>
+CV PACKAGES
+</small>
 
 <h2>
 باقات الـCV
@@ -1563,6 +2221,7 @@ id="pContact">
 </div>
 
 
+
 <div class="pricing">
 
 
@@ -1570,7 +2229,9 @@ id="pContact">
 
 <div class="plan">
 
-<h3>Starter</h3>
+<h3>
+Starter
+</h3>
 
 <div class="plan-desc">
 بداية بسيطة واحترافية
@@ -1580,23 +2241,39 @@ id="pContact">
 99 <span>جنيه</span>
 </div>
 
+
 <ul>
 
-<li>CV احترافي</li>
-<li>إدخال البيانات</li>
-<li>قالب أساسي</li>
-<li>PDF</li>
+<li>
+CV احترافي
+</li>
+
+<li>
+إدخال البيانات
+</li>
+
+<li>
+قالب أساسي
+</li>
+
+<li>
+PDF
+</li>
 
 </ul>
+
 
 <a
 class="plan-btn"
 target="_blank"
-href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20باقة%20Starter%20بسعر%2099%20جنيه.">
+href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20باقة%20Starter%20بسعر%2099%20جنيه.">
+
 اطلب الباقة
+
 </a>
 
 </div>
+
 
 
 <!-- PRO -->
@@ -1607,11 +2284,14 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20
 🔥 عرض الإطلاق
 </div>
 
-<h3>Pro</h3>
+<h3>
+Pro
+</h3>
 
 <div class="plan-desc">
 الأكثر طلباً
 </div>
+
 
 <div class="plan-price">
 
@@ -1620,24 +2300,43 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20
 </span>
 
 200
-<span>جنيه</span>
+
+<span>
+جنيه
+</span>
 
 </div>
 
+
 <ul>
 
-<li>كل مميزات Starter</li>
-<li>قالب احترافي</li>
-<li>تعديلات إضافية</li>
-<li>تنسيق أفضل</li>
-<li>دعم سريع</li>
+<li>
+كل مميزات Starter
+</li>
+
+<li>
+قالب احترافي
+</li>
+
+<li>
+تعديلات إضافية
+</li>
+
+<li>
+تنسيق أفضل
+</li>
+
+<li>
+دعم سريع
+</li>
 
 </ul>
+
 
 <a
 class="plan-btn"
 target="_blank"
-href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20عرض%20الإطلاق%20Pro%20بسعر%20200%20جنيه.">
+href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20عرض%20الإطلاق%20Pro%20بسعر%20200%20جنيه.">
 
 🎁 احجز العرض
 
@@ -1646,11 +2345,14 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20
 </div>
 
 
+
 <!-- PREMIUM -->
 
 <div class="plan">
 
-<h3>Premium</h3>
+<h3>
+Premium
+</h3>
 
 <div class="plan-desc">
 أعلى مستوى
@@ -1660,20 +2362,36 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20
 350 <span>جنيه</span>
 </div>
 
+
 <ul>
 
-<li>كل مميزات Pro</li>
-<li>تصميم Premium</li>
-<li>تعديلات مخصصة</li>
-<li>مراجعة CV</li>
-<li>أولوية التنفيذ</li>
+<li>
+كل مميزات Pro
+</li>
+
+<li>
+تصميم Premium
+</li>
+
+<li>
+تعديلات مخصصة
+</li>
+
+<li>
+مراجعة CV
+</li>
+
+<li>
+أولوية التنفيذ
+</li>
 
 </ul>
+
 
 <a
 class="plan-btn"
 target="_blank"
-href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20باقة%20Premium%20بسعر%20350%20جنيه.">
+href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20باقة%20Premium%20بسعر%20350%20جنيه.">
 
 اطلب الباقة
 
@@ -1689,15 +2407,21 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20
 </section>
 
 
-<!-- ================= OTHER SERVICES ================= -->
+
+<!-- =========================
+OTHER SERVICES
+========================= -->
 
 <section>
 
 <div class="container">
 
+
 <div class="heading">
 
-<small>MORE SERVICES</small>
+<small>
+MORE SERVICES
+</small>
 
 <h2>
 مشروعك محتاج إيه؟
@@ -1710,12 +2434,15 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20
 </div>
 
 
+
 <div class="other-services">
 
 
 <div class="big-card">
 
-<div class="icon">💼</div>
+<div class="icon">
+💼
+</div>
 
 <h3>
 Portfolio احترافي
@@ -1733,9 +2460,12 @@ Portfolio احترافي
 </div>
 
 
+
 <div class="big-card">
 
-<div class="icon">🌐</div>
+<div class="icon">
+🌐
+</div>
 
 <h3>
 Landing Page
@@ -1753,9 +2483,12 @@ Landing Page
 </div>
 
 
+
 <div class="big-card">
 
-<div class="icon">🖥️</div>
+<div class="icon">
+🖥️
+</div>
 
 <h3>
 موقع كامل
@@ -1780,15 +2513,21 @@ Landing Page
 </section>
 
 
-<!-- ================= WHY ================= -->
+
+<!-- =========================
+WHY
+========================= -->
 
 <section>
 
 <div class="container">
 
+
 <div class="heading">
 
-<small>WHY MIDO TECH</small>
+<small>
+WHY MIDO TECH
+</small>
 
 <h2>
 ليه MIDO TECH؟
@@ -1797,12 +2536,15 @@ Landing Page
 </div>
 
 
+
 <div class="why">
 
 
 <div class="why-card">
 
-<div class="icon">⚡</div>
+<div class="icon">
+⚡
+</div>
 
 <h3>
 سرعة وبساطة
@@ -1816,9 +2558,12 @@ Landing Page
 </div>
 
 
+
 <div class="why-card">
 
-<div class="icon">💎</div>
+<div class="icon">
+💎
+</div>
 
 <h3>
 تصميم Premium
@@ -1832,9 +2577,12 @@ Landing Page
 </div>
 
 
+
 <div class="why-card">
 
-<div class="icon">💰</div>
+<div class="icon">
+💰
+</div>
 
 <h3>
 أسعار مناسبة
@@ -1855,15 +2603,21 @@ Landing Page
 </section>
 
 
-<!-- ================= PAYMENT ================= -->
+
+<!-- =========================
+PAYMENT
+========================= -->
 
 <section id="payment">
 
 <div class="container">
 
+
 <div class="heading">
 
-<small>PAYMENT</small>
+<small>
+PAYMENT
+</small>
 
 <h2>
 الدفع وطلب الخدمة
@@ -1876,8 +2630,11 @@ Landing Page
 </div>
 
 
+
 <div class="payment">
 
+
+<!-- VODAFONE CASH -->
 
 <div class="payment-card">
 
@@ -1891,14 +2648,16 @@ Landing Page
 على واتساب.
 </p>
 
+
 <div class="cash">
-01112110250
+0101600567
 </div>
+
 
 <a
 class="btn primary"
 target="_blank"
-href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20تم%20تحويل%20قيمة%20الخدمة%20وأريد%20إرسال%20إثبات%20الدفع.">
+href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20تم%20تحويل%20قيمة%20الخدمة%20وأريد%20إرسال%20إثبات%20الدفع.">
 
 📲 إرسال إثبات الدفع
 
@@ -1906,6 +2665,9 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20تم%20تح
 
 </div>
 
+
+
+<!-- ORDER -->
 
 <div class="payment-card">
 
@@ -1921,10 +2683,11 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20تم%20تح
 
 <br>
 
+
 <a
 class="btn primary"
 target="_blank"
-href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20طلب%20خدمة%20وأريد%20معرفة%20التفاصيل.">
+href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20طلب%20خدمة%20وأريد%20معرفة%20التفاصيل.">
 
 💬 اطلب الآن
 
@@ -1940,7 +2703,10 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20
 </section>
 
 
-<!-- ================= CTA ================= -->
+
+<!-- =========================
+CTA
+========================= -->
 
 <section>
 
@@ -1956,10 +2722,11 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20
 Mido Tech — حوّل فكرتك لموقع.
 </p>
 
+
 <a
 class="btn primary"
 target="_blank"
-href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20الاستفسار%20عن%20خدماتكم.">
+href="https://wa.me/20111011025?text=مرحباً%20MIDO%20TECH،%20أريد%20الاستفسار%20عن%20خدماتكم.">
 
 📲 تواصل معنا على واتساب
 
@@ -1974,7 +2741,10 @@ href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer>
 
@@ -2001,13 +2771,19 @@ CV • Portfolio • Landing Pages • Websites
 </footer>
 
 
-<div class="toast" id="toast"></div>
+
+<div
+class="toast"
+id="toast">
+</div>
+
 
 
 <script>
 
+
 /* =========================
-   CV FIELDS
+CV FIELDS
 ========================= */
 
 const ids=[
@@ -2022,123 +2798,190 @@ const ids=[
 ];
 
 
+
 /* =========================
-   LIVE PREVIEW
+LIVE PREVIEW
 ========================= */
 
 function updateCV(){
 
   document.getElementById("pName").textContent =
-    document.getElementById("name").value || "اسمك هنا";
+    document.getElementById("name").value ||
+    "اسمك هنا";
+
 
   document.getElementById("pJob").textContent =
-    document.getElementById("job").value || "تخصصك أو وظيفتك";
+    document.getElementById("job").value ||
+    "تخصصك أو وظيفتك";
+
 
   const email =
     document.getElementById("email").value ||
     "البريد الإلكتروني";
 
+
   const phone =
     document.getElementById("phone").value ||
     "رقم الهاتف";
 
-  document.getElementById("pContact").innerHTML=
-    `<span>${email}</span>
-     <span>•</span>
-     <span>${phone}</span>`;
 
-  document.getElementById("pAbout").textContent=
+  document.getElementById("pContact").innerHTML =
+
+    `<span>${escapeHTML(email)}</span>
+     <span>•</span>
+     <span>${escapeHTML(phone)}</span>`;
+
+
+  document.getElementById("pAbout").textContent =
     document.getElementById("about").value ||
     "اكتب نبذة عنك لتظهر هنا.";
 
-  document.getElementById("pSkills").textContent=
+
+  document.getElementById("pSkills").textContent =
     document.getElementById("skills").value ||
     "اكتب مهاراتك لتظهر هنا.";
 
-  document.getElementById("pEducation").textContent=
+
+  document.getElementById("pEducation").textContent =
     document.getElementById("education").value ||
     "اكتب التعليم والمؤهلات.";
 
-  document.getElementById("pExperience").textContent=
+
+  document.getElementById("pExperience").textContent =
     document.getElementById("experience").value ||
     "اكتب خبراتك ومشاريعك.";
 }
 
 
-ids.forEach(id=>{
-  document.getElementById(id)
-  .addEventListener("input",updateCV);
-});
+
+/* =========================
+SECURITY
+========================= */
+
+function escapeHTML(text){
+
+  return String(text)
+
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
 
 
 /* =========================
-   SAVE
+INPUT LISTENERS
+========================= */
+
+ids.forEach(id=>{
+
+  document
+    .getElementById(id)
+    .addEventListener(
+      "input",
+      updateCV
+    );
+
+});
+
+
+
+/* =========================
+SAVE
 ========================= */
 
 function saveCV(){
 
   const data={};
 
+
   ids.forEach(id=>{
-    data[id]=document.getElementById(id).value;
+
+    data[id]=
+      document.getElementById(id).value;
+
   });
+
 
   localStorage.setItem(
     "midoTechCV",
     JSON.stringify(data)
   );
 
+
   toast("تم حفظ بيانات الـCV 💾");
 }
 
 
+
 /* =========================
-   LOAD
+LOAD
 ========================= */
 
 function loadCV(){
 
-  const data=
+  const data =
     localStorage.getItem("midoTechCV");
 
+
   if(!data){
+
     toast("مفيش بيانات محفوظة.");
+
     return;
   }
 
-  const cv=JSON.parse(data);
+
+  const cv =
+    JSON.parse(data);
+
 
   ids.forEach(id=>{
-    document.getElementById(id).value=
+
+    document.getElementById(id).value =
       cv[id] || "";
+
   });
 
+
   updateCV();
+
 
   toast("تم استرجاع البيانات 📂");
 }
 
 
+
 /* =========================
-   CLEAR
+CLEAR
 ========================= */
 
 function clearCV(){
 
   ids.forEach(id=>{
+
     document.getElementById(id).value="";
+
   });
 
-  localStorage.removeItem("midoTechCV");
+
+  localStorage.removeItem(
+    "midoTechCV"
+  );
+
 
   updateCV();
+
 
   toast("تم مسح البيانات 🗑️");
 }
 
 
+
 /* =========================
-   PRINT
+PRINT
 ========================= */
 
 function printCV(){
@@ -2149,103 +2992,147 @@ function printCV(){
 }
 
 
+
 /* =========================
-   TEMPLATES
+TEMPLATE
 ========================= */
 
 function activate(button){
 
-  document.querySelectorAll(".template")
-  .forEach(b=>b.classList.remove("active"));
+  document
+    .querySelectorAll(".template")
+    .forEach(b=>
+      b.classList.remove("active")
+    );
+
 
   button.classList.add("active");
 }
+
 
 
 function template1(button){
 
   activate(button);
 
-  const p=document.getElementById("preview");
+
+  const p =
+    document.getElementById("preview");
+
 
   p.style.borderTop="none";
-  p.style.background="white";
 
-  toast("تم اختيار القالب الكلاسيك ✨");
+  p.style.background="#ffffff";
+
+
+  toast(
+    "تم اختيار القالب الكلاسيك ✨"
+  );
 }
+
 
 
 function template2(button){
 
   activate(button);
 
-  const p=document.getElementById("preview");
+
+  const p =
+    document.getElementById("preview");
+
 
   p.style.borderTop="8px solid #7c3aed";
+
   p.style.background="#fafafa";
 
-  toast("تم اختيار القالب المودرن ✨");
+
+  toast(
+    "تم اختيار القالب المودرن ✨"
+  );
 }
+
 
 
 function template3(button){
 
   activate(button);
 
-  const p=document.getElementById("preview");
+
+  const p =
+    document.getElementById("preview");
+
 
   p.style.borderTop="18px solid #111827";
-  p.style.background="white";
 
-  toast("تم اختيار قالب Premium 💎");
+  p.style.background="#ffffff";
+
+
+  toast(
+    "تم اختيار قالب Premium 💎"
+  );
 }
 
 
+
 /* =========================
-   TOAST
+TOAST
 ========================= */
 
 function toast(message){
 
-  const el=
+  const el =
     document.getElementById("toast");
+
 
   el.textContent=message;
 
+
   el.classList.add("show");
 
+
   setTimeout(()=>{
+
     el.classList.remove("show");
+
   },2500);
 }
 
 
+
 /* =========================
-   AUTO LOAD
+AUTO LOAD
 ========================= */
 
 window.addEventListener(
   "DOMContentLoaded",
   ()=>{
-    const saved=
+
+    const saved =
       localStorage.getItem("midoTechCV");
+
 
     if(saved){
 
-      const data=JSON.parse(saved);
+      const data =
+        JSON.parse(saved);
+
 
       ids.forEach(id=>{
-        document.getElementById(id).value=
+
+        document.getElementById(id).value =
           data[id] || "";
+
       });
 
     }
 
+
     updateCV();
+
   }
 );
 
 </script>
 
 </body>
-     </html>
+   </html>
