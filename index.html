@@ -1,1795 +1,2251 @@
-<!-- =====================================================
-     MIDO TECH - CV MAKER + PREMIUM + SERVICES
-===================================================== -->
-
-<section id="cv-maker" class="mido-cv-app">
-
-    <!-- HEADER -->
-    <div class="mido-cv-title">
-        <span>🚀 MIDO TECH</span>
-        <h2>اعمل CV احترافي في دقائق</h2>
-        <p>اكتب بياناتك، اختار القالب، واحفظ الـCV بتاعك.</p>
-    </div>
-
-
-    <!-- MAIN -->
-    <div class="mido-cv-layout">
-
-        <!-- FORM -->
-        <div class="mido-panel">
-
-            <div class="mido-panel-head">
-                <div>
-                    <small>STEP 01</small>
-                    <h3>بيانات الـCV</h3>
-                </div>
-                <span>📄</span>
-            </div>
-
-
-            <label>الاسم بالكامل</label>
-            <input
-                id="cvName"
-                type="text"
-                placeholder="محمد رضا"
-            >
-
-
-            <label>التخصص / الوظيفة</label>
-            <input
-                id="cvJob"
-                type="text"
-                placeholder="Web Developer"
-            >
-
-
-            <label>البريد الإلكتروني</label>
-            <input
-                id="cvEmail"
-                type="email"
-                placeholder="example@email.com"
-            >
-
-
-            <label>رقم الهاتف</label>
-            <input
-                id="cvPhone"
-                type="text"
-                placeholder="01xxxxxxxxx"
-            >
-
-
-            <label>نبذة عنك</label>
-            <textarea
-                id="cvAbout"
-                placeholder="اكتب نبذة مختصرة عن نفسك..."
-            ></textarea>
-
-
-            <label>المهارات</label>
-            <textarea
-                id="cvSkills"
-                placeholder="HTML, CSS, JavaScript, Python..."
-            ></textarea>
-
-
-            <label>التعليم والمؤهلات</label>
-            <textarea
-                id="cvEducation"
-                placeholder="اكتب التعليم والمؤهلات..."
-            ></textarea>
-
-
-            <label>الخبرات والمشاريع</label>
-            <textarea
-                id="cvExperience"
-                placeholder="اكتب خبراتك ومشاريعك..."
-            ></textarea>
-
-
-            <div class="mido-small-actions">
-
-                <button onclick="midoSaveCV()">
-                    💾 حفظ
-                </button>
-
-                <button onclick="midoLoadCV()">
-                    🔄 استرجاع
-                </button>
-
-                <button onclick="midoClearCV()">
-                    🗑️ مسح
-                </button>
-
-            </div>
-
-
-            <button
-                class="mido-main-btn"
-                onclick="midoGenerateCV()"
-            >
-                ✨ إنشاء الـCV
-            </button>
-
-        </div>
-
-
-        <!-- PREVIEW -->
-        <div class="mido-preview-column">
-
-            <div class="mido-preview-top">
-
-                <div>
-                    <small>LIVE PREVIEW</small>
-                    <h3>معاينة الـCV</h3>
-                </div>
-
-                <span>👁️</span>
-
-            </div>
-
-
-            <!-- PAPER -->
-            <div
-                id="midoCV"
-                class="mido-paper template-one"
-            >
-
-                <div class="mido-paper-header">
-
-                    <h1 id="previewName">
-                        اسمك هنا
-                    </h1>
-
-                    <p id="previewJob">
-                        تخصصك أو وظيفتك
-                    </p>
-
-                </div>
-
-
-                <div class="mido-contact">
-
-                    <span id="previewEmail">
-                        البريد الإلكتروني
-                    </span>
-
-                    <span id="previewPhone">
-                        رقم الهاتف
-                    </span>
-
-                </div>
-
-
-                <div class="mido-paper-section">
-
-                    <h3>نبذة عني</h3>
-
-                    <p id="previewAbout">
-                        اكتب نبذة عنك لتظهر هنا.
-                    </p>
-
-                </div>
-
-
-                <div class="mido-paper-section">
-
-                    <h3>المهارات</h3>
-
-                    <p id="previewSkills">
-                        مهاراتك ستظهر هنا.
-                    </p>
-
-                </div>
-
-
-                <div class="mido-paper-section">
-
-                    <h3>التعليم</h3>
-
-                    <p id="previewEducation">
-                        التعليم والمؤهلات.
-                    </p>
-
-                </div>
-
-
-                <div class="mido-paper-section">
-
-                    <h3>الخبرات والمشاريع</h3>
-
-                    <p id="previewExperience">
-                        الخبرات والمشاريع.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- TEMPLATES -->
-            <div class="mido-template-box">
-
-                <div class="mido-template-title">
-
-                    <h3>
-                        🎨 اختر قالب الـCV
-                    </h3>
-
-                    <span>
-                        FREE
-                    </span>
-
-                </div>
-
-
-                <div class="mido-templates">
-
-                    <button
-                        class="template-btn active"
-                        onclick="midoTemplate(1)"
-                    >
-                        <strong>01</strong>
-                        كلاسيك
-                    </button>
-
-
-                    <button
-                        class="template-btn"
-                        onclick="midoTemplate(2)"
-                    >
-                        <strong>02</strong>
-                        مودرن
-                    </button>
-
-
-                    <button
-                        class="template-btn"
-                        onclick="midoTemplate(3)"
-                    >
-                        <strong>03</strong>
-                        برو
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- ACTIONS -->
-            <div class="mido-cv-actions">
-
-                <button
-                    class="mido-download"
-                    onclick="midoDownloadPDF()"
-                >
-                    📥 تحميل / حفظ PDF
-                </button>
-
-
-                <button
-                    class="mido-premium-btn"
-                    onclick="openPayment()"
-                >
-                    💎 افتح Premium
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- PREMIUM -->
-    <div class="mido-premium-box">
-
-        <div>
-
-            <span class="mido-premium-badge">
-                💎 MIDO TECH PRO
-            </span>
-
-            <h2>
-                خليك احترافي أكتر
-            </h2>
-
-            <p>
-                قوالب مميزة + أدوات إضافية
-                + مميزات متقدمة.
-            </p>
-
-        </div>
-
-
-        <div class="mido-premium-price">
-            200 جنيه
-        </div>
-
-
-        <button
-            class="mido-premium-buy"
-            onclick="openPayment()"
-        >
-            اشترك الآن
-        </button>
-
-    </div>
-
-
-    <!-- SERVICES -->
-    <div class="mido-service">
-
-        <div class="mido-service-icon">
-            🚀
-        </div>
-
-        <span>
-            OUR SERVICES
-        </span>
-
-        <h2>
-            عندك مشروع وعايز نعملهولك؟
-        </h2>
-
-        <p>
-            موقع، Portfolio، CV أو أداة خاصة.
-        </p>
-
-        <button
-            class="mido-main-btn"
-            onclick="midoRequestService()"
-        >
-            اطلب خدمتك الآن
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PAYMENT MODAL
-===================================================== -->
-
-<div
-    id="paymentModal"
-    class="mido-modal"
->
-
-    <div class="mido-payment">
-
-        <button
-            class="mido-close"
-            onclick="closePayment()"
-        >
-            ×
-        </button>
-
-
-        <div class="mido-payment-icon">
-            💎
-        </div>
-
-
-        <h2>
-            Mido Tech Pro
-        </h2>
-
-
-        <p class="mido-payment-sub">
-            افتح مميزات Premium
-        </p>
-
-
-        <div class="mido-price">
-
-            سعر الاشتراك:
-
-            <strong>
-                200 جنيه
-            </strong>
-
-        </div>
-
-
-        <!-- VODAFONE CASH -->
-        <div class="mido-payment-method">
-
-            <div class="mido-voda-logo">
-                Vodafone Cash
-            </div>
-
-
-            <h3>
-                الدفع عن طريق Vodafone Cash
-            </h3>
-
-
-            <p>
-                حوّل قيمة الاشتراك إلى الرقم التالي:
-            </p>
-
-
-            <div class="mido-payment-number">
-                01016005679
-            </div>
-
-
-            <button
-                class="mido-copy-btn"
-                onclick="copyPaymentNumber()"
-            >
-                📋 نسخ الرقم
-            </button>
-
-        </div>
-
-
-        <!-- STEPS -->
-        <div class="mido-payment-steps">
-
-            <strong>
-                طريقة الدفع:
-            </strong>
-
-
-            <p>
-                1️⃣ حوّل 200 جنيه إلى رقم Vodafone Cash.
-            </p>
-
-
-            <p>
-                2️⃣ احتفظ برسالة التحويل.
-            </p>
-
-
-            <p>
-                3️⃣ اكتب رقم العملية في الخانة التالية.
-            </p>
-
-
-            <p>
-                4️⃣ اضغط إرسال طلب التفعيل.
-            </p>
-
-
-            <p>
-                5️⃣ سيتم مراجعة التحويل ثم تفعيل Premium.
-            </p>
-
-        </div>
-
-
-        <label class="mido-operation-label">
-            رقم عملية التحويل
-        </label>
-
-
-        <input
-            id="paymentOperation"
-            class="mido-operation"
-            type="text"
-            inputmode="numeric"
-            placeholder="اكتب رقم العملية هنا"
-        >
-
-
-        <button
-            class="mido-submit-payment"
-            onclick="submitPayment()"
-        >
-            📤 إرسال طلب التفعيل على واتساب
-        </button>
-
-
-        <small class="mido-payment-note">
-            يتم تفعيل Premium بعد مراجعة التحويل.
-        </small>
-
-    </div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MIDO TECH | حوّل فكرتك لموقع 🚀</title>
+
+<meta name="description" content="MIDO TECH - CV احترافي، Portfolio، Landing Pages ومواقع كاملة بأسعار مناسبة.">
+
+<style>
+/* =========================
+   ROOT
+========================= */
+
+:root{
+  --bg:#050816;
+  --bg2:#080d1c;
+  --card:#0d1428;
+  --card2:#111a32;
+
+  --purple:#7c3aed;
+  --purple2:#a855f7;
+  --purple3:#c084fc;
+
+  --white:#fff;
+  --text:#eef2ff;
+  --muted:#929db5;
+
+  --green:#22c55e;
+  --gold:#f59e0b;
+
+  --border:rgba(255,255,255,.08);
+  --shadow:0 25px 70px rgba(0,0,0,.35);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 10% 5%,rgba(124,58,237,.18),transparent 28%),
+    radial-gradient(circle at 90% 20%,rgba(168,85,247,.10),transparent 25%),
+    linear-gradient(180deg,var(--bg),var(--bg2));
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.25;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:45px 45px;
+  mask-image:linear-gradient(to bottom,#000,transparent);
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,input,textarea{
+  font-family:inherit;
+}
+
+.container{
+  width:min(1150px,92%);
+  margin:auto;
+}
+
+section{
+  padding:90px 0;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,8,22,.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+/* LOGO */
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  font-size:20px;
+  letter-spacing:.5px;
+}
+
+.logo-mark{
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  box-shadow:0 0 30px rgba(124,58,237,.35);
+  font-weight:900;
+  font-size:19px;
+  transform:skew(-5deg);
+}
+
+.logo-text span{
+  color:var(--purple2);
+}
+
+.logo-text small{
+  display:block;
+  color:#79849c;
+  font-size:7px;
+  letter-spacing:2px;
+  margin-top:2px;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  list-style:none;
+  color:#aeb8ce;
+  font-size:12px;
+}
+
+.nav-links a{
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:#fff;
+}
+
+.nav-btn{
+  padding:11px 17px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  font-size:11px;
+  font-weight:900;
+  box-shadow:0 10px 30px rgba(124,58,237,.22);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:105px 0 65px;
+  text-align:center;
+}
+
+.badge{
+  display:inline-flex;
+  padding:9px 16px;
+  border-radius:50px;
+  color:#d9b7ff;
+  background:rgba(124,58,237,.08);
+  border:1px solid rgba(168,85,247,.25);
+  font-size:10px;
+  font-weight:bold;
+  box-shadow:0 0 40px rgba(124,58,237,.1);
+}
+
+.hero h1{
+  max-width:900px;
+  margin:25px auto 15px;
+  font-size:clamp(39px,7vw,72px);
+  line-height:1.1;
+  font-weight:900;
+  letter-spacing:-2px;
+}
+
+.gradient{
+  background:linear-gradient(100deg,#fff,#d8b4fe,#a855f7,#7c3aed);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:720px;
+  margin:20px auto;
+  color:var(--muted);
+  font-size:14px;
+  line-height:2;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+.btn{
+  min-height:48px;
+  padding:0 23px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  border-radius:13px;
+  font-size:12px;
+  font-weight:900;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.primary{
+  color:#fff;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  box-shadow:0 15px 40px rgba(124,58,237,.25);
+}
+
+.secondary{
+  background:rgba(255,255,255,.035);
+  border:1px solid var(--border);
+}
+
+/* =========================
+   IMPORTANT MARKETING
+========================= */
+
+.marketing{
+  margin-top:25px;
+  padding:38px;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(168,85,247,.15),transparent 35%),
+    linear-gradient(145deg,#111a32,#090f20);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+
+.marketing h2{
+  font-size:28px;
+  margin-bottom:14px;
+}
+
+.marketing-intro{
+  color:#c8d0e2;
+  line-height:1.9;
+  font-size:13px;
+}
+
+.offer{
+  margin-top:25px;
+  padding:20px;
+  border-radius:18px;
+  background:rgba(124,58,237,.08);
+  border:1px solid rgba(168,85,247,.2);
+}
+
+.offer-title{
+  color:#f4c76d;
+  font-size:11px;
+  font-weight:900;
+}
+
+.offer-price{
+  margin-top:8px;
+  font-size:28px;
+  font-weight:900;
+}
+
+.old-price{
+  color:#727d94;
+  font-size:14px;
+  text-decoration:line-through;
+  margin-left:7px;
+}
+
+.offer-price span{
+  color:#d8b1ff;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.heading{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.heading small{
+  color:var(--purple3);
+  font-size:9px;
+  letter-spacing:2px;
+  font-weight:900;
+}
+
+.heading h2{
+  margin:11px 0;
+  font-size:clamp(28px,5vw,40px);
+}
+
+.heading p{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.card{
+  padding:27px 23px;
+  border-radius:22px;
+  background:linear-gradient(145deg,rgba(17,27,50,.95),rgba(8,14,29,.95));
+  border:1px solid var(--border);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(168,85,247,.35);
+  box-shadow:var(--shadow);
+}
+
+.icon{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  background:rgba(124,58,237,.12);
+  border:1px solid rgba(168,85,247,.15);
+  font-size:23px;
+  margin-bottom:18px;
+}
+
+.card h3{
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.9;
+  min-height:65px;
+}
+
+.price{
+  color:#d5aeff;
+  margin-top:17px;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* =========================
+   CV MAKER
+========================= */
+
+.cv-box{
+  padding:30px;
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 85% 10%,rgba(124,58,237,.12),transparent 30%),
+    linear-gradient(145deg,#101a33,#080e1f);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+
+.cv-layout{
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:25px;
+}
+
+.cv-info{
+  padding:15px 5px;
+}
+
+.label{
+  color:var(--purple3);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.cv-info h2{
+  font-size:34px;
+  line-height:1.35;
+  margin:12px 0;
+}
+
+.cv-info p{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.9;
+}
+
+.features{
+  list-style:none;
+  margin:22px 0;
+}
+
+.features li{
+  color:#d5dcec;
+  font-size:11px;
+  margin:12px 0;
+}
+
+.features li::before{
+  content:"✓";
+  color:#c084fc;
+  margin-left:8px;
+  font-weight:900;
+}
+
+/* CV APP */
+
+.cv-app{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:12px;
+  padding:12px;
+  border-radius:20px;
+  background:#070c1a;
+  border:1px solid var(--border);
+}
+
+.form{
+  padding:10px;
+}
+
+.form h3{
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+.field{
+  margin-bottom:9px;
+}
+
+.field label{
+  display:block;
+  color:#bac4d9;
+  font-size:9px;
+  margin-bottom:5px;
+}
+
+.field input,
+.field textarea{
+  width:100%;
+  background:#0b1222;
+  color:white;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:9px;
+  outline:none;
+  padding:9px;
+  font-size:10px;
+}
+
+.field textarea{
+  min-height:55px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus{
+  border-color:rgba(168,85,247,.5);
+}
+
+.form-buttons{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:5px;
+  margin-top:10px;
+}
+
+.form-buttons button,
+.template{
+  min-height:32px;
+  background:#0d162a;
+  color:#cbd3e3;
+  border:1px solid var(--border);
+  border-radius:8px;
+  font-size:8px;
+}
+
+.print{
+  width:100%;
+  margin-top:6px;
+  min-height:40px;
+  border:0;
+  border-radius:10px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  font-size:10px;
+  font-weight:900;
+}
+
+.templates{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:5px;
+  margin-top:7px;
+}
+
+.template.active{
+  border-color:var(--purple2);
+  color:white;
+  background:rgba(124,58,237,.12);
+}
+
+/* PREVIEW */
+
+.preview-wrap{
+  padding:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#090f1e;
+  border-radius:14px;
+}
+
+.preview{
+  width:100%;
+  max-width:380px;
+  min-height:500px;
+  padding:28px;
+  background:white;
+  color:#171717;
+  border-radius:6px;
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.preview-name{
+  font-size:25px;
+  font-weight:900;
+}
+
+.preview-job{
+  color:#7c3aed;
+  font-size:12px;
+  font-weight:900;
+  margin:5px 0 13px;
+}
+
+.contact{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  color:#666;
+  font-size:8px;
+  margin-bottom:13px;
+}
+
+.line{
+  height:2px;
+  background:#7c3aed;
+  margin-bottom:15px;
+}
+
+.cv-section{
+  margin-bottom:13px;
+}
+
+.cv-section h4{
+  color:#7c3aed;
+  font-size:10px;
+  margin-bottom:4px;
+}
+
+.cv-section p{
+  color:#555;
+  font-size:8px;
+  line-height:1.7;
+  white-space:pre-line;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.plan{
+  position:relative;
+  padding:30px 24px;
+  border-radius:23px;
+  background:linear-gradient(145deg,#111a31,#090f20);
+  border:1px solid var(--border);
+}
+
+.plan.featured{
+  border-color:rgba(168,85,247,.6);
+  box-shadow:0 20px 60px rgba(124,58,237,.13);
+  transform:translateY(-8px);
+}
+
+.popular{
+  position:absolute;
+  top:-12px;
+  right:20px;
+  padding:6px 11px;
+  border-radius:50px;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  font-size:8px;
+  font-weight:900;
+}
+
+.plan h3{
+  font-size:19px;
+}
+
+.plan-desc{
+  color:var(--muted);
+  font-size:10px;
+  margin-top:6px;
+}
+
+.plan-price{
+  font-size:38px;
+  font-weight:900;
+  margin:17px 0;
+}
+
+.plan-price span{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:normal;
+}
+
+.plan ul{
+  list-style:none;
+  color:#adb7cc;
+  font-size:10px;
+  line-height:2.4;
+  margin-bottom:20px;
+}
+
+.plan li::before{
+  content:"✓";
+  color:#c084fc;
+  margin-left:7px;
+}
+
+.plan-btn{
+  min-height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:rgba(124,58,237,.1);
+  border:1px solid rgba(124,58,237,.25);
+  font-size:10px;
+  font-weight:900;
+}
+
+.featured .plan-btn{
+  color:#fff;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  border:0;
+}
+
+/* =========================
+   OTHER SERVICES
+========================= */
+
+.other-services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.big-card{
+  padding:28px;
+  border-radius:23px;
+  background:linear-gradient(145deg,#10192f,#090f20);
+  border:1px solid var(--border);
+}
+
+.big-card .icon{
+  margin-bottom:15px;
+}
+
+.big-card h3{
+  font-size:18px;
+}
+
+.big-card p{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.9;
+  margin:10px 0 17px;
+}
+
+.big-price{
+  color:#d5aeff;
+  font-weight:900;
+  font-size:13px;
+}
+
+/* =========================
+   WHY
+========================= */
+
+.why{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.why-card{
+  padding:27px;
+  border-radius:20px;
+  background:rgba(13,20,39,.85);
+  border:1px solid var(--border);
+}
+
+.why-card h3{
+  font-size:16px;
+  margin:12px 0 7px;
+}
+
+.why-card p{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.9;
+}
+
+/* =========================
+   PAYMENT
+========================= */
+
+.payment{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+}
+
+.payment-card{
+  padding:28px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#10192f,#090f20);
+  border:1px solid var(--border);
+}
+
+.payment-card h3{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.payment-card p{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.9;
+}
+
+.cash{
+  margin:18px 0;
+  padding:14px;
+  border-radius:11px;
+  background:#070c18;
+  border:1px dashed rgba(168,85,247,.3);
+  text-align:center;
+  direction:ltr;
+  color:#d5b0ff;
+  font-size:19px;
+  font-weight:900;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  padding:75px 25px;
+  border-radius:30px;
+  text-align:center;
+  background:
+    radial-gradient(circle at center,rgba(124,58,237,.18),transparent 60%),
+    #0d1427;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+
+.cta h2{
+  font-size:clamp(28px,5vw,42px);
+  margin-bottom:12px;
+}
+
+.cta p{
+  color:var(--muted);
+  font-size:12px;
+  margin-bottom:25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  margin-top:80px;
+  padding:40px 0;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:var(--muted);
+  font-size:10px;
+}
+
+footer strong{
+  color:white;
+  font-size:16px;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:22px;
+  transform:translate(-50%,100px);
+  z-index:99999;
+  padding:12px 18px;
+  border-radius:12px;
+  background:#121c33;
+  border:1px solid rgba(168,85,247,.25);
+  color:white;
+  font-size:10px;
+  box-shadow:var(--shadow);
+  transition:.3s;
+}
+
+.toast.show{
+  transform:translate(-50%,0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .services{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .cv-layout{
+    grid-template-columns:1fr;
+  }
+
+  .cv-app{
+    grid-template-columns:1fr;
+  }
+
+  .pricing{
+    grid-template-columns:1fr;
+  }
+
+  .plan.featured{
+    transform:none;
+  }
+
+  .other-services{
+    grid-template-columns:1fr;
+  }
+
+  .why{
+    grid-template-columns:1fr;
+  }
+
+  .payment{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  .container{
+    width:94%;
+  }
+
+  section{
+    padding:65px 0;
+  }
+
+  .hero{
+    padding:70px 0 45px;
+  }
+
+  .hero h1{
+    font-size:39px;
+  }
+
+  .hero p{
+    font-size:12px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .hero-buttons .btn{
+    width:100%;
+  }
+
+  .marketing{
+    padding:25px 18px;
+  }
+
+  .marketing h2{
+    font-size:23px;
+  }
+
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .cv-box{
+    padding:16px;
+  }
+
+  .cv-info h2{
+    font-size:28px;
+  }
+
+  .preview{
+    min-height:450px;
+    padding:22px;
+  }
+}
+
+/* =========================
+   PRINT PDF
+========================= */
+
+@media print{
+
+  body *{
+    visibility:hidden!important;
+  }
+
+  .preview,
+  .preview *{
+    visibility:visible!important;
+  }
+
+  .preview{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    max-width:none;
+    box-shadow:none;
+    border-radius:0;
+  }
+
+  @page{
+    size:A4;
+    margin:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="container">
+
+<nav class="nav">
+
+<a href="#home" class="logo">
+
+<div class="logo-mark">
+M
+</div>
+
+<div class="logo-text">
+MIDO <span>TECH</span>
+<small>DIGITAL SOLUTIONS</small>
+</div>
+
+</a>
+
+<ul class="nav-links">
+
+<li><a href="#home">الرئيسية</a></li>
+<li><a href="#services">الخدمات</a></li>
+<li><a href="#cv">CV Maker</a></li>
+<li><a href="#pricing">الباقات</a></li>
+<li><a href="#payment">الدفع</a></li>
+
+</ul>
+
+<a
+href="https://wa.me/201112110250"
+target="_blank"
+class="nav-btn">
+تواصل معنا
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main id="home">
+
+<section class="hero">
+
+<div class="container">
+
+<div class="badge">
+🚀 MIDO TECH — BUILD YOUR DIGITAL FUTURE
+</div>
+
+<h1>
+
+حوّل فكرتك إلى
+<span class="gradient">
+حضور رقمي احترافي
+</span>
+
+</h1>
+
+<p>
+
+محتاج CV احترافي؟
+<br>
+عايز Portfolio يعرض شغلك؟
+<br>
+أو محتاج موقع لمشروعك؟ 💻
+
+<br><br>
+
+إحنا بنساعدك تعمل حضور احترافي
+على الإنترنت بأسعار مناسبة 🔥
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#services" class="btn primary">
+🚀 شوف خدماتنا
+</a>
+
+<a href="#cv" class="btn secondary">
+📄 اصنع CV الآن
+</a>
 
 </div>
 
 
-<style>
-
-/* =====================================================
-   MIDO CV MAIN
-===================================================== */
-
-.mido-cv-app {
-    width: 100%;
-    max-width: 1150px;
-    margin: auto;
-    padding: 60px 16px;
-    box-sizing: border-box;
-    direction: rtl;
-}
-
-
-/* TITLE */
-
-.mido-cv-title {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.mido-cv-title span {
-    color: #a78bfa;
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-.mido-cv-title h2 {
-    color: #fff;
-    margin: 10px 0;
-    font-size: 34px;
-}
-
-.mido-cv-title p {
-    color: #94a3b8;
-    margin: 0;
-}
-
-
-/* =====================================================
-   LAYOUT
-===================================================== */
-
-.mido-cv-layout {
-    display: grid;
-    grid-template-columns: 390px minmax(0,1fr);
-    gap: 25px;
-    align-items: start;
-}
-
-
-/* =====================================================
-   PANEL
-===================================================== */
-
-.mido-panel,
-.mido-template-box,
-.mido-premium-box,
-.mido-service {
-    background: #101827;
-    border: 1px solid #202c40;
-    border-radius: 18px;
-    box-sizing: border-box;
-}
-
-.mido-panel {
-    padding: 24px;
-}
-
-.mido-panel-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.mido-panel-head small,
-.mido-preview-top small {
-    color: #a78bfa;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-}
-
-.mido-panel-head h3,
-.mido-preview-top h3 {
-    color: #fff;
-    margin: 5px 0 0;
-    font-size: 20px;
-}
-
-
-/* =====================================================
-   INPUTS
-===================================================== */
-
-.mido-panel label {
-    display: block;
-    color: #cbd5e1;
-    font-size: 13px;
-    font-weight: 700;
-    margin: 13px 0 6px;
-}
-
-.mido-panel input,
-.mido-panel textarea {
-    width: 100%;
-    box-sizing: border-box;
-    background: #080d17;
-    border: 1px solid #263247;
-    border-radius: 9px;
-    padding: 12px;
-    color: #fff;
-    outline: none;
-    font-family: inherit;
-    font-size: 13px;
-}
-
-.mido-panel textarea {
-    min-height: 78px;
-    resize: vertical;
-}
-
-.mido-panel input:focus,
-.mido-panel textarea:focus {
-    border-color: #8b5cf6;
-    box-shadow: 0 0 0 2px rgba(139,92,246,.10);
-}
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.mido-main-btn {
-    width: 100%;
-    margin-top: 15px;
-    padding: 13px;
-    border: none;
-    border-radius: 9px;
-    background: linear-gradient(
-        135deg,
-        #7c3aed,
-        #9333ea
-    );
-    color: #fff;
-    font-family: inherit;
-    font-weight: 900;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.mido-main-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(124,58,237,.25);
-}
-
-
-/* =====================================================
-   SMALL ACTIONS
-===================================================== */
-
-.mido-small-actions {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 7px;
-    margin-top: 15px;
-}
-
-.mido-small-actions button {
-    padding: 9px 4px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 11px;
-    font-weight: 700;
-    border: 1px solid #263247;
-    background: #151e2e;
-    color: #cbd5e1;
-}
-
-
-/* =====================================================
-   PREVIEW
-===================================================== */
-
-.mido-preview-column {
-    min-width: 0;
-}
-
-.mido-preview-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.mido-paper {
-    width: 100%;
-    min-height: 650px;
-    background: #fff;
-    color: #111827;
-    box-sizing: border-box;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 18px 45px rgba(0,0,0,.28);
-}
-
-.mido-paper-header {
-    padding-bottom: 18px;
-    border-bottom: 3px solid #7c3aed;
-}
-
-.mido-paper-header h1 {
-    margin: 0;
-    color: #111827;
-    font-size: 30px;
-}
-
-.mido-paper-header p {
-    margin: 6px 0 0;
-    color: #7c3aed;
-    font-weight: 800;
-}
-
-.mido-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 18px;
-    padding: 15px 0 22px;
-    color: #64748b;
-    font-size: 11px;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.mido-paper-section {
-    margin-top: 22px;
-}
-
-.mido-paper-section h3 {
-    margin: 0 0 7px;
-    color: #6d28d9;
-    font-size: 16px;
-}
-
-.mido-paper-section p {
-    margin: 0;
-    color: #374151;
-    line-height: 1.8;
-    font-size: 12px;
-    white-space: pre-line;
-}
-
-
-/* =====================================================
-   TEMPLATES
-===================================================== */
-
-.mido-template-box {
-    padding: 15px;
-    margin-top: 12px;
-}
-
-.mido-template-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.mido-template-title h3 {
-    color: #fff;
-    margin: 0;
-    font-size: 14px;
-}
-
-.mido-template-title span {
-    color: #22c55e;
-    font-size: 10px;
-    font-weight: 900;
-}
-
-.mido-templates {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 8px;
-}
-
-.template-btn {
-    padding: 10px 5px;
-    background: #0b1220;
-    border: 1px solid #263247;
-    border-radius: 9px;
-    color: #94a3b8;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 11px;
-}
-
-.template-btn strong {
-    display: block;
-    color: #cbd5e1;
-    margin-bottom: 3px;
-}
-
-.template-btn.active {
-    border-color: #8b5cf6;
-    background: #17122b;
-    color: #c4b5fd;
-}
-
-
-/* =====================================================
-   ACTIONS
-===================================================== */
-
-.mido-cv-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 9px;
-    margin-top: 12px;
-}
-
-.mido-download,
-.mido-premium-btn {
-    border-radius: 9px;
-    padding: 12px;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: 900;
-}
-
-.mido-download {
-    background: #172033;
-    border: 1px solid #263247;
-    color: #fff;
-}
-
-.mido-premium-btn {
-    background: #17122b;
-    border: 1px solid #6d28d9;
-    color: #c4b5fd;
-}
-
-
-/* =====================================================
-   PREMIUM
-===================================================== */
-
-.mido-premium-box {
-    margin-top: 25px;
-    padding: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.mido-premium-badge {
-    color: #c4b5fd;
-    font-size: 11px;
-    font-weight: 900;
-}
-
-.mido-premium-box h2 {
-    color: #fff;
-    margin: 8px 0;
-}
-
-.mido-premium-box p {
-    color: #94a3b8;
-    margin: 0;
-}
-
-.mido-premium-price {
-    color: #c4b5fd;
-    font-size: 25px;
-    font-weight: 900;
-}
-
-.mido-premium-buy {
-    padding: 12px 22px;
-    border: none;
-    border-radius: 9px;
-    background: #7c3aed;
-    color: #fff;
-    font-family: inherit;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-
-/* =====================================================
-   SERVICE
-===================================================== */
-
-.mido-service {
-    margin-top: 25px;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.mido-service-icon {
-    font-size: 30px;
-    margin-bottom: 8px;
-}
-
-.mido-service > span {
-    color: #a78bfa;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-.mido-service h2 {
-    color: #fff;
-    margin: 8px 0;
-}
-
-.mido-service p {
-    color: #94a3b8;
-    margin: 0 auto 20px;
-}
-
-
-/* =====================================================
-   PAYMENT
-===================================================== */
-
-.mido-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 999999;
-    background: rgba(0,0,0,.75);
-    backdrop-filter: blur(6px);
-    padding: 20px;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-}
-
-.mido-modal.show {
-    display: flex;
-}
-
-.mido-payment {
-    position: relative;
-    width: 100%;
-    max-width: 480px;
-    max-height: 92vh;
-    overflow-y: auto;
-    background: #101827;
-    border: 1px solid #303c52;
-    border-radius: 20px;
-    padding: 25px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.mido-close {
-    position: absolute;
-    top: 10px;
-    left: 14px;
-    border: none;
-    background: transparent;
-    color: #94a3b8;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-.mido-payment-icon {
-    font-size: 35px;
-}
-
-.mido-payment h2 {
-    color: #fff;
-    margin: 5px 0;
-}
-
-.mido-payment-sub {
-    color: #94a3b8;
-}
-
-.mido-price {
-    margin: 18px 0;
-    padding: 12px;
-    border-radius: 10px;
-    background: #0b1220;
-    color: #cbd5e1;
-}
-
-.mido-price strong {
-    color: #c4b5fd;
-}
-
-.mido-payment-method {
-    background: #0b1220;
-    border: 1px solid #263247;
-    border-radius: 14px;
-    padding: 18px;
-}
-
-.mido-voda-logo {
-    display: inline-block;
-    background: #e60000;
-    color: #fff;
-    padding: 7px 12px;
-    border-radius: 7px;
-    font-weight: 900;
-}
-
-.mido-payment-method h3 {
-    color: #fff;
-    font-size: 17px;
-}
-
-.mido-payment-method p {
-    color: #94a3b8;
-    font-size: 13px;
-}
-
-.mido-payment-number {
-    background: #17122b;
-    border: 1px solid #7c3aed;
-    border-radius: 10px;
-    padding: 13px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 900;
-    direction: ltr;
-    letter-spacing: 1px;
-}
-
-.mido-copy-btn {
-    margin-top: 9px;
-    border: 1px solid #334155;
-    background: #172033;
-    color: #cbd5e1;
-    border-radius: 8px;
-    padding: 8px 14px;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.mido-payment-steps {
-    text-align: right;
-    background: #111b2b;
-    padding: 14px;
-    border-radius: 11px;
-    margin-top: 13px;
-}
-
-.mido-payment-steps strong {
-    color: #fff;
-}
-
-.mido-payment-steps p {
-    color: #94a3b8;
-    font-size: 12px;
-    margin: 7px 0;
-}
-
-.mido-operation-label {
-    display: block;
-    color: #cbd5e1;
-    text-align: right;
-    margin: 15px 0 7px;
-    font-size: 13px;
-}
-
-.mido-operation {
-    width: 100%;
-    box-sizing: border-box;
-    background: #080d17;
-    border: 1px solid #263247;
-    border-radius: 9px;
-    padding: 12px;
-    color: #fff;
-    outline: none;
-    direction: ltr;
-    text-align: center;
-}
-
-.mido-submit-payment {
-    width: 100%;
-    margin-top: 12px;
-    padding: 13px;
-    border: none;
-    border-radius: 9px;
-    background: #7c3aed;
-    color: #fff;
-    font-family: inherit;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-.mido-payment-note {
-    display: block;
-    color: #64748b;
-    margin-top: 12px;
-    font-size: 11px;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:850px) {
-
-    .mido-cv-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .mido-premium-box {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .mido-premium-buy {
-        width: 100%;
-    }
-
-}
-
-@media(max-width:500px) {
-
-    .mido-cv-app {
-        padding: 45px 10px;
-    }
-
-    .mido-cv-title h2 {
-        font-size: 26px;
-    }
-
-    .mido-panel {
-        padding: 18px;
-    }
-
-    .mido-paper {
-        padding: 25px 18px;
-    }
-
-    .mido-cv-actions {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-/* =====================================================
-   PRINT
-===================================================== */
-
-@media print {
-
-    body * {
-        visibility: hidden !important;
-    }
-
-    #midoCV,
-    #midoCV * {
-        visibility: visible !important;
-    }
-
-    #midoCV {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        box-shadow: none;
-        border-radius: 0;
-    }
-
-}
-
-</style>
+<!-- IMPORTANT MARKETING -->
+
+<div class="marketing">
+
+<h2>
+Mido Tech — حوّل فكرتك لموقع 🚀
+</h2>
+
+<p class="marketing-intro">
+
+📄 CV احترافي
+&nbsp;&nbsp; • &nbsp;&nbsp;
+💼 Portfolio
+&nbsp;&nbsp; • &nbsp;&nbsp;
+🌐 Landing Pages
+&nbsp;&nbsp; • &nbsp;&nbsp;
+🖥️ مواقع كاملة
+
+</p>
+
+<div class="offer">
+
+<div class="offer-title">
+🎁 عرض الإطلاق
+</div>
+
+<div class="offer-price">
+
+<span class="old-price">
+250 جنيه
+</span>
+
+200 جنيه
+
+</div>
+
+<p style="color:#929db5;font-size:10px;margin-top:6px;">
+باقة Pro لفترة الإطلاق
+</p>
+
+<br>
+
+<a
+href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20الاستفادة%20من%20عرض%20الإطلاق%20Pro%20بسعر%20200%20جنيه."
+target="_blank"
+class="btn primary">
+🎁 استفيد من العرض
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="heading">
+
+<small>OUR SERVICES</small>
+
+<h2>
+الخدمات اللي بنقدمها 🚀
+</h2>
+
+<p>
+اختار الخدمة المناسبة ليك وابدأ.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="card">
+
+<div class="icon">📄</div>
+
+<h3>CV احترافي</h3>
+
+<p>
+CV احترافي مناسب للتقديم على الوظائف
+والتدريب والفرص المختلفة.
+</p>
+
+<div class="price">
+يبدأ من 99 جنيه
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">💼</div>
+
+<h3>Portfolio</h3>
+
+<p>
+موقع شخصي لعرض أعمالك ومهاراتك
+ومشاريعك بشكل احترافي.
+</p>
+
+<div class="price">
+يبدأ من 800 جنيه
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌐</div>
+
+<h3>Landing Page</h3>
+
+<p>
+صفحة احترافية لمنتجك أو خدمتك
+ومشروعك.
+</p>
+
+<div class="price">
+يبدأ من 500 جنيه
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🖥️</div>
+
+<h3>مواقع كاملة</h3>
+
+<p>
+موقع كامل مصمم حسب فكرة المشروع
+والاحتياجات الخاصة بيك.
+</p>
+
+<div class="price">
+يبدأ من 1500 جنيه
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CV MAKER ================= -->
+
+<section id="cv">
+
+<div class="container">
+
+<div class="heading">
+
+<small>SMART CV MAKER</small>
+
+<h2>
+اصنع CV احترافي بنفسك ✨
+</h2>
+
+<p>
+اكتب بياناتك وشوف النتيجة مباشرة.
+</p>
+
+</div>
+
+
+<div class="cv-box">
+
+<div class="cv-layout">
+
+
+<div class="cv-info">
+
+<div class="label">
+CV MAKER
+</div>
+
+<h2>
+خلي أول انطباع عنك قوي.
+</h2>
+
+<p>
+اكتب بياناتك، اختار القالب،
+وبعدها اطبع الـCV أو احفظه PDF.
+</p>
+
+<ul class="features">
+
+<li>معاينة مباشرة</li>
+<li>3 قوالب</li>
+<li>حفظ البيانات</li>
+<li>استرجاع البيانات</li>
+<li>طباعة وحفظ PDF</li>
+
+</ul>
+
+<a href="#pricing" class="btn primary">
+💎 شوف الباقات
+</a>
+
+</div>
+
+
+<div class="cv-app">
+
+<!-- FORM -->
+
+<div class="form">
+
+<h3>
+بيانات الـCV
+</h3>
+
+
+<div class="field">
+
+<label>الاسم بالكامل</label>
+
+<input
+id="name"
+placeholder="محمد رضا">
+
+</div>
+
+
+<div class="field">
+
+<label>التخصص / الوظيفة</label>
+
+<input
+id="job"
+placeholder="Web Developer">
+
+</div>
+
+
+<div class="field">
+
+<label>البريد الإلكتروني</label>
+
+<input
+id="email"
+placeholder="example@email.com">
+
+</div>
+
+
+<div class="field">
+
+<label>رقم الهاتف</label>
+
+<input
+id="phone"
+placeholder="01xxxxxxxxx">
+
+</div>
+
+
+<div class="field">
+
+<label>نبذة عني</label>
+
+<textarea
+id="about"
+placeholder="اكتب نبذة عنك..."></textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>المهارات</label>
+
+<textarea
+id="skills"
+placeholder="HTML, CSS, JavaScript..."></textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>التعليم</label>
+
+<textarea
+id="education"
+placeholder="اكتب التعليم والمؤهلات..."></textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>الخبرات والمشاريع</label>
+
+<textarea
+id="experience"
+placeholder="اكتب خبراتك ومشاريعك..."></textarea>
+
+</div>
+
+
+<div class="form-buttons">
+
+<button onclick="saveCV()">💾 حفظ</button>
+<button onclick="loadCV()">📂 استرجاع</button>
+<button onclick="clearCV()">🗑️ مسح</button>
+
+</div>
+
+
+<button
+class="print"
+onclick="printCV()">
+📄 حفظ / طباعة PDF
+</button>
+
+
+<div class="templates">
+
+<button
+class="template active"
+onclick="template1(this)">
+كلاسيك
+</button>
+
+<button
+class="template"
+onclick="template2(this)">
+مودرن
+</button>
+
+<button
+class="template"
+onclick="template3(this)">
+Premium
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PREVIEW -->
+
+<div class="preview-wrap">
+
+<div class="preview" id="preview">
+
+<div
+class="preview-name"
+id="pName">
+اسمك هنا
+</div>
+
+<div
+class="preview-job"
+id="pJob">
+تخصصك أو وظيفتك
+</div>
+
+<div
+class="contact"
+id="pContact">
+
+<span>البريد الإلكتروني</span>
+<span>•</span>
+<span>رقم الهاتف</span>
+
+</div>
+
+<div class="line"></div>
+
+
+<div class="cv-section">
+
+<h4>نبذة عني</h4>
+
+<p id="pAbout">
+اكتب نبذة عنك لتظهر هنا.
+</p>
+
+</div>
+
+
+<div class="cv-section">
+
+<h4>المهارات</h4>
+
+<p id="pSkills">
+اكتب مهاراتك لتظهر هنا.
+</p>
+
+</div>
+
+
+<div class="cv-section">
+
+<h4>التعليم والمؤهلات</h4>
+
+<p id="pEducation">
+اكتب التعليم والمؤهلات.
+</p>
+
+</div>
+
+
+<div class="cv-section">
+
+<h4>الخبرات والمشاريع</h4>
+
+<p id="pExperience">
+اكتب خبراتك ومشاريعك.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRICING ================= -->
+
+<section id="pricing">
+
+<div class="container">
+
+<div class="heading">
+
+<small>CV PACKAGES</small>
+
+<h2>
+باقات الـCV
+</h2>
+
+<p>
+اختار الباقة المناسبة ليك.
+</p>
+
+</div>
+
+
+<div class="pricing">
+
+
+<!-- STARTER -->
+
+<div class="plan">
+
+<h3>Starter</h3>
+
+<div class="plan-desc">
+بداية بسيطة واحترافية
+</div>
+
+<div class="plan-price">
+99 <span>جنيه</span>
+</div>
+
+<ul>
+
+<li>CV احترافي</li>
+<li>إدخال البيانات</li>
+<li>قالب أساسي</li>
+<li>PDF</li>
+
+</ul>
+
+<a
+class="plan-btn"
+target="_blank"
+href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20باقة%20Starter%20بسعر%2099%20جنيه.">
+اطلب الباقة
+</a>
+
+</div>
+
+
+<!-- PRO -->
+
+<div class="plan featured">
+
+<div class="popular">
+🔥 عرض الإطلاق
+</div>
+
+<h3>Pro</h3>
+
+<div class="plan-desc">
+الأكثر طلباً
+</div>
+
+<div class="plan-price">
+
+<span class="old-price">
+250
+</span>
+
+200
+<span>جنيه</span>
+
+</div>
+
+<ul>
+
+<li>كل مميزات Starter</li>
+<li>قالب احترافي</li>
+<li>تعديلات إضافية</li>
+<li>تنسيق أفضل</li>
+<li>دعم سريع</li>
+
+</ul>
+
+<a
+class="plan-btn"
+target="_blank"
+href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20عرض%20الإطلاق%20Pro%20بسعر%20200%20جنيه.">
+
+🎁 احجز العرض
+
+</a>
+
+</div>
+
+
+<!-- PREMIUM -->
+
+<div class="plan">
+
+<h3>Premium</h3>
+
+<div class="plan-desc">
+أعلى مستوى
+</div>
+
+<div class="plan-price">
+350 <span>جنيه</span>
+</div>
+
+<ul>
+
+<li>كل مميزات Pro</li>
+<li>تصميم Premium</li>
+<li>تعديلات مخصصة</li>
+<li>مراجعة CV</li>
+<li>أولوية التنفيذ</li>
+
+</ul>
+
+<a
+class="plan-btn"
+target="_blank"
+href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20باقة%20Premium%20بسعر%20350%20جنيه.">
+
+اطلب الباقة
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= OTHER SERVICES ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="heading">
+
+<small>MORE SERVICES</small>
+
+<h2>
+مشروعك محتاج إيه؟
+</h2>
+
+<p>
+إحنا نقدر نبني لك الحل المناسب.
+</p>
+
+</div>
+
+
+<div class="other-services">
+
+
+<div class="big-card">
+
+<div class="icon">💼</div>
+
+<h3>
+Portfolio احترافي
+</h3>
+
+<p>
+موقع شخصي لعرض أعمالك، مهاراتك،
+مشاريعك وطرق التواصل معك.
+</p>
+
+<div class="big-price">
+يبدأ من 800 جنيه
+</div>
+
+</div>
+
+
+<div class="big-card">
+
+<div class="icon">🌐</div>
+
+<h3>
+Landing Page
+</h3>
+
+<p>
+صفحة هبوط جذابة لمنتج أو خدمة
+مع زر تواصل وطلب مباشر.
+</p>
+
+<div class="big-price">
+يبدأ من 500 جنيه
+</div>
+
+</div>
+
+
+<div class="big-card">
+
+<div class="icon">🖥️</div>
+
+<h3>
+موقع كامل
+</h3>
+
+<p>
+نبني الموقع حسب فكرتك،
+من التصميم إلى الأقسام والخدمات.
+</p>
+
+<div class="big-price">
+يبدأ من 1500 جنيه
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= WHY ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="heading">
+
+<small>WHY MIDO TECH</small>
+
+<h2>
+ليه MIDO TECH؟
+</h2>
+
+</div>
+
+
+<div class="why">
+
+
+<div class="why-card">
+
+<div class="icon">⚡</div>
+
+<h3>
+سرعة وبساطة
+</h3>
+
+<p>
+تجربة واضحة للعميل بدون خطوات
+معقدة أو تصميم مزدحم.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="icon">💎</div>
+
+<h3>
+تصميم Premium
+</h3>
+
+<p>
+ألوان وإضاءة ومسافات متناسقة
+تخلي الموقع شكله احترافي.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="icon">💰</div>
+
+<h3>
+أسعار مناسبة
+</h3>
+
+<p>
+خدمات رقمية بأسعار مناسبة
+للطلاب وأصحاب المشاريع الصغيرة.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PAYMENT ================= -->
+
+<section id="payment">
+
+<div class="container">
+
+<div class="heading">
+
+<small>PAYMENT</small>
+
+<h2>
+الدفع وطلب الخدمة
+</h2>
+
+<p>
+الدفع عن طريق Vodafone Cash والتواصل عبر واتساب.
+</p>
+
+</div>
+
+
+<div class="payment">
+
+
+<div class="payment-card">
+
+<h3>
+📱 Vodafone Cash
+</h3>
+
+<p>
+بعد اختيار الخدمة، حوّل قيمة الطلب
+على رقم Vodafone Cash ثم أرسل إثبات الدفع
+على واتساب.
+</p>
+
+<div class="cash">
+01112110250
+</div>
+
+<a
+class="btn primary"
+target="_blank"
+href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20تم%20تحويل%20قيمة%20الخدمة%20وأريد%20إرسال%20إثبات%20الدفع.">
+
+📲 إرسال إثبات الدفع
+
+</a>
+
+</div>
+
+
+<div class="payment-card">
+
+<h3>
+🚀 اطلب خدمتك
+</h3>
+
+<p>
+محتاج CV؟ Portfolio؟ Landing Page؟
+أو موقع كامل؟ ابعت لنا تفاصيل فكرتك
+ونبدأ معاك.
+</p>
+
+<br>
+
+<a
+class="btn primary"
+target="_blank"
+href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20طلب%20خدمة%20وأريد%20معرفة%20التفاصيل.">
+
+💬 اطلب الآن
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="cta">
+
+<h2>
+محتاج تبدأ مشروعك؟ 🚀
+</h2>
+
+<p>
+Mido Tech — حوّل فكرتك لموقع.
+</p>
+
+<a
+class="btn primary"
+target="_blank"
+href="https://wa.me/201112110250?text=مرحباً%20MIDO%20TECH،%20أريد%20الاستفسار%20عن%20خدماتكم.">
+
+📲 تواصل معنا على واتساب
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<strong>
+MIDO TECH 🚀
+</strong>
+
+<br><br>
+
+حوّل فكرتك لموقع.
+
+<br><br>
+
+CV • Portfolio • Landing Pages • Websites
+
+<br><br>
+
+© 2026 MIDO TECH — جميع الحقوق محفوظة
+
+</div>
+
+</footer>
+
+
+<div class="toast" id="toast"></div>
 
 
 <script>
 
-/* =====================================================
-   MIDO CV SYSTEM
-===================================================== */
+/* =========================
+   CV FIELDS
+========================= */
 
-const midoFields = {
-
-    cvName: "previewName",
-    cvJob: "previewJob",
-    cvEmail: "previewEmail",
-    cvPhone: "previewPhone",
-    cvAbout: "previewAbout",
-    cvSkills: "previewSkills",
-    cvEducation: "previewEducation",
-    cvExperience: "previewExperience"
-
-};
+const ids=[
+  "name",
+  "job",
+  "email",
+  "phone",
+  "about",
+  "skills",
+  "education",
+  "experience"
+];
 
 
-const midoDefaults = {
-
-    cvName: "اسمك هنا",
-    cvJob: "تخصصك أو وظيفتك",
-    cvEmail: "البريد الإلكتروني",
-    cvPhone: "رقم الهاتف",
-    cvAbout: "اكتب نبذة عنك لتظهر هنا.",
-    cvSkills: "مهاراتك ستظهر هنا.",
-    cvEducation: "التعليم والمؤهلات.",
-    cvExperience: "الخبرات والمشاريع."
-
-};
-
-
-/* =====================================================
+/* =========================
    LIVE PREVIEW
-===================================================== */
+========================= */
 
-document.addEventListener("DOMContentLoaded", function() {
+function updateCV(){
 
-    Object.keys(midoFields).forEach(function(id) {
+  document.getElementById("pName").textContent =
+    document.getElementById("name").value || "اسمك هنا";
 
-        const input =
-            document.getElementById(id);
+  document.getElementById("pJob").textContent =
+    document.getElementById("job").value || "تخصصك أو وظيفتك";
 
-        const preview =
-            document.getElementById(
-                midoFields[id]
-            );
+  const email =
+    document.getElementById("email").value ||
+    "البريد الإلكتروني";
 
-        if (!input || !preview) return;
+  const phone =
+    document.getElementById("phone").value ||
+    "رقم الهاتف";
 
-        input.addEventListener(
-            "input",
-            function() {
+  document.getElementById("pContact").innerHTML=
+    `<span>${email}</span>
+     <span>•</span>
+     <span>${phone}</span>`;
 
-                preview.textContent =
-                    input.value.trim() ||
-                    midoDefaults[id];
+  document.getElementById("pAbout").textContent=
+    document.getElementById("about").value ||
+    "اكتب نبذة عنك لتظهر هنا.";
 
-                midoAutoSave();
+  document.getElementById("pSkills").textContent=
+    document.getElementById("skills").value ||
+    "اكتب مهاراتك لتظهر هنا.";
 
-            }
-        );
+  document.getElementById("pEducation").textContent=
+    document.getElementById("education").value ||
+    "اكتب التعليم والمؤهلات.";
 
-    });
+  document.getElementById("pExperience").textContent=
+    document.getElementById("experience").value ||
+    "اكتب خبراتك ومشاريعك.";
+}
 
-    midoLoadSilent();
 
+ids.forEach(id=>{
+  document.getElementById(id)
+  .addEventListener("input",updateCV);
 });
 
 
-/* =====================================================
-   GENERATE CV
-===================================================== */
-
-function midoGenerateCV() {
-
-    Object.keys(midoFields).forEach(function(id) {
-
-        const input =
-            document.getElementById(id);
-
-        const preview =
-            document.getElementById(
-                midoFields[id]
-            );
-
-        if (input && preview) {
-
-            preview.textContent =
-                input.value.trim() ||
-                midoDefaults[id];
-
-        }
-
-    });
-
-    midoAutoSave();
-
-    midoMessage(
-        "🎉 تم إنشاء الـCV بنجاح"
-    );
-
-}
-
-
-/* =====================================================
+/* =========================
    SAVE
-===================================================== */
+========================= */
 
-function midoAutoSave() {
+function saveCV(){
 
-    const data = {};
+  const data={};
 
-    Object.keys(midoFields).forEach(function(id) {
+  ids.forEach(id=>{
+    data[id]=document.getElementById(id).value;
+  });
 
-        const input =
-            document.getElementById(id);
+  localStorage.setItem(
+    "midoTechCV",
+    JSON.stringify(data)
+  );
 
-        if (input) {
-            data[id] = input.value;
-        }
-
-    });
-
-    localStorage.setItem(
-        "midoTechCV",
-        JSON.stringify(data)
-    );
-
+  toast("تم حفظ بيانات الـCV 💾");
 }
 
 
-function midoSaveCV() {
-
-    midoAutoSave();
-
-    midoMessage(
-        "💾 تم حفظ بيانات الـCV"
-    );
-
-}
-
-
-/* =====================================================
+/* =========================
    LOAD
-===================================================== */
+========================= */
 
-function midoLoadSilent() {
+function loadCV(){
 
-    const saved =
-        localStorage.getItem(
-            "midoTechCV"
-        );
+  const data=
+    localStorage.getItem("midoTechCV");
 
-    if (!saved) return;
+  if(!data){
+    toast("مفيش بيانات محفوظة.");
+    return;
+  }
 
-    try {
+  const cv=JSON.parse(data);
 
-        const data =
-            JSON.parse(saved);
+  ids.forEach(id=>{
+    document.getElementById(id).value=
+      cv[id] || "";
+  });
 
-        Object.keys(data).forEach(function(id) {
+  updateCV();
 
-            const input =
-                document.getElementById(id);
-
-            const preview =
-                document.getElementById(
-                    midoFields[id]
-                );
-
-            if (input) {
-                input.value = data[id];
-            }
-
-            if (preview) {
-
-                preview.textContent =
-                    data[id] ||
-                    midoDefaults[id];
-
-            }
-
-        });
-
-    } catch(error) {}
-
+  toast("تم استرجاع البيانات 📂");
 }
 
 
-function midoLoadCV() {
-
-    const saved =
-        localStorage.getItem(
-            "midoTechCV"
-        );
-
-    if (!saved) {
-
-        midoMessage(
-            "لا توجد بيانات محفوظة."
-        );
-
-        return;
-
-    }
-
-    midoLoadSilent();
-
-    midoMessage(
-        "🔄 تم استرجاع بياناتك"
-    );
-
-}
-
-
-/* =====================================================
+/* =========================
    CLEAR
-===================================================== */
+========================= */
 
-function midoClearCV() {
+function clearCV(){
 
-    if (
-        !confirm(
-            "هل تريد مسح بيانات الـCV؟"
-        )
-    ) {
-        return;
-    }
+  ids.forEach(id=>{
+    document.getElementById(id).value="";
+  });
 
-    localStorage.removeItem(
-        "midoTechCV"
-    );
+  localStorage.removeItem("midoTechCV");
 
-    Object.keys(midoFields).forEach(function(id) {
+  updateCV();
 
-        const input =
-            document.getElementById(id);
-
-        const preview =
-            document.getElementById(
-                midoFields[id]
-            );
-
-        if (input) {
-            input.value = "";
-        }
-
-        if (preview) {
-            preview.textContent =
-                midoDefaults[id];
-        }
-
-    });
-
-    midoMessage(
-        "🗑️ تم مسح البيانات"
-    );
-
+  toast("تم مسح البيانات 🗑️");
 }
 
 
-/* =====================================================
+/* =========================
+   PRINT
+========================= */
+
+function printCV(){
+
+  updateCV();
+
+  window.print();
+}
+
+
+/* =========================
    TEMPLATES
-===================================================== */
+========================= */
 
-function midoTemplate(number) {
+function activate(button){
 
-    const cv =
-        document.getElementById("midoCV");
+  document.querySelectorAll(".template")
+  .forEach(b=>b.classList.remove("active"));
 
-    if (number === 1) {
-
-        cv.style.borderTop = "none";
-        cv.style.borderRight = "none";
-
-    }
-
-    if (number === 2) {
-
-        cv.style.borderTop =
-            "7px solid #2563eb";
-
-        cv.style.borderRight = "none";
-
-    }
-
-    if (number === 3) {
-
-        cv.style.borderTop =
-            "7px solid #111827";
-
-        cv.style.borderRight =
-            "7px solid #7c3aed";
-
-    }
-
-
-    document
-        .querySelectorAll(".template-btn")
-        .forEach(function(btn) {
-
-            btn.classList.remove("active");
-
-        });
-
-
-    const buttons =
-        document.querySelectorAll(
-            ".template-btn"
-        );
-
-
-    if (buttons[number - 1]) {
-
-        buttons[number - 1]
-            .classList.add("active");
-
-    }
-
+  button.classList.add("active");
 }
 
 
-/* =====================================================
-   PDF
-===================================================== */
+function template1(button){
 
-function midoDownloadPDF() {
+  activate(button);
 
-    midoGenerateCV();
+  const p=document.getElementById("preview");
 
-    setTimeout(function() {
+  p.style.borderTop="none";
+  p.style.background="white";
 
-        window.print();
-
-    }, 300);
-
+  toast("تم اختيار القالب الكلاسيك ✨");
 }
 
 
-/* =====================================================
-   PAYMENT
-===================================================== */
+function template2(button){
 
-function openPayment() {
+  activate(button);
 
-    document
-        .getElementById("paymentModal")
-        .classList.add("show");
+  const p=document.getElementById("preview");
 
-    document.body.style.overflow =
-        "hidden";
+  p.style.borderTop="8px solid #7c3aed";
+  p.style.background="#fafafa";
 
+  toast("تم اختيار القالب المودرن ✨");
 }
 
 
-function closePayment() {
+function template3(button){
 
-    document
-        .getElementById("paymentModal")
-        .classList.remove("show");
+  activate(button);
 
-    document.body.style.overflow =
-        "";
+  const p=document.getElementById("preview");
 
+  p.style.borderTop="18px solid #111827";
+  p.style.background="white";
+
+  toast("تم اختيار قالب Premium 💎");
 }
 
 
-/* =====================================================
-   COPY VODAFONE CASH
-===================================================== */
+/* =========================
+   TOAST
+========================= */
 
-function copyPaymentNumber() {
+function toast(message){
 
-    const number =
-        "01016005679";
+  const el=
+    document.getElementById("toast");
+
+  el.textContent=message;
+
+  el.classList.add("show");
+
+  setTimeout(()=>{
+    el.classList.remove("show");
+  },2500);
+}
 
 
-    if (
-        navigator.clipboard &&
-        navigator.clipboard.writeText
-    ) {
+/* =========================
+   AUTO LOAD
+========================= */
 
-        navigator.clipboard.writeText(number);
+window.addEventListener(
+  "DOMContentLoaded",
+  ()=>{
+    const saved=
+      localStorage.getItem("midoTechCV");
 
-        midoMessage(
-            "📋 تم نسخ رقم Vodafone Cash"
-        );
+    if(saved){
 
-    } else {
+      const data=JSON.parse(saved);
 
-        midoMessage(
-            "Vodafone Cash: 01016005679"
-        );
+      ids.forEach(id=>{
+        document.getElementById(id).value=
+          data[id] || "";
+      });
 
     }
 
-}
-
-
-/* =====================================================
-   SEND PAYMENT
-===================================================== */
-
-function submitPayment() {
-
-    const operation =
-        document
-        .getElementById(
-            "paymentOperation"
-        )
-        .value
-        .trim();
-
-
-    if (!operation) {
-
-        midoMessage(
-            "⚠️ اكتب رقم عملية التحويل أولًا"
-        );
-
-        return;
-
-    }
-
-
-    const customerName =
-        document
-        .getElementById("cvName")
-        .value
-        .trim();
-
-
-    const customerPhone =
-        document
-        .getElementById("cvPhone")
-        .value
-        .trim();
-
-
-    const message =
-
-        "🚀 طلب تفعيل Mido Tech Pro\n\n" +
-
-        "💎 السعر: 200 جنيه\n\n" +
-
-        "👤 الاسم: " +
-        (customerName || "غير مكتوب") +
-        "\n\n" +
-
-        "📱 هاتف العميل: " +
-        (customerPhone || "غير مكتوب") +
-        "\n\n" +
-
-        "💳 طريقة الدفع: Vodafone Cash\n\n" +
-
-        "🔢 رقم عملية التحويل: " +
-        operation +
-        "\n\n" +
-
-        "📌 أرجو مراجعة التحويل وتفعيل Premium.";
-
-
-    const whatsappNumber =
-        "201112110250";
-
-
-    const url =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
-
-
-    window.open(
-        url,
-        "_blank"
-    );
-
-}
-
-
-/* =====================================================
-   SERVICE REQUEST
-===================================================== */
-
-function midoRequestService() {
-
-    const whatsappNumber =
-        "201112110250";
-
-
-    const message =
-        "🚀 أريد طلب خدمة من Mido Tech\n\n" +
-        "الخدمة المطلوبة: ";
-
-
-    const url =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
-
-
-    window.open(
-        url,
-        "_blank"
-    );
-
-}
-
-
-/* =====================================================
-   NOTIFICATION
-===================================================== */
-
-function midoMessage(text) {
-
-    const old =
-        document.getElementById(
-            "midoNotification"
-        );
-
-
-    if (old) {
-        old.remove();
-    }
-
-
-    const box =
-        document.createElement("div");
-
-
-    box.id =
-        "midoNotification";
-
-
-    box.textContent =
-        text;
-
-
-    box.style.cssText = `
-
-        position:fixed;
-
-        bottom:22px;
-
-        left:50%;
-
-        transform:translateX(-50%);
-
-        background:#101827;
-
-        color:#fff;
-
-        border:1px solid #7c3aed;
-
-        border-radius:10px;
-
-        padding:12px 18px;
-
-        z-index:9999999;
-
-        font-family:inherit;
-
-        font-size:13px;
-
-        box-shadow:0 10px 35px rgba(0,0,0,.35);
-
-        max-width:90%;
-
-        text-align:center;
-
-    `;
-
-
-    document.body.appendChild(box);
-
-
-    setTimeout(function() {
-
-        if (box) {
-            box.remove();
-        }
-
-    }, 3000);
-
-}
-
-
-/* =====================================================
-   CLOSE MODAL OUTSIDE
-===================================================== */
-
-document.addEventListener(
-    "click",
-    function(e) {
-
-        const modal =
-            document.getElementById(
-                "paymentModal"
-            );
-
-        if (
-            modal &&
-            e.target === modal
-        ) {
-
-            closePayment();
-
-        }
-
-    }
+    updateCV();
+  }
 );
 
 </script>
+
+</body>
+     </html>
